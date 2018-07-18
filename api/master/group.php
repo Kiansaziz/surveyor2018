@@ -32,10 +32,10 @@ if ($table != 'tbl_jwb_gb_ab') {
 $query    = "SELECT $col,
                     tbl_kuesioner.nomor_kuesioner AS nomor_kuesioner,
                     tbl_jwb_gb_ab.p107 AS usia,
-                    tbl_jwb_gb_ab.p201 AS profesi,
-                    tbl_prov.kategori_tppu AS tppu,
-                    tbl_prov.kategori_tppt AS tppt,
-                    tbl_profil.kategori AS profesi
+                    tbl_prov.kategori_tppu AS tppu_wil,
+                    tbl_prov.kategori_tppt AS tppt_wil,
+                    tbl_profil.kategori_tppu AS tppu_profesi,
+                    tbl_profil.kategori_tppt AS tppt_profesi
              FROM $table $joinab
              INNER JOIN tbl_kuesioner ON $table.nomor_kuesioner=tbl_kuesioner.nomor_kuesioner
              INNER JOIN tbl_prov ON tbl_prov.id=tbl_kuesioner.id_prov

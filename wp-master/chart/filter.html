@@ -9,8 +9,8 @@
             <div class="input-group-btn">
               <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" ng-model="filter.kategori">Kategori <span class="fa fa-caret-down"></span></button>
               <ul class="dropdown-menu">
-                <li><a ng-click="filter.kategori = 'TPPU'; filter.tppt = ''; filterGroup(filter, checkPoint)">TPPU</a></li>
-                <li><a ng-click="filter.kategori = 'TPPT'; filter.tppu = ''; filterGroup(filter, checkPoint)">TPPT</a></li>
+                <li><a ng-click="filter.kategori = 'TPPU'; filter.tppt_wil = ''; filter.tppt_profesi = ''; filterGroup(filter, checkPoint)">TPPU</a></li>
+                <li><a ng-click="filter.kategori = 'TPPT'; filter.tppu_wil = ''; filter.tppu_profesi = ''; filterGroup(filter, checkPoint)">TPPT</a></li>
               </ul>
             </div>
             <!-- /btn-group -->
@@ -22,7 +22,7 @@
       <div class="col-md-3" ng-if="filter.kategori == 'TPPU'">
         <div class="form-group">
           <label>Wilayah (TPPU)</label>
-          <select class="form-control input-sm" name="tppu" ng-model="filter.tppu" ng-change="filterGroup(filter, checkPoint)">
+          <select class="form-control input-sm" name="wil" ng-model="filter.tppu_wil" ng-change="filterGroup(filter, checkPoint)">
             <option value="">-Pilih</option>
             <option value="1">High</option>
             <option value="2">Medium</option>
@@ -33,7 +33,7 @@
       <div class="col-md-3" ng-if="filter.kategori == 'TPPT'">
         <div class="form-group">
           <label>Wilayah (TPPT)</label>
-          <select class="form-control input-sm" name="tppt" ng-model="filter.tppt" ng-change="filterGroup(filter, checkPoint)">
+          <select class="form-control input-sm" name="wil" ng-model="filter.tppt_wil" ng-change="filterGroup(filter, checkPoint)">
             <option value="">-Pilih</option>
             <option value="1">High</option>
             <option value="2">Medium</option>
@@ -41,10 +41,21 @@
           </select>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3" ng-if="filter.kategori == 'TPPU'">
         <div class="form-group">
-          <label>Profesi</label>
-          <select class="form-control input-sm" name="profesi" ng-model="filter.profesi" ng-change="filterGroup(filter, checkPoint)">
+          <label>Profesi (TPPU)</label>
+          <select class="form-control input-sm" name="profesi" ng-model="filter.tppu_profesi" ng-change="filterGroup(filter, checkPoint)">
+            <option value="">-Pilih</option>
+            <option value="1">High</option>
+            <option value="2">Medium</option>
+            <option value="3">Low</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3" ng-if="filter.kategori == 'TPPT'">
+        <div class="form-group">
+          <label>Profesi (TPPT)</label>
+          <select class="form-control input-sm" name="profesi" ng-model="filter.tppt_profesi" ng-change="filterGroup(filter, checkPoint)">
             <option value="">-Pilih</option>
             <option value="1">High</option>
             <option value="2">Medium</option>
@@ -66,5 +77,6 @@
         </div>
       </div>
     </div>
+    {{filter}}
   </div>
 </div>

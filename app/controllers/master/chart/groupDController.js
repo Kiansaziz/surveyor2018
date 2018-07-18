@@ -93,7 +93,7 @@
           $scope[poin].type = type;
           $scope[poin].series   = [];
           $scope[poin].key      = [];
-          $scope[poin].filtered = filterFilter(response.data.hasil, {tppu: filter.tppu, tppt: filter.tppt, usia: filter.usia, profesi: filter.profesi});
+          $scope[poin].filtered = filterFilter(response.data.hasil, {tppu_wil: filter.tppu_wil, tppt_wil: filter.tppt_wil, tppu_profesi: filter.tppu_profesi, tppt_profesi: filter.tppt_profesi, usia: filter.usia});
           if (poin == 'p401' || 'p402') {
             setOutput($scope[poin].filtered, poin, type);
           }
@@ -124,7 +124,7 @@
         }
         $scope[poin].series   = [];                         //kembali dikosongkan
         var type              = $scope[poin].type;    //kembali mengambil type jika melalui filter
-        $scope[poin].filtered = filterFilter($scope[poin], {tppu: filter.tppu, tppt: filter.tppt, usia: filter.usia, profesi: filter.profesi});
+        $scope[poin].filtered = filterFilter($scope[poin], {tppu_wil: filter.tppu_wil, tppt_wil: filter.tppt_wil, tppu_profesi: filter.tppu_profesi, tppt_profesi: filter.tppt_profesi, usia: filter.usia});
         if (poin == 'p401' || 'p402') {
           setOutput($scope[poin].filtered, poin, type);
         }
