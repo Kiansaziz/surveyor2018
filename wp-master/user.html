@@ -1,0 +1,116 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Users
+    <small>Data Users</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Users</li>
+  </ol>
+</section>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+
+
+      <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-target="#semua" data-toggle="tab">SEMUA USER</a></li>
+          <li><a data-target="#add" data-toggle="tab"><span class="fa fa-plus"></span> TAMBAH</a></li>
+        </ul>
+        <div class="tab-content">
+
+          <div class="active tab-pane" id="semua">
+            <span class="box-header with-border">
+              <input type="text" class="form-control" placeholder="Cari Data" ng-model="search_global">
+            </span>
+
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <a href="" ng-click="searchToggle()"><i class="fa fa-search-plus"></i> Cari</a>
+                <thead>
+                  <tr>
+                    <th width="3%">No <br><input type="text" class="form-control input-sm" placeholder="..." readOnly ng-show="mySearchFiled"></th>
+                    <th>
+                      <a ng-click="order('level')">Level</a> <br>
+                      <select class="input-sm" ng-model="search.level" ng-show="mySearchFiled">
+                        <option value=""></option>
+                        <option ng-repeat="level in main.levels" value="{{level.id}}">{{level.nama_level}}</option>
+                      </select>
+                    </th>
+                    <th><a ng-click="order('nama')">Nama</a>        <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="search.nama" ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('no_telp')">Telepon</a>  <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="search.no_telp" ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('email')">Email</a>      <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="search.email" ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('last_access')">Terakhir Login</a> <br><input type="text" class="form-control input-sm date-picker" placeholder="..." ng-model="search.last_access" ng-show="mySearchFiled"></th>
+                    <th width="80px"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr dir-paginate="user in filteredSemua = (users | filter:search | filter:search_global | filter:search_index) | orderBy:'nama' | orderBy:predicate:reverse  | itemsPerPage:itemsize">
+                    <td>{{ $index + 1}}</td>
+                    <td>{{user.nama_level}}</td>
+                    <td>{{user.nama}}</td>
+                    <td>{{user.no_telp}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.last_access | dateToISO | date : "dd/MMM/yyyy - HH:mm"}}</td>
+                    <td>
+                      <a ng-if="profile.id != user.id" title="Detail Data" href="#user/{{user.id}}"><span class="fa fa-eye"></span></a>
+                      <a ng-if="profile.id == user.id" title="Detail Data" href="#profile"><span class="fa fa-eye"></span></a>
+                      <a ng-if="profile.id != user.id" title="Hapus Data" ng-click="deleteUser(user)" class="pull-right danger"><span class="fa fa-trash-o"></span></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row">
+              <div class="col-sm-2">
+                <small>Total :</small> {{filteredSemua.length}}
+              </div>
+              <div class="form-group" ng-show="filteredSemua.length > 10">
+                <small for="inputName" class="col-sm-2 col-sm-offset-6">Jumlah /Page :</small>
+                <div class="col-sm-2">
+                  <select class="form-control input-sm" name="" ng-model="itemsize" ng-init="itemsize = '10'">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+                <div class="col-sm-12">
+                  <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="add">
+            <div ng-include src="'user-add.html'"></div>
+          </div>
+          <!-- /.tab-pane -->
+
+        </div>
+        <!-- /.tab-content -->
+      </div>
+      <!-- /.nav-tabs-custom -->
+
+
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+</section>
+<!-- /.content -->
+
+
+<script type="text/javascript">
+$('.date-picker').datepicker({
+  autoclose: true,
+  todayHighlight: true,
+  format:'yyyy-mm-dd'
+})
+</script>

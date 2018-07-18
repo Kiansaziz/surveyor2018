@@ -1,0 +1,168 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Kuesioner
+    <small>Data Kuesioner</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Kuesioner</li>
+  </ol>
+</section>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+
+
+      <div class="box box-primary">
+        <div class="box-body">
+
+          <div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Nomor Kuesioner</label>
+                <input type="text" class="form-control" placeholder="..." ng-model="search.nomor_kuesioner">
+              </div>
+              <div class="form-group">
+                <label>Provinsi</label>
+                <select class="form-control" name="provinsi" ng-model="search.id_prov" ng-change="changeProv(search)">
+                  <option value="">-Pilih</option>
+                  <option ng-repeat="provinsi in main.provinsis | orderBy:'provinsi'" value="{{provinsi.id}}">{{provinsi.provinsi}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Kabupaten</label>
+                <select class="form-control" name="kabupaten" ng-model="search.id_kab" ng-change="changeKab(search)">
+                  <option value="">-Pilih</option>
+                  <option ng-repeat="kabupaten in main.kabupatens | filter:{'id_prov':search.id_prov}:true | orderBy:'kabupaten'" value="{{kabupaten.id}}">{{kabupaten.kabupaten}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Kecamatan</label>
+                <select class="form-control" name="kecamatan" ng-model="search.id_kec" ng-change="changeKec(search)">
+                  <option value="">-Pilih</option>
+                  <option ng-repeat="kecamatan in main.kecamatans | filter:{'id_kab':search.id_kab}:true | orderBy:'kecamatan'" value="{{kecamatan.id}}">{{kecamatan.kecamatan}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Kelurahan</label>
+                <select class="form-control" name="kelurahan" ng-model="search.id_kel">
+                  <option value="">-Pilih</option>
+                  <option ng-repeat="kelurahan in main.kelurahans | filter:{'id_kec':search.id_kec}:true | orderBy:'kelurahan'" value="{{kelurahan.id}}">{{kelurahan.kelurahan}}</option>
+                </select>
+              </div>
+              <table class="table table-bordered">
+                <tr>
+                  <td colspan="3">
+                    <div class="alert alert-info">
+                      <span class="fa fa-warning"></span> PERHATIAN !!
+                      <ul>
+                        <li>Ceklis Pada Bagian Masing-masing</li>
+                        <li>Jika Enumerator dan Data Entry sudah ada, tapi table-3 Masih <span class="badge bg-red"><i class="fa fa-times"></i></span>, Data Jawaban Masih Ada Yang BERBEDA</li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="radio">
+                      <label><input type="checkbox"  ng-model="search.valid_enumerator" ng-true-value="0" ng-false-value="" /> Enumerator</label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="radio">
+                      <label><input type="checkbox"  ng-model="search.valid_data_entry" ng-true-value="0" ng-false-value="" /> Data Entry</label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="radio">
+                      <label><input type="checkbox"  ng-model="search.valid_gabungan" ng-true-value="0" ng-false-value="" /> Tabel Ke-3</label>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <!-- /.search -->
+
+            <div class="col-md-12" ng-show="loadData">
+              <div class="alert alert-info">
+                Memuat Data, Memerlukan Waktu Beberapa Saat Untuk Mengambil Semua Data Kuesioner ..
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th width="3%">No</th>
+                      <th>Nomor Kuesioner</th>
+                      <th>Provinsi</th>
+                      <th>Kabupaten</th>
+                      <th>Kecamatan</th>
+                      <th>Kelurahan</th>
+                      <th title="Enumerator / Data Entry / Table Ke-3">E / D / 3</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr dir-paginate="kuesioner in filtered = (main.kuesioners | filter:search | filter:search_index) | orderBy:predicate:reverse  | itemsPerPage:itemsize">
+                      <td>{{ $index + 1}}</td>
+                      <td>{{kuesioner.nomor_kuesioner}}</td>
+                      <td>{{kuesioner.provinsi}}</td>
+                      <td>{{kuesioner.kabupaten}}</td>
+                      <td>{{kuesioner.kecamatan}}</td>
+                      <td>{{kuesioner.kelurahan}}</td>
+                      <td>
+                        <span ng-if="kuesioner.valid_enumerator == 0" class="badge bg-blue"><i class="fa fa-check"></i></span>
+                        <span ng-if="kuesioner.valid_enumerator == 1" class="badge bg-red"><i class="fa fa-times"></i></span>
+                        /
+                        <span ng-if="kuesioner.valid_data_entry == 0" class="badge bg-blue"><i class="fa fa-check"></i></span>
+                        <span ng-if="kuesioner.valid_data_entry == 1" class="badge bg-red"><i class="fa fa-times"></i></span>
+                        /
+                        <span ng-if="kuesioner.valid_gabungan == 0" class="badge bg-blue"><i class="fa fa-check"></i></span>
+                        <span ng-if="kuesioner.valid_gabungan == 1" class="badge bg-red"><i class="fa fa-times"></i></span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-2">
+                <small>Total :</small> {{filtered.length}}
+              </div>
+              <div class="form-group" ng-show="filtered.length > 10">
+                <small for="inputName" class="col-sm-2 col-sm-offset-6">Jumlah /Page :</small>
+                <div class="col-sm-2">
+                  <select class="form-control input-sm" name="" ng-model="itemsize" ng-init="itemsize = '10'">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+                <div class="col-sm-12">
+                  <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
+                </div>
+              </div>
+            </div>
+
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box box-primary-->
+
+
+    </div>
+    <!-- /.col 12 -->
+  </div>
+  <!-- /.row -->
+</section>
+<!-- /.content -->

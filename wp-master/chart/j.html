@@ -1,0 +1,275 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    GRUP J
+    <small>Info Grafis Kuesioner Grup J</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Grup Pertanyaan</li>
+    <li class="active">J</li>
+  </ol>
+</section>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div ng-include src="'chart/filter.html'"></div>
+
+      <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+          <li class="active"><a ng-click="getData('tbl_jwb_gb_j', 'p1001', filter, 'pie', post1001)" data-target="#1001" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 1001</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_j', 'p1002', filter, 'bar', post1002)" data-target="#1002" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 1002</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_j', 'p1003', filter, 'pie', post1003)" data-target="#1003" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 1003</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_j', 'p1004', filter, 'column', post1004)" data-target="#1004" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 1004</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_j', 'p1005', filter, 'column', post1005)" data-target="#1005" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 1005</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_j', 'p1006', filter, 'pie', post1006)" data-target="#1006" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 1006</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_j', 'p1007', filter, 'bar', post1007)" data-target="#1007" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 1007</a></li>
+        </ul>
+        <div class="tab-content">
+
+          <div class="active tab-pane" id="1001">
+            <div class="row" ng-if="p1001.a.chart && p1001.a.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p1001.a.chart && p1001.a.chart.series[0].data != ''">
+              <div class="col-md-6">
+                <hc-chart options="p1001.a.chart"></hc-chart>
+              </div>
+              <div class="col-md-6">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Jawaban</th>
+                      <th>Jumlah</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="x in p1001.a.chart.series[0].data | orderBy :'-y'">
+                      <td>{{$index + 1}}</td>
+                      <td>{{x.name}}</td>
+                      <td>{{x.y}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="1002">
+            <div class="row" ng-if="p1002.a.chart && p1002.a.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p1002.a.chart && p1002.a.chart.series[0].data != ''">
+              <div class="col-md-6">
+                <hc-chart options="p1002.a.chart"></hc-chart>
+              </div>
+              <div class="col-md-6">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Jawaban</th>
+                      <th>Jumlah</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="x in p1002.a.chart.series[0].data | orderBy :'-y'">
+                      <td>{{$index + 1}}</td>
+                      <td>{{x.name}}</td>
+                      <td>{{x.y}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="1003">
+            <div class="row" ng-if="p1003.a.chart && p1003.a.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p1003.a.chart && p1003.a.chart.series[0].data != ''">
+              <div class="col-md-6">
+                <hc-chart options="p1003.a.chart"></hc-chart>
+              </div>
+              <div class="col-md-6">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Jawaban</th>
+                      <th>Jumlah</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="x in p1003.a.chart.series[0].data | orderBy :'-y'">
+                      <td>{{$index + 1}}</td>
+                      <td>{{x.name}}</td>
+                      <td>{{x.y}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-md-12">
+                <hc-chart options="p1003.b.chart"></hc-chart>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="1004">
+            <div class="row" ng-if="p1004.chart && p1004.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p1004.chart && p1004.chart.series[0].data != ''">
+              <div class="col-md-12">
+                <hc-chart options="p1004.chart"></hc-chart>
+              </div>
+              <div class="col-md-12">
+                <h4 class="text-center">JAWABAN 1004 E</h4>
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Nomor Kuesioner</th>
+                      <th>Jawaban</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr dir-paginate="x in filteredSemua = (p1004.filtered | filter:emptyOrNull) | orderBy:'-p1004e' | orderBy:predicate:reverse  | itemsPerPage:itemsize">
+                      <td width="2%">{{$index + 1}}</td>
+                      <td width="30%">{{x.nomor_kuesioner}}</td>
+                      <td>{{x.p1004e}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="col-sm-2">
+                  <small>Total :</small> {{filteredSemua.length}}
+                </div>
+                <div class="form-group" ng-show="filteredSemua.length > 10">
+                  <small for="inputName" class="col-sm-2 col-sm-offset-6">Jumlah /Page :</small>
+                  <div class="col-sm-2">
+                    <select class="form-control input-sm" name="" ng-model="itemsize" ng-init="itemsize = '10'">
+                      <option value="10">10</option>
+                      <option value="25">25</option>
+                      <option value="50">50</option>
+                      <option value="100">100</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-12">
+                    <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="1005">
+            <div class="row" ng-if="p1005.chart && p1005.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p1005.chart && p1005.chart.series[0].data != ''">
+              <div class="col-md-12">
+                <hc-chart options="p1005.chart"></hc-chart>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="1006">
+            <div class="row" ng-if="p1006.a.chart && p1006.a.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p1006.a.chart && p1006.a.chart.series[0].data != ''">
+              <div class="col-md-6">
+                <hc-chart options="p1006.a.chart"></hc-chart>
+              </div>
+              <div class="col-md-6">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Jawaban</th>
+                      <th>Jumlah</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="x in p1006.a.chart.series[0].data | orderBy :'-y'">
+                      <td>{{$index + 1}}</td>
+                      <td>{{x.name}}</td>
+                      <td>{{x.y}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-md-12">
+                <hc-chart options="p1006.b.chart"></hc-chart>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="1007">
+            <div class="row" ng-if="p1007.a.chart && p1007.a.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p1007.a.chart && p1007.a.chart.series[0].data != ''">
+              <div class="col-md-6">
+                <hc-chart options="p1007.a.chart"></hc-chart>
+              </div>
+              <div class="col-md-6">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Jawaban</th>
+                      <th>Jumlah</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="x in p1007.a.chart.series[0].data | orderBy :'-y'">
+                      <td>{{$index + 1}}</td>
+                      <td>{{x.name}}</td>
+                      <td>{{x.y}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+        </div>
+        <!-- /.tab-content -->
+      </div>
+      <!-- /.nav-tabs-custom -->
+
+
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+</section>
+<!-- /.content -->

@@ -1,0 +1,47 @@
+<!-- Content Header (Page header) -->
+<section class="content-header text-center">
+  <h1>
+    B. KETERANGAN KEGIATAN RESPONDEN
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Group B</li>
+  </ol>
+</section>
+
+<div ng-if="kuesioner.alert.b">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Sudah Ada Data Kuesioner Untuk Nomor Kuesioner {{kuesioner.nomor_kuesioner}}, Silakan Update Jawaban Pada Form Berikut.</div>
+</div>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+
+        <span class="label label-info pull-right">{{kuesioner.aksi.b}}</span>
+
+        <div class="box-body">
+          <form name="form" ng-submit="submit(kuesioner.b, kuesioner.tbl_b, kuesioner.aksi.b, 'b')">
+
+            
+
+            <div class="form-group">
+              <div class="col-md-12">
+                  <button type="submit" class="btn btn-danger">Submit</button>
+                  <img ng-show="loadForm" src="../assets/images/line-load.gif" alt="">
+              </div>
+            </div>
+
+          </form>
+        </div><!-- box-body -->
+        <div class="box-footer">
+          FORM GROUP B
+        </div><!-- box-footer -->
+      </div><!-- /.nav-tabs-custom -->
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</section>
+<!-- /.content -->

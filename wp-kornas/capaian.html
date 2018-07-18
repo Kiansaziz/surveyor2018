@@ -1,0 +1,99 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Capaian
+    <small>Data Capaian Kornas Lain</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Capaian</li>
+  </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title"><span class="fa fa-fire"></span> Capaian Persentase</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+
+          <div ng-if = "capaian_kornas == ''" class="alert alert-info text-center">MEMUAT</div>
+
+          <div style="height: 300px; margin-bottom:100px;"
+            ng-if = "capaian_kornas != ''"
+            bar-chart
+            bar-data='capaian_kornas'
+            bar-x='nama'
+            bar-y='["target", "enumerator", "data_entry", "hasil"]'
+            bar-labels='["Target", "Enumerator", "Data Entry", "Hasil"]'>
+          </div>
+
+          <!-- <div>
+            <div class="col-xs-3 text-center" style="border-right: 1px solid #f4f4f4">
+              <input type="text" class="knob" data-readonly="true" value="100" data-width="60" data-height="60" data-fgColor="#39CCCC">
+              <div class="knob-label">{{x.nama}}</div>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-12">
+
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title"><span class="fa fa-fire"></span> Capaian Persentase (Tabel)</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Nama</th>
+                  <th>Jumlah kuesioner</th>
+                  <th>Capaian Enumerator</th>
+                  <th>Capaian Data Entry</th>
+                  <th>Capaian Hasil</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="x in capaian_kornas">
+                  <td>{{$index + 1}}</td>
+                  <td>{{x.nama}}</td>
+                  <td>{{x.jumlah}}</td>
+                  <td>{{x.enumerator | number}} %</td>
+                  <td>{{x.data_entry | number}}%</td>
+                  <td><span class="badge" ng-class="{'bg-red': x.hasil <= 50, 'bg-yellow': x.hasil > 50, 'bg-green': x.hasil == 100 }">{{ x.hasil | number}} %</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<!-- /.content -->
+
+<!-- <script type="text/javascript">
+  $(".knob").knob();
+</script> -->

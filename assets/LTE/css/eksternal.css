@@ -1,0 +1,32 @@
+a {cursor: pointer;}
+.col-nomor {
+  width : 3%;
+}
+.col-soal {
+  width : 97%;
+}
+.judul {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 767px) {
+  .my-responsive-table-wrapper {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 1px solid #dddddd;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+  }
+  .my-responsive-table-wrapper > .my-table > thead > tr > th,
+  .my-responsive-table-wrapper > .my-table > tbody > tr > th,
+  .my-responsive-table-wrapper > .my-table > tfoot > tr > th,
+  .my-responsive-table-wrapper > .my-table > thead > tr > td,
+  .my-responsive-table-wrapper > .my-table > tbody > tr > td,
+  .my-responsive-table-wrapper > .my-table > tfoot > tr > td {
+    white-space: normal;
+  }
+}

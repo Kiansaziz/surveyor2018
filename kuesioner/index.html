@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="mainController">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{kuesioner.bagian}} | Surveyor</title>
+  <link rel="shortcut icon" href="../assets/images/logo.png">
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/plugins/datepicker/bootstrap-datepicker3.min.css" />
+  <link rel="stylesheet" href="../assets/plugins/datepicker/bootstrap-datetimepicker.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../assets/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../assets/LTE/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../assets/LTE/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="../assets/plugins/pace/pace.css" />
+  <!-- Alert Toaster -->
+  <link rel="stylesheet" href="../assets/plugins/toaster/toaster.css" />
+  <link rel="stylesheet" href="../assets/LTE/css/eksternal.css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+
+<!-- Site wrapper -->
+<div class="wrapper">
+
+
+  <nav class="main-header">
+    <!-- Logo -->
+    <a href="#/" class="logo navbar-fixed-top">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>S</b>PP</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Survey</b> <small>Persepsi Publik</small></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-fixed-top">
+      <!-- Sidebar toggle button-->
+      <a class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <div class="navbar-custom-menu">
+
+        <ul class="nav navbar-nav">
+          <li><a class="judul">{{$route.current.title}}</a></li>
+
+          <li class="dropdown user user-menu">
+            <a class="dropdown-toggle" data-toggle="dropdown">
+              <img src="../assets/images/foto.gif" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{kuesioner.nomor_kuesioner}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="../assets/images/foto.gif" class="img-circle" alt="User Image">
+                <p>
+                  {{kuesioner.provinsi}} - {{kuesioner.kabupaten}}
+                  <small>{{kuesioner.kecamatan}} - {{kuesioner.kelurahan}}</small>
+                </p>
+              </li>
+              <li class="user-footer">
+                  Survey Persepsi Publik TPPU-PT18
+              </li>
+            </ul>
+          </li>
+
+          <li title="KELUAR">
+            <a role="button" ng-click="logout()"><i class="fa fa-sign-out"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </nav>
+
+  <!-- =============================================== -->
+
+  <!-- Left side column. contains the sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="../assets/images/foto.gif" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>{{kuesioner.bagian}}</p>
+          <a><i class="fa fa-circle text-success"></i> {{kuesioner.nama}}</a>
+        </div>
+      </div>
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        <li ng-class="{'active': $route.current.activetab == ''}">
+          <a href="#/">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="header">GROUP FORM</li>
+        <li ng-class="{'active': $route.current.activetab == 'ab'}" title="KETERANGAN RUMAHTANGGA DAN PROFIL RESPONDEN">
+          <a href="#ab">
+            <i class="fa fa-barcode"></i> <span>Group A & B</span> <span ng-if="kuesioner.alert.ab" class="badge bg-blue pull-right"><i class="fa fa-check"></i></span>
+          </a>
+        </li>
+        <li ng-class="{'active': $route.current.activetab == 'c'}" title="KARAKTERISTIK PERBUATAN PENCUCIAN UANG">
+          <a href="#/c">
+            <i class="fa fa-barcode"></i> <span>Group C</span> <span ng-if="kuesioner.alert.c" class="badge bg-blue pull-right"><i class="fa fa-check"></i></span>
+          </a>
+        </li>
+        <li ng-class="{'active': $route.current.activetab == 'd'}" title="PANDANGAN TERKAIT RISIKO PENCUCIAN UANG">
+          <a href="#/d">
+            <i class="fa fa-barcode"></i> <span>Group D</span> <span ng-if="kuesioner.alert.d && (kuesioner.c.p303a != 'Tidak' || kuesioner.c.p303c != 'Tidak')" class="badge bg-blue pull-right"><i class="fa fa-check"></i></span> <span ng-if="kuesioner.c.p303a == 'Tidak' && kuesioner.c.p303c == 'Tidak'" class="badge bg-red pull-right"><i class="fa fa-times"></i></span>
+          </a>
+        </li>
+        <li ng-class="{'active': $route.current.activetab == 'e'}" title="PENGALAMAN RESPONDEN TERKAIT ANTI PENCUCIAN UANG">
+          <a href="#e">
+            <i class="fa fa-barcode"></i> <span>Group E</span> <span ng-if="kuesioner.alert.e" class="badge bg-blue pull-right"><i class="fa fa-check"></i></span>
+          </a>
+        </li>
+        <li ng-class="{'active': $route.current.activetab == 'f'}" title="KARAKTERISTIK PEMBUATAN PENDANAAN TERORISME">
+          <a href="#f">
+            <i class="fa fa-barcode"></i> <span>Group F</span> <span ng-if="kuesioner.alert.f" class="badge bg-blue pull-right"><i class="fa fa-check"></i></span>
+          </a>
+        </li>
+        <li ng-class="{'active': $route.current.activetab == 'g'}" title="PANDANGAN TERKAIT RISIKO PENDANAAN TERORISME">
+          <a href="#g">
+            <i class="fa fa-barcode"></i> <span>Group G</span> <span ng-if="kuesioner.alert.g && (kuesioner.f.p603a != 'Tidak' || kuesioner.f.p603c != 'Tidak')" class="badge bg-blue pull-right"><i class="fa fa-check"></i></span> <span ng-if="kuesioner.f.p603a == 'Tidak' && kuesioner.f.p603c == 'Tidak'" class="badge bg-red pull-right"><i class="fa fa-times"></i></span>
+          </a>
+        </li>
+        <li ng-class="{'active': $route.current.activetab == 'h'}" title="PENGALAMAN RESPONDEN TERKAIT PENCEGAHAN PENDANAAN TERORISME">
+          <a href="#h">
+            <i class="fa fa-barcode"></i> <span>Group H</span> <span ng-if="kuesioner.alert.h" class="badge bg-blue pull-right"><i class="fa fa-check"></i></span>
+          </a>
+        </li>
+        <li ng-class="{'active': $route.current.activetab == 'i'}" title="KEEFEKTIFAN KINERJA INSTANSI PEMERINTAH TERKAIT PROGRAM ANTI PENCUCIAN UANG DAN PENCEGAHAN PENDANAAN TERORISME">
+          <a href="#i">
+            <i class="fa fa-barcode"></i> <span>Group I</span> <span ng-if="kuesioner.alert.i" class="badge bg-blue pull-right"><i class="fa fa-check"></i></span>
+          </a>
+        </li>
+        <li ng-class="{'active': $route.current.activetab == 'j'}" title="PANDANGAN PUBLIK TERHADAP ANCAMAN POLITIK UANG DAN PELANGGARAN DANA KAMPANYE DALAM PEMILUKADA">
+          <a href="#j">
+            <i class="fa fa-barcode"></i> <span>Group J</span> <span ng-if="kuesioner.alert.j" class="badge bg-blue pull-right"><i class="fa fa-check"></i></span>
+          </a>
+        </li>
+        <li ng-class="{'active': $route.current.activetab == 'k'}" title="PANDANGAN PUBLIK TERKAIT RADIKALISME">
+          <a href="#k">
+            <i class="fa fa-barcode"></i> <span>Group K</span> <span ng-if="kuesioner.alert.k" class="badge bg-blue pull-right"><i class="fa fa-check"></i></span>
+          </a>
+        </li>
+        <li ng-class="{'active': $route.current.activetab == 'l'}" title="PANDANGAN PUBLIK TERHADAP PENDANAAN PROLIFERASI/PENGEMBANGAN SENJATA PEMUSNAH MASSAL">
+          <a href="#l">
+            <i class="fa fa-barcode"></i> <span>Group L</span> <span ng-if="kuesioner.alert.l" class="badge bg-blue pull-right"><i class="fa fa-check"></i></span>
+          </a>
+        </li>
+        <li ng-class="{'active': $route.current.activetab == 'm'}" title="EDUKASI PROGRAM ANTI PENCUCIAN UANG DAN PENCEGAHAN PENDANAAN TERORISME KEPADA MASYARAKAT">
+          <a href="#m">
+            <i class="fa fa-barcode"></i> <span>Group M</span> <span ng-if="kuesioner.alert.m" class="badge bg-blue pull-right"><i class="fa fa-check"></i></span>
+          </a>
+        </li>
+        <li ng-class="{'active': $route.current.activetab == 'n'}" title="MASUKAN RESPONDEN DAN LEMBAR PENGESAHAN">
+          <a href="#n">
+            <i class="fa fa-barcode"></i> <span>Group N</span> <span ng-if="kuesioner.alert.n" class="badge bg-blue pull-right"><i class="fa fa-check"></i></span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- =============================================== -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" style="padding-top:50px">
+
+    <noscript>
+      <style type="text/css">
+          .main-sidebar {display:none;}
+      </style>
+      <div class="alert alert-danger">
+        Untuk Menggunakan Aplikasi ini, Diperlukan mengaktikan Javascript pada browser Anda. <br>
+        Klik <a href="http://www.enable-javascript.com/" target="_blank">Disini</a> Untuk Melihat Cara Mengaktikan Javascript
+      </div>
+    </noscript>
+
+    <ng-view autoscroll="true"></ng-view>
+
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>TPPU PT-18</b> 2018
+    </div>
+    <strong>Copyright &copy; 2018 <a href="https://www.facebook.com/ggamaobnykCta" target="_blank">Surveyor - PTSI</a></strong>
+    All rights reserved.
+  </footer>
+
+
+
+</div>
+<!-- ./wrapper -->
+
+
+
+
+
+<!-- jQuery 2.2.3 -->
+<script src="../assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- progres Halaman -->
+<script src="../assets/plugins/pace/paceEksternal.js"></script>
+<script src="../assets/plugins/pace/pace.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../assets/LTE/js/app.min.js"></script>
+<!-- Angular -->
+<script src="../assets/angular/angular.min.js"></script>
+<script src="../assets/angular/angular-route.js"></script>
+<script src="../assets/angular/angular-animate.min.js"></script>
+<script src="../assets/plugins/toaster/toaster.js"></script>
+<script src="../assets/plugins/pagination/pagination.js"></script>
+<script src="../assets/plugins/datepicker/moment.min.js"></script>
+<script src="../assets/plugins/datepicker/bootstrap-datepicker.min.js"></script>
+<script src="../assets/plugins/datepicker/bootstrap-datetimepicker.min.js"></script>
+
+<script src="../app/appKuesioner.js"></script>
+<script src="../app/directives/attrs.js"></script>
+<script src="../app/controllers/kuesioner/mainController.js"></script>
+
+
+</body>
+</html>

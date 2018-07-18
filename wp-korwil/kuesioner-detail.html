@@ -1,0 +1,196 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Kuesioner Detail
+    <small>Data Detail Kuesioner</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li><a href="#kuesioner"> Kuesioner</a></li>
+    <li class="active">{{kuesioner.nomor_kuesioner}}</li>
+  </ol>
+</section>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+
+
+      <div class="box box-primary">
+        <div class="box-body">
+
+
+          <div class="col-md-6">
+            <table class="table table-bordered">
+              <tr>
+                <td width="40%">Nomor Kuesioner</td>
+                <td>: {{kuesioner.nomor_kuesioner}}</td>
+              </tr>
+              <tr>
+                <td>Provinsi</td>
+                <td>: {{kuesioner.provinsi}}</td>
+              </tr>
+              <tr>
+                <td>Kabupaten/Kota</td>
+                <td>: {{kuesioner.kabupaten}}</td>
+              </tr>
+              <tr>
+                <td>Kecamatan</td>
+                <td>: {{kuesioner.kecamatan}}</td>
+              </tr>
+              <tr>
+                <td>Kelurahan</td>
+                <td>: {{kuesioner.kelurahan}}</td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-md-6">
+            <table class="table table-bordered">
+              <tr>
+                <td width="40%">Nama Enumerator</td>
+                <td>: {{kuesioner.nama_enum}}</td>
+              </tr>
+              <tr>
+                <td>Nama Data Entry</td>
+                <td>: {{kuesioner.nama_entry}}</td>
+              </tr>
+              <tr>
+                <td>Input Enumerator</td>
+                <td>:
+                  <span ng-if="kuesioner.valid_enumerator == 0" class="badge bg-blue"><i class="fa fa-check"></i></span>
+                  <span ng-if="kuesioner.valid_enumerator == 1" class="badge bg-red"><i class="fa fa-times"></i></span>
+                </td>
+              </tr>
+              <tr>
+                <td>Input Data Entry</td>
+                <td>:
+                  <span ng-if="kuesioner.valid_data_entry == 0" class="badge bg-blue"><i class="fa fa-check"></i></span>
+                  <span ng-if="kuesioner.valid_data_entry == 1" class="badge bg-red"><i class="fa fa-times"></i></span>
+                </td>
+              </tr>
+              <tr>
+                <td>Jawaban Sama</td>
+                <td>:
+                  <span ng-if="kuesioner.valid_gabungan == 0" class="badge bg-blue"><i class="fa fa-check"></i></span>
+                  <span ng-if="kuesioner.valid_gabungan == 1" class="badge bg-red"><i class="fa fa-times"></i></span>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- <div class="row">
+            <div class="col-md-12">
+              <div class="alert alert-success">{{kuesioner.enum.f | json}}</div>
+              <div class="alert alert-warning">{{kuesioner.data.f | json}}</div>
+              <div class="alert alert-info">{{kuesioner.final.f | json}}</div>
+            </div>
+          </div> -->
+
+
+          <div class="col-md-12">
+            <div class="nav-tabs-custom">
+              <ul class="nav nav-tabs">
+                <li class="active"> <a data-target="#ab" data-toggle="tab">Grup A & B <span class="badge bg-red">{{grup(kuesioner.beda, 'ab')}}</span></a></li>
+                <li class="">       <a data-target="#c" data-toggle="tab">Grup C <span class="badge bg-red">{{grup(kuesioner.beda, 'c')}}</span></a></li>
+                <li class="">       <a data-target="#d" data-toggle="tab">Grup D <span class="badge bg-red">{{grup(kuesioner.beda, 'd')}}</span></a></li>
+                <li class="">       <a data-target="#e" data-toggle="tab">Grup E <span class="badge bg-red">{{grup(kuesioner.beda, 'e')}}</span></a></li>
+                <li class="">       <a data-target="#f" data-toggle="tab">Grup F <span class="badge bg-red">{{grup(kuesioner.beda, 'f')}}</span></a></li>
+                <li class="">       <a data-target="#g" data-toggle="tab">Grup G <span class="badge bg-red">{{grup(kuesioner.beda, 'g')}}</span></a></li>
+                <li class="">       <a data-target="#h" data-toggle="tab">Grup H <span class="badge bg-red">{{grup(kuesioner.beda, 'h')}}</span></a></li>
+                <li class="">       <a data-target="#i" data-toggle="tab">Grup I <span class="badge bg-red">{{grup(kuesioner.beda, 'i')}}</span></a></li>
+                <li class="">       <a data-target="#j" data-toggle="tab">Grup J <span class="badge bg-red">{{grup(kuesioner.beda, 'j')}}</span></a></li>
+                <li class="">       <a data-target="#k" data-toggle="tab">Grup K <span class="badge bg-red">{{grup(kuesioner.beda, 'k')}}</span></a></li>
+                <li class="">       <a data-target="#l" data-toggle="tab">Grup L <span class="badge bg-red">{{grup(kuesioner.beda, 'l')}}</span></a></li>
+                <li class="">       <a data-target="#m" data-toggle="tab">Grup M <span class="badge bg-red">{{grup(kuesioner.beda, 'm')}}</span></a></li>
+                <li class="">       <a data-target="#n" data-toggle="tab">Grup N <span class="badge bg-red">{{grup(kuesioner.beda, 'n')}}</span></a></li>
+              </ul>
+              <div class="tab-content">
+
+                <div class="active tab-pane" id="ab">
+                  <div ng-include src="'form/ab.html'"></div>
+                </div>
+                <!-- /.tab-pane -->
+
+                <div class="tab-pane" id="c">
+                  <div ng-include src="'form/c.html'"></div>
+                </div>
+                <!-- /.tab-pane -->
+
+                <div class="tab-pane" id="d">
+                  <div ng-include src="'form/d.html'"></div>
+                </div>
+                <!-- /.tab-pane -->
+
+                <div class="tab-pane" id="e">
+                  <div ng-include src="'form/e.html'"></div>
+                </div>
+                <!-- /.tab-pane -->
+
+                <div class="tab-pane" id="f">
+                  <div ng-include src="'form/f.html'"></div>
+                </div>
+                <!-- /.tab-pane -->
+
+                <div class="tab-pane" id="g">
+                  <div ng-include src="'form/g.html'"></div>
+                </div>
+                <!-- /.tab-pane -->
+
+                <div class="tab-pane" id="h">
+                  <div ng-include src="'form/h.html'"></div>
+                </div>
+                <!-- /.tab-pane -->
+
+                <div class="tab-pane" id="i">
+                  <div ng-include src="'form/i.html'"></div>
+                </div>
+                <!-- /.tab-pane -->
+
+                <div class="tab-pane" id="j">
+                  <div ng-include src="'form/j.html'"></div>
+                </div>
+                <!-- /.tab-pane -->
+
+                <div class="tab-pane" id="k">
+                  <div ng-include src="'form/k.html'"></div>
+                </div>
+                <!-- /.tab-pane -->
+
+                    <!-- kians -->
+                <div class="tab-pane" id="l">
+                  <div ng-include src="'form/l.html'"></div>
+                </div>
+                <!-- /.tab-pane -->
+
+                <!-- kians -->
+                <div class="tab-pane" id="m">
+                  <div ng-include src="'form/m.html'"></div>
+                </div>
+                <!-- /.tab-pane -->
+
+                <!-- kians -->
+                <div class="tab-pane" id="n">
+                  <div ng-include src="'form/n.html'"></div>
+                </div>
+                <!-- /.tab-pane -->
+
+              </div>
+              <!-- /.tab-content -->
+            </div>
+            <!-- /.nav-tabs-custom -->
+          </div>
+
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box box-primary-->
+
+
+    </div>
+    <!-- /.col 12 -->
+  </div>
+  <!-- /.row -->
+</section>
+<!-- /.content -->

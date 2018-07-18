@@ -1,0 +1,411 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Wilayah
+    <small>Data Wilayah Yang Mengikuti Survey</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Wilayah</li>
+  </ol>
+</section>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+
+
+      <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-target="#provinsi" data-toggle="tab"> PROVINSI</a></li>
+          <li><a data-target="#kabupaten" data-toggle="tab"> KABUPATEN/KOTA</a></li>
+          <li><a data-target="#kecamatan" data-toggle="tab"> KECAMATAN</a></li>
+          <li><a data-target="#kelurahan" data-toggle="tab"> DESA/KELURAHAN</a></li>
+        </ul>
+        <div class="tab-content">
+
+          <div class="active tab-pane" id="provinsi">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <a href="" ng-click="searchToggle()"><i class="fa fa-search-plus"></i> Cari</a>
+                <thead>
+                  <tr>
+                    <th width="3%">No <br><input type="text" class="form-control input-sm" placeholder="..." readOnly ng-show="mySearchFiled"></th>
+                    <th width="5%"><a ng-click="order('id')">Kode</a>  <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="searchProvinsi.id" ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('provinsi')">Provinsi</a>  <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="searchProvinsi.provinsi" ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('kategori_tppu')">Kategori TPPU</a> <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="searchProvinsi.kategori_tppu" ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('kategori_tppt')">Kategori TPPT</a> <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="searchProvinsi.kategori_tppt" ng-show="mySearchFiled"></th>
+                    <th width="40px"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr dir-paginate="prov in filteredProv = (main.provinsis | filter:searchProvinsi | filter:search_index) | orderBy:'provinsi' | orderBy:predicate:reverse  | itemsPerPage:itemsize" pagination-id="provinsi">
+                    <td>{{ $index + 1}}</td>
+                    <td>{{prov.id}}</td>
+                    <td>{{prov.provinsi}}</td>
+                    <td>{{prov.kategori_tppu}} <span ng-if="prov.kategori_tppu=='1'">(High)</span><span ng-if="prov.kategori_tppu=='2'">(Medium)</span><span ng-if="prov.kategori_tppu=='3'">(Low)</span></td>
+                    <td>{{prov.kategori_tppt}} <span ng-if="prov.kategori_tppt=='1'">(High)</span><span ng-if="prov.kategori_tppt=='2'">(Medium)</span><span ng-if="prov.kategori_tppt=='3'">(Low)</span></td>
+                    <td>
+                      <a title="Hapus Data" ng-click="deleteWilayah(prov, 'provinsis', 'tbl_prov')" class="pull-right danger"><span class="fa fa-trash-o"></span></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row">
+              <div class="col-sm-2">
+                <small>Total :</small> {{filteredProv.length}}
+              </div>
+              <div class="form-group" ng-show="filteredProv.length > 10">
+                <small for="inputName" class="col-sm-2 col-sm-offset-6">Jumlah /Page :</small>
+                <div class="col-sm-2">
+                  <select class="form-control input-sm" name="" ng-model="itemsize" ng-init="itemsize = '10'">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+                <div class="col-sm-12">
+                  <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="provinsi"></dir-pagination-controls>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="page-header">
+                  FORM TAMBAH PROVINSI
+                </div>
+                <form class="form-horizontal" role="form" name="formProv" novalidate ng-submit="submit(dataProv, 'tbl_prov')">
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"> Kode <b class="text-danger">*</b></label>
+                    <div class="col-sm-10">
+                      <input type="text" name="id" required placeholder="Kode" class="form-control" ng-model="dataProv.id"/>
+                      <span ng-show="formProv.id.$invalid && !formProv.id.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"> Nama Provinsi <b class="text-danger">*</b></label>
+                    <div class="col-sm-10">
+                      <input type="text" name="provinsi" required placeholder="" class="form-control" ng-model="dataProv.provinsi"/>
+                      <span ng-show="formProv.provinsi.$invalid && !formProv.provinsi.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"> Kategori TPPU<b class="text-danger">*</b></label>
+                    <div class="col-sm-10">
+                      <select class="form-control" name="kategori_tppu" required ng-model="dataProv.kategori_tppu">
+                        <option value="1">High</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Low</option>
+                      </select>
+                      <span ng-show="formProv.kategori_tppu.$invalid && !formProv.kategori_tppu.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"> Kategori TPPT<b class="text-danger">*</b></label>
+                    <div class="col-sm-10">
+                      <select class="form-control" name="kategori_tppt" required ng-model="dataProv.kategori_tppt">
+                        <option value="1">High</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Low</option>
+                      </select>
+                      <span ng-show="formProv.kategori_tppt.$invalid && !formProv.kategori_tppt.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">
+                      <button class="btn btn-info" type="submit" ng-disabled="formProv.$invalid">
+                        <i class="ace-icon fa fa-check bigger-110"></i>
+                        Simpan
+                      </button>
+                    </label>
+                    <div class="col-sm-10"></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="kabupaten">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <a href="" ng-click="searchToggle()"><i class="fa fa-search-plus"></i> Cari</a>
+                <thead>
+                  <tr>
+                    <th width="3%">No <br><input type="text" class="form-control input-sm" placeholder="..." readOnly ng-show="mySearchFiled"></th>
+                    <th width="20%"><a ng-click="order('provinsi')">Provinsi</a>  <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="searchKabupaten.provinsi" ng-show="mySearchFiled"></th>
+                    <th width="5%"><a ng-click="order('kode')">Kode</a>  <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="searchKabupaten.kode" ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('kabupaten')">Kabupaten/Kota</a> <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="searchKabupaten.kabupaten" ng-show="mySearchFiled"></th>
+                    <th width="40px"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr dir-paginate="kab in filteredKab = (main.kabupatens | filter:searchKabupaten | filter:search_index) | orderBy:'kabupaten' | orderBy:predicate:reverse  | itemsPerPage:itemsize" pagination-id="kabupaten">
+                    <td>{{ $index + 1}}</td>
+                    <td>{{kab.provinsi}}</td>
+                    <td>{{kab.kode}}</td>
+                    <td>{{kab.kabupaten}}</td>
+                    <td>
+                      <a title="Hapus Data" ng-click="deleteWilayah(kab, 'kabupatens', 'tbl_kab')" class="pull-right danger"><span class="fa fa-trash-o"></span></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row">
+              <div class="col-sm-2">
+                <small>Total :</small> {{filteredKab.length}}
+              </div>
+              <div class="form-group" ng-show="filteredKab.length > 10">
+                <small for="inputName" class="col-sm-2 col-sm-offset-6">Jumlah /Page :</small>
+                <div class="col-sm-2">
+                  <select class="form-control input-sm" name="" ng-model="itemsize" ng-init="itemsize = '10'">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+                <div class="col-sm-12">
+                  <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="kabupaten"></dir-pagination-controls>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="page-header">
+                  FORM TAMBAH KABUPATEN/KOTA
+                </div>
+                <form class="form-horizontal" role="form" name="formKab" novalidate ng-submit="submit(dataKab, 'tbl_kab')">
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"> Provinsi <b class="text-danger">*</b></label>
+                    <div class="col-sm-10">
+                      <select class="form-control" name="id_prov" required ng-model="dataKab.id_prov">
+                        <option ng-repeat="x in main.provinsis" value="{{x.id}}">{{x.provinsi}}</option>
+                      </select>
+                      <span ng-show="formKab.id_prov.$invalid && !formKab.id_prov.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"> Kode <b class="text-danger">*</b></label>
+                    <div class="col-sm-10">
+                      <input type="text" name="kode" required placeholder="Kode" class="form-control" ng-model="dataKab.kode"/>
+                      <span ng-show="formKab.kode.$invalid && !formKab.kode.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"> Nama Kabupten/Kota <b class="text-danger">*</b></label>
+                    <div class="col-sm-10">
+                      <input type="text" name="kabupaten" required placeholder="" class="form-control" ng-model="dataKab.kabupaten"/>
+                      <span ng-show="formKab.kabupaten.$invalid && !formKab.kabupaten.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">
+                      <button class="btn btn-info" type="submit" ng-disabled="formKab.$invalid">
+                        <i class="ace-icon fa fa-check bigger-110"></i>
+                        Simpan
+                      </button>
+                    </label>
+                    <div class="col-sm-10"></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="kecamatan">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <a href="" ng-click="searchToggle()"><i class="fa fa-search-plus"></i> Cari</a>
+                <thead>
+                  <tr>
+                    <th width="3%">No <br><input type="text" class="form-control input-sm" placeholder="..." readOnly ng-show="mySearchFiled"></th>
+                    <th width="20%"><a ng-click="order('kabupaten')">Kabupaten</a>  <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="searchKecamatan.kabupaten" ng-show="mySearchFiled"></th>
+                    <th width="5%"><a ng-click="order('kode')">Kode</a>  <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="searchKecamatan.kode" ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('kecamatan')">Kecamatan</a> <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="searchKecamatan.kecamatan" ng-show="mySearchFiled"></th>
+                    <th width="40px"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr dir-paginate="kec in filteredKec = (main.kecamatans | filter:searchKecamatan | filter:search_index) | orderBy:'kecamatan' | orderBy:predicate:reverse  | itemsPerPage:itemsize" pagination-id="kecamatan">
+                    <td>{{ $index + 1}}</td>
+                    <td>{{kec.kabupaten}}</td>
+                    <td>{{kec.kode}}</td>
+                    <td>{{kec.kecamatan}}</td>
+                    <td>
+                      <a title="Hapus Data" ng-click="deleteWilayah(kec, 'kecamatans', 'tbl_kec')" class="pull-right danger"><span class="fa fa-trash-o"></span></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row">
+              <div class="col-sm-2">
+                <small>Total :</small> {{filteredKec.length}}
+              </div>
+              <div class="form-group" ng-show="filteredKec.length > 10">
+                <small for="inputName" class="col-sm-2 col-sm-offset-6">Jumlah /Page :</small>
+                <div class="col-sm-2">
+                  <select class="form-control input-sm" name="" ng-model="itemsize" ng-init="itemsize = '10'">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+                <div class="col-sm-12">
+                  <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="kecamatan"></dir-pagination-controls>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="page-header">
+                  FORM TAMBAH KECAMATAN
+                </div>
+                <form class="form-horizontal" role="form" name="formKec" novalidate ng-submit="submit(dataKec, 'tbl_kec')">
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"> Kabupaten <b class="text-danger">*</b></label>
+                    <div class="col-sm-10">
+                      <select class="form-control" name="id_kab" required ng-model="dataKec.id_kab">
+                        <option ng-repeat="x in main.kabupatens" value="{{x.id}}">{{x.kabupaten}}</option>
+                      </select>
+                      <span ng-show="formKec.id_kab.$invalid && !formKec.id_kab.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"> Kode <b class="text-danger">*</b></label>
+                    <div class="col-sm-10">
+                      <input type="text" name="kode" required placeholder="Kode" class="form-control" ng-model="dataKec.kode"/>
+                      <span ng-show="formKec.kode.$invalid && !formKec.kode.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"> Nama Kecamatan <b class="text-danger">*</b></label>
+                    <div class="col-sm-10">
+                      <input type="text" name="kecamatan" required placeholder="" class="form-control" ng-model="dataKec.kecamatan"/>
+                      <span ng-show="formKec.kecamatan.$invalid && !formKec.kecamatan.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">
+                      <button class="btn btn-info" type="submit" ng-disabled="formKec.$invalid">
+                        <i class="ace-icon fa fa-check bigger-110"></i>
+                        Simpan
+                      </button>
+                    </label>
+                    <div class="col-sm-10"></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="kelurahan">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <a href="" ng-click="searchToggle()"><i class="fa fa-search-plus"></i> Cari</a>
+                <thead>
+                  <tr>
+                    <th width="3%">No <br><input type="text" class="form-control input-sm" placeholder="..." readOnly ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('kecamatan')">Kecamatan</a>  <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="searchKelurahan.kecamatan" ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('kode')">Kode</a>  <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="searchKelurahan.kode" ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('kelurahan')">Desa/Kelurahan</a> <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="searchKelurahan.kelurahan" ng-show="mySearchFiled"></th>
+                    <th width="80px"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr dir-paginate="kel in filteredKel = (main.kelurahans | filter:searchKelurahan | filter:search_index) | orderBy:'id' | orderBy:predicate:reverse  | itemsPerPage:itemsize" pagination-id="kelurahan">
+                    <td>{{ $index + 1}}</td>
+                    <td>{{kel.kecamatan}}</td>
+                    <td>{{kel.kode}}</td>
+                    <td>{{kel.kelurahan}}</td>
+                    <td>
+                      <a title="Hapus Data" ng-click="deleteWilayah(kel, 'kelurahans', 'tbl_kel')" class="pull-right danger"><span class="fa fa-trash-o"></span></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row">
+              <div class="col-sm-2">
+                <small>Total :</small> {{filteredKel.length}}
+              </div>
+              <div class="form-group" ng-show="filteredKel.length > 10">
+                <small for="inputName" class="col-sm-2 col-sm-offset-6">Jumlah /Page :</small>
+                <div class="col-sm-2">
+                  <select class="form-control input-sm" name="" ng-model="itemsize" ng-init="itemsize = '10'">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+                <div class="col-sm-12">
+                  <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="kelurahan"></dir-pagination-controls>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="page-header">
+                  FORM TAMBAH DESA/KELURAHAN
+                </div>
+                <form class="form-horizontal" role="form" name="formKel" novalidate ng-submit="submit(dataKel, 'tbl_kel')">
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"> Kecamatan <b class="text-danger">*</b></label>
+                    <div class="col-sm-10">
+                      <select class="form-control" name="id_kel" required ng-model="dataKel.id_kec">
+                        <option ng-repeat="x in main.kecamatans" value="{{x.id}}">{{x.kecamatan}}</option>
+                      </select>
+                      <span ng-show="formKel.id_kel.$invalid && !formKel.id_kel.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"> Kode <b class="text-danger">*</b></label>
+                    <div class="col-sm-10">
+                      <input type="text" name="kode" required placeholder="Kode" class="form-control" ng-model="dataKel.kode"/>
+                      <span ng-show="formKel.kode.$invalid && !formKel.kode.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label"> Nama Desa/Kelurahan <b class="text-danger">*</b></label>
+                    <div class="col-sm-10">
+                      <input type="text" name="kelurahan" required placeholder="" class="form-control" ng-model="dataKel.kelurahan"/>
+                      <span ng-show="formKel.kelurahan.$invalid && !formKel.kelurahan.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">
+                      <button class="btn btn-info" type="submit" ng-disabled="formKel.$invalid">
+                        <i class="ace-icon fa fa-check bigger-110"></i>
+                        Simpan
+                      </button>
+                    </label>
+                    <div class="col-sm-10"></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+        </div>
+        <!-- /.tab-content -->
+      </div>
+      <!-- /.nav-tabs-custom -->
+
+
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+</section>
+<!-- /.content -->

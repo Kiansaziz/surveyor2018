@@ -1,0 +1,122 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Profile
+    <small>Data Diri User</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Profile</li>
+  </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+  <div class="row">
+    <div class="col-md-3">
+
+      <!-- Profile Image -->
+      <div class="box box-primary">
+        <div class="box-body box-profile">
+          <img class="profile-user-img img-responsive img-circle" ng-src="{{getImg(profile)}}" alt="User {{profile.nama}}">
+
+          <h3 class="profile-username text-center">{{profile.nama}}</h3>
+
+          <p class="text-muted text-center">{{profile.nama_level}}</p>
+
+          <ul class="list-group list-group-unbordered">
+            <li class="list-group-item">
+              <b>Telpon</b> <a class="pull-right">{{profile.no_telp}}</a>
+            </li>
+            <li class="list-group-item">
+              <b>Email</b> <a ng-href="mailto:{{profile.email}}" class="pull-right">{{profile.email}}</a>
+            </li>
+            <li class="list-group-item">
+              <b>Akses Terakhir</b> <a class="pull-right">{{profile.last_access | dateToISO | date : "dd/MMM/yyyy HH:mm"}}</a>
+            </li>
+          </ul>
+
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+
+    </div>
+    <!-- /.col -->
+
+    <div class="col-md-9">
+      <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-target="#settings" data-toggle="tab">Settings</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="active tab-pane" id="settings">
+            <form name="form" class="form-horizontal" ng-submit="updateProfile(profile)" novalidate>
+              <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">Level</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputName" ng-model="profile.nama_level" readOnly>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">Nama</label>
+                <div class="col-sm-10">
+                  <input type="text" name="nama" class="form-control" ng-model="profile.nama" required>
+                  <p ng-show="form.nama.$error.required && !form.nama.$pristine"><i class="text-danger">Nama Harus Di Isi</i></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" name="email" class="form-control" ng-model="profile.email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">Telpon</label>
+                <div class="col-sm-10">
+                  <input type="text" name="no_telp" class="form-control" ng-model="profile.no_telp">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputName" class="col-sm-2 control-label">Username</label>
+                <div class="col-sm-10">
+                  <input type="text" name="username" class="form-control" id="inputSkills" ng-model="profile.username" required>
+                  <p ng-show="form.username.$error.required && !form.username.$pristine"><i class="text-danger">Username Harus Di Isi</i></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassNew" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" name="passwordNew" class="form-control" id="passwordNew" ng-minlength="5" ng-model="profile.passwordNew" placeholder="Input Ulang/Baru" required>
+                  <p ng-show="form.passwordNew.$error.required && !form.passwordNew.$pristine"><i class="text-danger">Password Harus Di Isi</i></p>
+                  <p ng-show="form.passwordNew.$error.minlength"><i class="text-danger">Password Terlalu Singkat</i></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassNew" class="col-sm-2 control-label">Ulangi Password</label>
+                <div class="col-sm-10">
+                  <input type="password" name="repasswordNew" class="form-control" id="repasswordNew" ng-model="profile.repasswordNew" match="profile.passwordNew" pw-check="passwordNew" placeholder="Input Ulang/Baru" required>
+                  <p ng-show="form.repasswordNew.$error.required && !form.repasswordNew.$pristine"><i class="text-danger">Konfirmasi Password Harus Di Isi</i></p>
+                  <p ng-show="form.repasswordNew.$error.pwmatch && !form.repasswordNew.$pristine"><i class="text-danger">Password Tidak Sama.</i></p>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-danger" ng-disabled="form.$invalid">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- /.tab-pane -->
+        </div>
+        <!-- /.tab-content -->
+      </div>
+      <!-- /.nav-tabs-custom -->
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+
+</section>
+<!-- /.content -->

@@ -1,0 +1,243 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Informasi Umum
+    <small>Data Informasi Kornas</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Informasi Umum</li>
+  </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+  <div class="alert alert-info">Data Capaian Merupakan Hasil Dari Kalkulasi Capaian Tabel ke-3</div>
+
+  <div class="row">
+    <div class="col-md-3">
+
+      <!-- Profile Image -->
+      <div class="box box-primary">
+        <div class="box-body box-profile">
+          <table class="table">
+            <tr>
+              <td>Jumlah Provinsi</td>
+              <td>: {{main.provinsis.length}}</td>
+            </tr>
+            <tr>
+              <td>Jumlah Kabupaten/Kota</td>
+              <td>: {{main.kabupatens.length}}</td>
+            </tr>
+            <tr>
+              <td>Jumlah Kecamatan</td>
+              <td>: {{main.kecamatans.length}}</td>
+            </tr>
+            <tr>
+              <td>Jumlah Kelurahan</td>
+              <td>: {{main.kelurahans.length}}</td>
+            </tr>
+            <tr>
+              <td>Jumlah Kuesioner</td>
+              <td>: <b>{{main.kuesioners.length}}</b></td>
+            </tr>
+            <tr>
+              <td>Jumlah Input Enumerator</td>
+              <td>: <b>{{dashboard.kuesioner.enumerator}}</b></td>
+            </tr>
+            <tr>
+              <td>Jumlah Input Data Entry</td>
+              <td>: <b>{{dashboard.kuesioner.data_entry}}</b></td>
+            </tr>
+            <tr>
+              <td>Jumlah Data Selesai</td>
+              <td>: <b>{{dashboard.kuesioner.hasil}}</b></td>
+            </tr>
+          </table>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+
+    </div>
+    <!-- /.col -->
+
+    <div class="col-md-9">
+      <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-target="#provinsi" data-toggle="tab">Provinsi</a></li>
+          <li class=""><a data-target="#kabupaten" data-toggle="tab">Kabupaten/Kota</a></li>
+          <li class=""><a data-target="#kecamatan" data-toggle="tab">Kecamatan</a></li>
+          <li class=""><a data-target="#kelurahan" data-toggle="tab">Kelurahan</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="active tab-pane" id="provinsi">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Provinsi</th>
+                  <th>Capaian</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr dir-paginate="prov in filteredProv = (main.provinsis | filter:search_index) | orderBy:predicate:reverse  | itemsPerPage:itemsize" pagination-id="provinsi">
+                  <td>{{$index + 1}}</td>
+                  <td>{{prov.provinsi}}</td>
+                  <td><span class="badge" ng-class="{'bg-red': capaianProv(prov) <= 50, 'bg-yellow': capaianProv(prov) > 50, 'bg-green': capaianProv(prov) == 100 }">{{ capaianProv(prov) | number}} %</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="row">
+              <div class="col-sm-2">
+                <small>Total :</small> {{filteredProv.length}}
+              </div>
+              <div class="form-group" ng-show="filteredProv.length > 10">
+                <small for="inputName" class="col-sm-2 col-sm-offset-6">Jumlah /Page :</small>
+                <div class="col-sm-2">
+                  <select class="form-control input-sm" name="" ng-model="itemsize" ng-init="itemsize = '10'">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+                <div class="col-sm-12">
+                  <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="provinsi"></dir-pagination-controls>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+          <div class="tab-pane" id="kabupaten">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Kabupaten/Kota</th>
+                  <th>Provinsi</th>
+                  <th>Capaian</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr dir-paginate="kab in filteredKab = (main.kabupatens | filter:search_index) | orderBy:predicate:reverse  | itemsPerPage:itemsize" pagination-id="kabupaten">
+                  <td>{{$index + 1}}</td>
+                  <td>{{kab.kabupaten}}</td>
+                  <td>{{kab.provinsi}}</td>
+                  <td><span class="badge" ng-class="{'bg-red': capaianKab(kab) <= 50, 'bg-yellow': capaianKab(kab) > 50, 'bg-green': capaianKab(kab) == 100 }">{{ capaianKab(kab) | number}} %</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="row">
+              <div class="col-sm-2">
+                <small>Total :</small> {{filteredKab.length}}
+              </div>
+              <div class="form-group" ng-show="filteredKab.length > 10">
+                <small for="inputName" class="col-sm-2 col-sm-offset-6">Jumlah /Page :</small>
+                <div class="col-sm-2">
+                  <select class="form-control input-sm" name="" ng-model="itemsize" ng-init="itemsize = '10'">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+                <div class="col-sm-12">
+                  <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="kabupaten"></dir-pagination-controls>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+          <div class="tab-pane" id="kecamatan">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Kecamatan</th>
+                  <th>Kabupaten/Kota</th>
+                  <th>Capaian</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr dir-paginate="kec in filteredKec = (main.kecamatans | filter:search_index) | orderBy:predicate:reverse  | itemsPerPage:itemsize" pagination-id="kecamatan">
+                  <td>{{$index + 1}}</td>
+                  <td>{{kec.kecamatan}}</td>
+                  <td>{{kec.kabupaten}}</td>
+                  <td><span class="badge" ng-class="{'bg-red': capaianKec(kec) <= 50, 'bg-yellow': capaianKec(kec) > 50, 'bg-green': capaianKec(kec) == 100 }">{{ capaianKec(kec) | number}} %</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="row">
+              <div class="col-sm-2">
+                <small>Total :</small> {{filteredKec.length}}
+              </div>
+              <div class="form-group" ng-show="filteredKec.length > 10">
+                <small for="inputName" class="col-sm-2 col-sm-offset-6">Jumlah /Page :</small>
+                <div class="col-sm-2">
+                  <select class="form-control input-sm" name="" ng-model="itemsize" ng-init="itemsize = '10'">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+                <div class="col-sm-12">
+                  <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="kecamatan"></dir-pagination-controls>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+          <div class="tab-pane" id="kelurahan">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Kelurahan</th>
+                  <th>Kecamatan</th>
+                  <th>Capaian</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr dir-paginate="kel in filteredKel = (main.kelurahans | filter:search_index) | orderBy:predicate:reverse  | itemsPerPage:itemsize" pagination-id="kelurahan">
+                  <td>{{$index + 1}}</td>
+                  <td>{{kel.kelurahan}}</td>
+                  <td>{{kel.kecamatan}}</td>
+                  <td><span class="badge" ng-class="{'bg-red': capaianKel(kel) <= 50, 'bg-yellow': capaianKel(kel) > 50, 'bg-green': capaianKel(kel) == 100 }">{{ capaianKel(kel) | number}} %</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="row">
+              <div class="col-sm-2">
+                <small>Total :</small> {{filteredKel.length}}
+              </div>
+              <div class="form-group" ng-show="filteredKel.length > 10">
+                <small for="inputName" class="col-sm-2 col-sm-offset-6">Jumlah /Page :</small>
+                <div class="col-sm-2">
+                  <select class="form-control input-sm" name="" ng-model="itemsize" ng-init="itemsize = '10'">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+                <div class="col-sm-12">
+                  <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="kelurahan"></dir-pagination-controls>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+        </div>
+        <!-- /.tab-content -->
+      </div>
+      <!-- /.nav-tabs-custom -->
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+
+</section>
+<!-- /.content -->

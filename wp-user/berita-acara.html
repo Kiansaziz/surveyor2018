@@ -1,0 +1,1134 @@
+<!-- Content Header (Page header) -->
+<section class="content-header text-center">
+  <h1>
+    BERITA ACARA
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Berita Acara</li>
+  </ol>
+</section>
+
+<div ng-if="profile.alert.ba">
+  <br>
+  <div class="alert alert-info"><span class="fa fa-warning"></span> PERHATIAN !! Sudah Ada Data Berita Acara Untuk Kelurahan {{profile.kelurahan}}, Silakan Update Pada Form Berikut.</div>
+</div>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+
+        <span class="label label-info pull-right">{{profile.aksi.ba}}</span>
+
+        <div class="box-body">
+          <form name="form" ng-submit="submit(profile.ba, 'tbl_user_kelurahan_ba', profile.aksi.ba, 'ba')">
+
+            <div class="form-group">
+              <label>Waktu <b class="text-danger">*</b></label>
+              <div class="input-group">
+                  <span class="input-group-addon"> <b>Hari :</b> </span>
+                <select class="form-control" name="hari" ng-model="profile.ba.hari" required>
+                  <option value="Senin">Senin</option>
+                  <option value="Selasa">Selasa</option>
+                  <option value="Rabu">Rabu</option>
+                  <option value="Kamis">Kamis</option>
+                  <option value="Jumat">Jumat</option>
+                  <option value="Sabtu">Sabtu</option>
+                  <option value="Minggu">Minggu</option>
+                </select>
+                  <span class="input-group-addon"> <b>Tanggal :</b> </span>
+                <select class="form-control" name="tanggal" ng-model="profile.ba.tanggal" required>
+                  <option ng-repeat="n in [] | range:31" value="{{$index + 1}}">{{$index + 1}}</option>
+                </select>
+                  <span class="input-group-addon"> <b>Bulan :</b> </span>
+                <select class="form-control" name="bulan" ng-model="profile.ba.bulan" required>
+                  <option value="Januari">Januari</option>
+                  <option value="Februari">Februari</option>
+                  <option value="Maret">Maret</option>
+                  <option value="April">April</option>
+                  <option value="Mei">Mei</option>
+                  <option value="Juni">Juni</option>
+                  <option value="Juli">Juli</option>
+                  <option value="Agustus">Agustus</option>
+                  <option value="September">September</option>
+                  <option value="Oktober">Oktober</option>
+                  <option value="Nopember">Nopember</option>
+                  <option value="Desember">Desember</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <h2>A. Nama Wilayah</h2>
+              </div>
+              <div class="col-md-6">
+
+                <div class="form-group">
+                  <label> Desa / Kelurahan <b class="text-danger">*</b></label>
+                  <input type="text" name="kelurahan" class="form-control" ng-model="profile.kelurahan" placeholder="" readOnly>
+                  <span ng-show="form.kelurahan.$invalid && !form.kelurahan.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                </div>
+
+                <div class="form-group">
+                  <label> Kecamatan <b class="text-danger">*</b></label>
+                  <input type="text" name="kecamatan" class="form-control" ng-model="profile.kecamatan" placeholder="" readOnly>
+                  <span ng-show="form.kecamatan.$invalid && !form.kecamatan.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                </div>
+
+              </div>
+              <div class="col-md-6">
+
+                <div class="form-group">
+                  <label> Kabupaten/Kota <b class="text-danger">*</b></label>
+                  <input type="text" name="kabupaten" class="form-control" ng-model="profile.kabupaten" placeholder="" readOnly>
+                  <span ng-show="form.kabupaten.$invalid && !form.kabupaten.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                </div>
+
+                <div class="form-group">
+                  <label> Provinsi <b class="text-danger">*</b></label>
+                  <input type="text" name="provinsi" class="form-control" ng-model="profile.provinsi" placeholder="" readOnly>
+                  <span ng-show="form.provinsi.$invalid && !form.provinsi.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                </div>
+
+              </div>
+              <div class="col-md-12">
+                <h2>B. Identitas Desa</h2>
+              </div>
+              <div class="col-md-6">
+
+                <div class="form-group">
+                  <label> Nama Kepala Desa / Lurah <b class="text-danger">*</b></label>
+                  <input type="text" name="kades" class="form-control" ng-model="profile.ba.kades" placeholder="" required>
+                  <span ng-show="form.kades.$invalid && !form.kades.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                </div>
+
+                <div class="form-group">
+                  <label> NIK / NIP <b class="text-danger">*</b></label>
+                  <input type="text" name="nip" class="form-control" ng-model="profile.ba.nip" placeholder="">
+                </div>
+
+                <div class="form-group">
+                  <label> Jumlah Penduduk <b class="text-danger">*</b></label>
+                  <input type="number" name="jumlah_penduduk" class="form-control" ng-model="profile.ba.jumlah_penduduk" min="0" max="{{profile.ba.laki_laki + profile.ba.perempuan}}" placeholder="" required>
+                  <span ng-show="form.jumlah_penduduk.$invalid && !form.jumlah_penduduk.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                  <span ng-show="form.jumlah_penduduk.$error.min"><i class="text-danger">Tidak Sesuai Jumlah Laki-laki Dan Perempuan</i></span>
+                  <span ng-show="form.jumlah_penduduk.$error.max"><i class="text-danger">Tidak Sesuai Jumlah Laki-laki Dan Perempuan</i></span>
+                </div>
+
+              </div>
+              <div class="col-md-6">
+
+                <div class="form-group">
+                  <label> Laki - Laki <b class="text-danger">*</b></label>
+                  <input type="number" name="laki_laki" class="form-control" ng-model="profile.ba.laki_laki" placeholder="" required>
+                  <span ng-show="form.laki_laki.$invalid && !form.laki_laki.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                  <span ng-show="form.laki_laki.$error.min"><i class="text-danger">Isi Minimal 0</i></span>
+                </div>
+
+                <div class="form-group">
+                  <label> Perempuan <b class="text-danger">*</b></label>
+                  <input type="number" name="perempuan" class="form-control" ng-model="profile.ba.perempuan" placeholder="" required>
+                  <span ng-show="form.perempuan.$invalid && !form.perempuan.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                  <span ng-show="form.perempuan.$error.min"><i class="text-danger">Isi Minimal 0</i></span>
+                </div>
+
+                <div class="form-group">
+                  <label> Jumlah Rumah Tangga (KK) <b class="text-danger">*</b></label>
+                  <input type="number" name="jumlah_kk" class="form-control" ng-model="profile.ba.jumlah_kk" placeholder="" required>
+                  <span ng-show="form.jumlah_kk.$invalid && !form.jumlah_kk.$pristine"><i class="text-danger">Harus Diisi</i></span>
+                  <span ng-show="form.jumlah_kk.$error.min"><i class="text-danger">Isi Minimal 0</i></span>
+                </div>
+
+              </div><!-- md12 -->
+
+              <div class="col-md-12">
+
+                <h2>C. Data Responden</h2>
+                <div class="table-responsive">
+                <table class="table table-bordered">
+                  <thead>
+                    <th width="3px">No</th>
+                    <th>Nama</th>
+                    <th>Alamat</th>
+                    <th>No Telp</th>
+                    <th>Profesi</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td> <input type="text" name="nama_1" ng-model="profile.ba.nama_1" ng-init="profile.ba.nama_1 = profile.ba.nama_1 || getNama(profile, '01')"></td>
+                      <td> {{getAlamat(profile, '01')}}</td>
+                      <td> <input type="text" name="telp_1" ng-model="profile.ba.telp_1"></td>
+                      <td> {{getProfesi(profile, '01')}}</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td> <input type="text" name="nama_2" ng-model="profile.ba.nama_2" ng-init="profile.ba.nama_2 = profile.ba.nama_2 || getNama(profile, '02')"></td>
+                      <td> {{getAlamat(profile, '02')}}</td>
+                      <td> <input type="text" name="telp_2" ng-model="profile.ba.telp_2"></td>
+                      <td> {{getProfesi(profile, '02')}}</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td> <input type="text" name="nama_3" ng-model="profile.ba.nama_3" ng-init="profile.ba.nama_3 = profile.ba.nama_3 || getNama(profile, '03')"></td>
+                      <td> {{getAlamat(profile, '03')}}</td>
+                      <td> <input type="text" name="telp_3" ng-model="profile.ba.telp_3"></td>
+                      <td> {{getProfesi(profile, '03')}}</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td> <input type="text" name="nama_4" ng-model="profile.ba.nama_4" ng-init="profile.ba.nama_4 = profile.ba.nama_4 || getNama(profile, '04')"></td>
+                      <td> {{getAlamat(profile, '04')}}</td>
+                      <td> <input type="text" name="telp_4" ng-model="profile.ba.telp_4"></td>
+                      <td> {{getProfesi(profile, '04')}}</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td> <input type="text" name="nama_5" ng-model="profile.ba.nama_5" ng-init="profile.ba.nama_5 = profile.ba.nama_5 || getNama(profile.id, '05')"></td>
+                      <td> {{getAlamat(profile, '05')}}</td>
+                      <td> <input type="text" name="telp_5" ng-model="profile.ba.telp_5"></td>
+                      <td> {{getProfesi(profile, '05')}}</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td> <input type="text" name="nama_6" ng-model="profile.ba.nama_6" ng-init="profile.ba.nama_6 = profile.ba.nama_6 || getNama(profile, '06')"></td>
+                      <td> {{getAlamat(profile, '06')}}</td>
+                      <td> <input type="text" name="telp_6" ng-model="profile.ba.telp_6"></td>
+                      <td> {{getProfesi(profile, '06')}}</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td> <input type="text" name="nama_7" ng-model="profile.ba.nama_7" ng-init="profile.ba.nama_7 = profile.ba.nama_7 || getNama(profile, '07')"></td>
+                      <td> {{getAlamat(profile, '07')}}</td>
+                      <td> <input type="text" name="telp_7" ng-model="profile.ba.telp_7"></td>
+                      <td> {{getProfesi(profile, '07')}}</td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td> <input type="text" name="nama_8" ng-model="profile.ba.nama_8" ng-init="profile.ba.nama_8 = profile.ba.nama_8 || getNama(profile, '08')"></td>
+                      <td> {{getAlamat(profile, '08')}}</td>
+                      <td> <input type="text" name="telp_8" ng-model="profile.ba.telp_8"></td>
+                      <td> {{getProfesi(profile, '08')}}</td>
+                    </tr>
+                    <tr>
+                      <td>9</td>
+                      <td> <input type="text" name="nama_9" ng-model="profile.ba.nama_9" ng-init="profile.ba.nama_9 = profile.ba.nama_9 || getNama(profile, '09')"></td>
+                      <td> {{getAlamat(profile, '09')}}</td>
+                      <td> <input type="text" name="telp_9" ng-model="profile.ba.telp_9"></td>
+                      <td> {{getProfesi(profile, '09')}}</td>
+                    </tr>
+                    <tr>
+                      <td>10</td>
+                      <td> <input type="text" name="nama_10" ng-model="profile.ba.nama_10" ng-init="profile.ba.nama_10 = profile.ba.nama_10 || getNama(profile, '10')"></td>
+                      <td> {{getAlamat(profile, '10')}}</td>
+                      <td> <input type="text" name="telp_10" ng-model="profile.ba.telp_10"></td>
+                      <td> {{getProfesi(profile, '10')}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+
+              </div>
+              <div class="col-md-12">
+
+                <h2>D. Kuesioner Intermediate Course</h2>
+
+                <div class="form-group">
+                  <div class="col-md-1 col-nomor">No</div>
+                  <div class="col-md-11 col-soal">
+                    <label>Pertanyaan</label> <br>
+                    <div class="col-md-4 col-md-offset-8">
+                      <img ng-src="../assets/images/1-10-efektif.png" alt="" class="img-responsive" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-1 col-nomor">1</div>
+                  <div class="col-md-11 col-soal">
+                    <div class="col-md-8">
+                     Seberapa efektifkah kebijakan, koordinasi, dan kerjasama pemerintah dinilai mampu mengatasi resiko dan pencucian uang dan pendaanaan terorisme di wilayah setempat?
+                    </div>
+                    <div class="col-md-4">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d1" class="" required ng-model="profile.ba.d1" value="Tidak Tahu">Tidak Tahu</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d1" class="" required ng-model="profile.ba.d1" value="1">1</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d1" class="" required ng-model="profile.ba.d1" value="6">6</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d1" class="" required ng-model="profile.ba.d1" value="2">2</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d1" class="" required ng-model="profile.ba.d1" value="7">7</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d1" class="" required ng-model="profile.ba.d1" value="3">3</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d1" class="" required ng-model="profile.ba.d1" value="8">8</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d1" class="" required ng-model="profile.ba.d1" value="4">4</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d1" class="" required ng-model="profile.ba.d1" value="9">9</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d1" class="" required ng-model="profile.ba.d1" value="5">5</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d1" class="" required ng-model="profile.ba.d1" value="10">10</label>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-1 col-nomor">2</div>
+                  <div class="col-md-11 col-soal">
+                    <div class="col-md-8">
+                      Seberapa efektifkah penerapan prinsip mengenal pengguna jasa oleh sektor-sektor berikut di wilayah Saudara/i, sehingga terjadi indikasi kejahatan dan dana untuk mendukung terorisme dapat dideteksi : 
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-1 col-nomor"></div>
+                  <div class="col-md-11 col-soal">
+                    <div class="col-md-8">
+                      <br>
+                      a. Bank
+                    </div>
+                    <div class="col-md-4">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2a" class="" required ng-model="profile.ba.d2a" value="Tidak Tahu">Tidak Tahu</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2a" class="" required ng-model="profile.ba.d2a" value="1">1</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2a" class="" required ng-model="profile.ba.d2a" value="6">6</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2a" class="" required ng-model="profile.ba.d2a" value="2">2</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2a" class="" required ng-model="profile.ba.d2a" value="7">7</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2a" class="" required ng-model="profile.ba.d2a" value="3">3</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2a" class="" required ng-model="profile.ba.d2a" value="8">8</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2a" class="" required ng-model="profile.ba.d2a" value="4">4</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2a" class="" required ng-model="profile.ba.d2a" value="9">9</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2a" class="" required ng-model="profile.ba.d2a" value="5">5</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2a" class="" required ng-model="profile.ba.d2a" value="10">10</label>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-1 col-nomor"></div>
+                  <div class="col-md-11 col-soal">
+                    <div class="col-md-8">
+                      b. Industri Keuangan Bukan Bank
+                    </div>
+                    <div class="col-md-4">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2b" class="" required ng-model="profile.ba.d2b" value="Tidak Tahu">Tidak Tahu</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2b" class="" required ng-model="profile.ba.d2b" value="1">1</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2b" class="" required ng-model="profile.ba.d2b" value="6">6</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2b" class="" required ng-model="profile.ba.d2b" value="2">2</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2b" class="" required ng-model="profile.ba.d2b" value="7">7</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2b" class="" required ng-model="profile.ba.d2b" value="3">3</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2b" class="" required ng-model="profile.ba.d2b" value="8">8</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2b" class="" required ng-model="profile.ba.d2b" value="4">4</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2b" class="" required ng-model="profile.ba.d2b" value="9">9</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2b" class="" required ng-model="profile.ba.d2b" value="5">5</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2b" class="" required ng-model="profile.ba.d2b" value="10">10</label>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-1 col-nomor"></div>
+                  <div class="col-md-11 col-soal">
+                    <div class="col-md-8">
+                      c.	Penyedia Barang dan Jasa (Perusahaan/Properti, Perusahaan Kendaraan Bermotor, Pedagang Permata dan Perhiasan/Logam Mulia, Pedagang Barang Seni dan Antik)
+                    </div>
+                    <div class="col-md-4">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2c" class="" required ng-model="profile.ba.d2c" value="Tidak Tahu">Tidak Tahu</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2c" class="" required ng-model="profile.ba.d2c" value="1">1</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2c" class="" required ng-model="profile.ba.d2c" value="6">6</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2c" class="" required ng-model="profile.ba.d2c" value="2">2</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2c" class="" required ng-model="profile.ba.d2c" value="7">7</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2c" class="" required ng-model="profile.ba.d2c" value="3">3</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2c" class="" required ng-model="profile.ba.d2c" value="8">8</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2c" class="" required ng-model="profile.ba.d2c" value="4">4</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2c" class="" required ng-model="profile.ba.d2c" value="9">9</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2c" class="" required ng-model="profile.ba.d2c" value="5">5</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2c" class="" required ng-model="profile.ba.d2c" value="10">10</label>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-1 col-nomor"></div>
+                  <div class="col-md-11 col-soal">
+                    <div class="col-md-8">
+                      d. Jasa Profesi (Advokat, Notaris/PPAT, Akuntan, Perencana Keuangan)
+                    </div>
+                    <div class="col-md-4">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2d" class="" required ng-model="profile.ba.d2d" value="Tidak Tahu">Tidak Tahu</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2d" class="" required ng-model="profile.ba.d2d" value="1">1</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2d" class="" required ng-model="profile.ba.d2d" value="6">6</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2d" class="" required ng-model="profile.ba.d2d" value="2">2</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2d" class="" required ng-model="profile.ba.d2d" value="7">7</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2d" class="" required ng-model="profile.ba.d2d" value="3">3</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2d" class="" required ng-model="profile.ba.d2d" value="8">8</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2d" class="" required ng-model="profile.ba.d2d" value="4">4</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2d" class="" required ng-model="profile.ba.d2d" value="9">9</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d2d" class="" required ng-model="profile.ba.d2d" value="5">5</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d2d" class="" required ng-model="profile.ba.d2d" value="10">10</label>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-1 col-nomor">3</div>
+                  <div class="col-md-11 col-soal">
+                    <div class="col-md-8">
+                      Seberapa efektifkah pengawasan pembawaan uang lintas batas dari/ke luar negeri di wilayah provinsi setempat?
+                    </div>
+                    <div class="col-md-4">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d3" class="" required ng-model="profile.ba.d3" value="Tidak Tahu">Tidak Tahu</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d3" class="" required ng-model="profile.ba.d3" value="1">1</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d3" class="" required ng-model="profile.ba.d3" value="6">6</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d3" class="" required ng-model="profile.ba.d3" value="2">2</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d3" class="" required ng-model="profile.ba.d3" value="7">7</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d3" class="" required ng-model="profile.ba.d3" value="3">3</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d3" class="" required ng-model="profile.ba.d3" value="8">8</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d3" class="" required ng-model="profile.ba.d3" value="4">4</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d3" class="" required ng-model="profile.ba.d3" value="9">9</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d3" class="" required ng-model="profile.ba.d3" value="5">5</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d3" class="" required ng-model="profile.ba.d3" value="10">10</label>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-1 col-nomor">4</div>
+                  <div class="col-md-11 col-soal">
+                    <div class="col-md-8">
+                      Seberapa efektifkah pengawasan Pemerintah untuk memproteksi organisasi masyarakat setempat dari risiko pendanaan terorisme dan pergerakan radikal?
+                    </div>
+                    <div class="col-md-4">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d4" class="" required ng-model="profile.ba.d4" value="Tidak Tahu">Tidak Tahu</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d4" class="" required ng-model="profile.ba.d4" value="1">1</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d4" class="" required ng-model="profile.ba.d4" value="6">6</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d4" class="" required ng-model="profile.ba.d4" value="2">2</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d4" class="" required ng-model="profile.ba.d4" value="7">7</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d4" class="" required ng-model="profile.ba.d4" value="3">3</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d4" class="" required ng-model="profile.ba.d4" value="8">8</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d4" class="" required ng-model="profile.ba.d4" value="4">4</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d4" class="" required ng-model="profile.ba.d4" value="9">9</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d4" class="" required ng-model="profile.ba.d4" value="5">5</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d4" class="" required ng-model="profile.ba.d4" value="10">10</label>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                 <div class="form-group">
+                  <div class="col-md-1 col-nomor">5</div>
+                  <div class="col-md-11 col-soal">
+                    <div class="col-md-8">
+                      Jika di wilayah Saudara/i dilakukan Pemilu/Pemilukada tahun 2018, seberapa efektifkah peran pemerintah dalam mengawasi politik uang dan pelanggaran dana kampanye ?
+                    </div>
+                    <div class="col-md-4">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d5" class="" required ng-model="profile.ba.d5" value="Tidak Tahu">Tidak Tahu</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d5" class="" required ng-model="profile.ba.d5" value="1">1</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d5" class="" required ng-model="profile.ba.d5" value="6">6</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d5" class="" required ng-model="profile.ba.d5" value="2">2</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d5" class="" required ng-model="profile.ba.d5" value="7">7</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d5" class="" required ng-model="profile.ba.d5" value="3">3</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d5" class="" required ng-model="profile.ba.d5" value="8">8</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d5" class="" required ng-model="profile.ba.d5" value="4">4</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d5" class="" required ng-model="profile.ba.d5" value="9">9</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d5" class="" required ng-model="profile.ba.d5" value="5">5</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d5" class="" required ng-model="profile.ba.d5" value="10">10</label>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-1 col-nomor">6</div>
+                  <div class="col-md-11 col-soal">
+                    <div class="col-md-8">
+                      Seberapa efektifkah penegakan hukum yang telah dilakukan mampu berkontribusi terhadap pemberantasan TPPU dan TPPT, jika ditinjau dari aspek-aspek berikut:
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-1 col-nomor"></div>
+                  <div class="col-md-11 col-soal">
+                    <div class="col-md-8">
+                      <br>
+                      a.	Banyaknya jumlah kasus TPPU yang terungkap
+                    </div>
+                    <div class="col-md-4">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6a" class="" required ng-model="profile.ba.d6a" value="Tidak Tahu">Tidak Tahu</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6a" class="" required ng-model="profile.ba.d6a" value="1">1</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6a" class="" required ng-model="profile.ba.d6a" value="6">6</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6a" class="" required ng-model="profile.ba.d6a" value="2">2</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6a" class="" required ng-model="profile.ba.d6a" value="7">7</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6a" class="" required ng-model="profile.ba.d6a" value="3">3</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6a" class="" required ng-model="profile.ba.d6a" value="8">8</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6a" class="" required ng-model="profile.ba.d6a" value="4">4</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6a" class="" required ng-model="profile.ba.d6a" value="9">9</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6a" class="" required ng-model="profile.ba.d6a" value="5">5</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6a" class="" required ng-model="profile.ba.d6a" value="10">10</label>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-1 col-nomor"></div>
+                  <div class="col-md-11 col-soal">
+                    <div class="col-md-8">
+                      b.	Beratnya hukuman yang dijatuhkan terhadap pelaku TPPU
+                    </div>
+                    <div class="col-md-4">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6b" class="" required ng-model="profile.ba.d6b" value="Tidak Tahu">Tidak Tahu</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6b" class="" required ng-model="profile.ba.d6b" value="1">1</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6b" class="" required ng-model="profile.ba.d6b" value="6">6</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6b" class="" required ng-model="profile.ba.d6b" value="2">2</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6b" class="" required ng-model="profile.ba.d6b" value="7">7</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6b" class="" required ng-model="profile.ba.d6b" value="3">3</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6b" class="" required ng-model="profile.ba.d6b" value="8">8</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6b" class="" required ng-model="profile.ba.d6b" value="4">4</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6b" class="" required ng-model="profile.ba.d6b" value="9">9</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6b" class="" required ng-model="profile.ba.d6b" value="5">5</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6b" class="" required ng-model="profile.ba.d6b" value="10">10</label>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-1 col-nomor"></div>
+                  <div class="col-md-11 col-soal">
+                    <div class="col-md-8">
+                      c.	Besarnya aset yang mampu dirampas atas hasil TPPU
+                    </div>
+                    <div class="col-md-4">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6c" class="" required ng-model="profile.ba.d6c" value="Tidak Tahu">Tidak Tahu</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6c" class="" required ng-model="profile.ba.d6c" value="1">1</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6c" class="" required ng-model="profile.ba.d6c" value="6">6</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6c" class="" required ng-model="profile.ba.d6c" value="2">2</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6c" class="" required ng-model="profile.ba.d6c" value="7">7</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6c" class="" required ng-model="profile.ba.d6c" value="3">3</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6c" class="" required ng-model="profile.ba.d6c" value="8">8</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6c" class="" required ng-model="profile.ba.d6c" value="4">4</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6c" class="" required ng-model="profile.ba.d6c" value="9">9</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6c" class="" required ng-model="profile.ba.d6c" value="5">5</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6c" class="" required ng-model="profile.ba.d6c" value="10">10</label>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-1 col-nomor"></div>
+                  <div class="col-md-11 col-soal">
+                    <div class="col-md-8">
+                      d.	Banyaknya jumlah kasus TPPT yang terungkap
+                    </div>
+                    <div class="col-md-4">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6d" class="" required ng-model="profile.ba.d6d" value="Tidak Tahu">Tidak Tahu</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6d" class="" required ng-model="profile.ba.d6d" value="1">1</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6d" class="" required ng-model="profile.ba.d6d" value="6">6</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6d" class="" required ng-model="profile.ba.d6d" value="2">2</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6d" class="" required ng-model="profile.ba.d6d" value="7">7</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6d" class="" required ng-model="profile.ba.d6d" value="3">3</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6d" class="" required ng-model="profile.ba.d6d" value="8">8</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6d" class="" required ng-model="profile.ba.d6d" value="4">4</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6d" class="" required ng-model="profile.ba.d6d" value="9">9</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6d" class="" required ng-model="profile.ba.d6d" value="5">5</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6d" class="" required ng-model="profile.ba.d6d" value="10">10</label>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-md-1 col-nomor"></div>
+                  <div class="col-md-11 col-soal">
+                    <div class="col-md-8">
+                      e.	Banyaknya hukuaman yang dijatuhkan terhadap pelaku TPPT
+                    </div>
+                    <div class="col-md-4">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6e" class="" required ng-model="profile.ba.d6e" value="Tidak Tahu">Tidak Tahu</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6e" class="" required ng-model="profile.ba.d6e" value="1">1</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6e" class="" required ng-model="profile.ba.d6e" value="6">6</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6e" class="" required ng-model="profile.ba.d6e" value="2">2</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6e" class="" required ng-model="profile.ba.d6e" value="7">7</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6e" class="" required ng-model="profile.ba.d6e" value="3">3</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6e" class="" required ng-model="profile.ba.d6e" value="8">8</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6e" class="" required ng-model="profile.ba.d6e" value="4">4</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6e" class="" required ng-model="profile.ba.d6e" value="9">9</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6e" class="" required ng-model="profile.ba.d6e" value="5">5</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6e" class="" required ng-model="profile.ba.d6e" value="10">10</label>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+               <div class="form-group">
+                  <div class="col-md-1 col-nomor"></div>
+                  <div class="col-md-11 col-soal">
+                    <div class="col-md-8">
+                      f.  Besarnya aset yang mampu dirampas atas hasil TPPT
+                    </div>
+                    <div class="col-md-4">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6f" class="" required ng-model="profile.ba.d6f" value="Tidak Tahu">Tidak Tahu</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6f" class="" required ng-model="profile.ba.d6f" value="1">1</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6f" class="" required ng-model="profile.ba.d6f" value="6">6</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6f" class="" required ng-model="profile.ba.d6f" value="2">2</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6f" class="" required ng-model="profile.ba.d6f" value="7">7</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6f" class="" required ng-model="profile.ba.d6f" value="3">3</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6f" class="" required ng-model="profile.ba.d6f" value="8">8</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6f" class="" required ng-model="profile.ba.d6f" value="4">4</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6f" class="" required ng-model="profile.ba.d6f" value="9">9</label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <label><input type="radio" name="d6f" class="" required ng-model="profile.ba.d6f" value="5">5</label>
+                            </div>
+                            <div class="radio">
+                              <label><input type="radio" name="d6f" class="" required ng-model="profile.ba.d6f" value="10">10</label>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                    <img ng-show="loadForm" src="../assets/images/line-load.gif" alt="">
+                </div>
+              </div>
+            </div>
+
+
+          </form>
+        </div><!-- box-body -->
+        <div class="box-footer">
+          FORM BERITA ACARA
+        </div><!-- box-footer -->
+      </div><!-- /.nav-tabs-custom -->
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</section>
+<!-- /.content -->

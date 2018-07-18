@@ -1,0 +1,358 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Dashboard
+    <small>Halaman Awal</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li class="active"><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active"></li>
+  </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+  <!-- Small boxes (Stat box) -->
+  <div class="row">
+    <div class="col-lg-3 col-xs-6">
+      <!-- small box -->
+      <div class="small-box bg-aqua">
+        <div class="inner text-center">
+          <div class="row">
+            <div class="col-md-4 col-xs-6">
+              <h3>{{main.kabupatens.length}}</h3>
+              <p>Kabupaten</p>
+            </div>
+            <div class="col-md-4 col-xs-6">
+              <h3>{{main.kecamatans.length}}</h3>
+              <p>Kecamatan</p>
+            </div>
+            <div class="col-md-4 col-xs-6 hidden-xs hidden-sm">
+              <h3>{{main.kelurahans.length}}</h3>
+              <p>Kelurahan</p>
+            </div>
+          </div>
+        </div>
+        <div class="icon">
+          <i class="ion ion-bag"></i>
+        </div>
+        <a href="#info" class="small-box-footer">Detail <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+      <!-- small box -->
+      <div class="small-box bg-green">
+        <div class="inner">
+          <h3>{{dashboard.kuesioner.jumlah}}</h3>
+          <p>Kuesioner</p>
+        </div>
+        <div class="icon">
+          <i class="fa fa-files-o"></i>
+        </div>
+        <a href="#kuesioner" class="small-box-footer">Detail <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+      <!-- small box -->
+      <div class="small-box bg-yellow">
+        <div class="inner text-center">
+          <div class="row">
+            <div class="col-xs-4">
+              <h3>{{dashboard.kuesioner.enumerator}}</h3>
+              <p>Enum</p>
+            </div>
+            <div class="col-xs-4">
+              <h3>{{dashboard.kuesioner.data_entry}}</h3>
+              <p>Entry</p>
+            </div>
+            <div class="col-xs-4">
+              <h3>{{dashboard.kuesioner.hasil}}</h3>
+              <p>Selesai</p>
+            </div>
+          </div>
+        </div>
+        <a href="#info" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-3 col-xs-6">
+      <!-- small box -->
+      <div class="small-box bg-red">
+        <div class="inner">
+          <h3>{{(dashboard.kuesioner.hasil / dashboard.kuesioner.jumlah) * 100 | number}} <sup style="font-size: 20px">%</sup></h3>
+          <p>Capaian</p>
+        </div>
+        <div class="icon">
+          <i class="fa fa-bar-chart-o"></i>
+        </div>
+        <a data-target="#" class="small-box-footer">&nbsp;</a>
+      </div>
+    </div>
+    <!-- ./col -->
+  </div>
+  <!-- /.row -->
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title"><span class="fa fa-bolt"></span> Capaian Jumlah</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+
+          <div ng-if = "dashboard.capaian == ''" class="alert alert-info text-center">MEMUAT</div>
+
+          <div style="height: 300px; margin-bottom:100px;"
+            ng-if = "dashboard.capaian != ''"
+            bar-chart
+            bar-data='dashboard.capaian'
+            bar-x='kabupaten'
+            bar-y='["target", "enumerator", "data_entry", "hasil"]'
+            bar-labels='["Target", "Enumerator", "Data Entry", "Hasil"]'>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-12">
+
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title"><span class="fa fa-fire"></span> Capaian Persentase</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+
+          <div ng-if = "dashboard.capaian_percent == ''" class="alert alert-info text-center">MEMUAT</div>
+
+          <div style="height: 300px; margin-bottom:100px;"
+            ng-if = "dashboard.capaian_percent != ''"
+            bar-chart
+            bar-data='dashboard.capaian_percent'
+            bar-x='kabupaten'
+            bar-y='["target", "enumerator", "data_entry", "hasil"]'
+            bar-labels='["Target", "Enumerator", "Data Entry", "Hasil"]'>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+
+      <div class="info-box bg-orange">
+        <span class="info-box-icon"><i class="fa fa-male"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Laki-laki</span>
+          <span class="info-box-number" ng-repeat="x in dashboard.lakilaki">{{x.value}}</span>
+          <div class="progress">
+            <div class="progress-bar" style="width: {{jumlahJenisKelamin('Laki-laki') / totalJenisKelamin() * 100}}%"></div>
+          </div>
+          <span class="progress-description">
+            {{jumlahJenisKelamin('Laki-laki') / totalJenisKelamin() * 100 | number}}% Dari {{totalJenisKelamin()}} Responden
+          </span>
+        </div>
+      </div>
+
+      <div class="info-box bg-purple">
+        <span class="info-box-icon"><i class="fa fa-female"></i></span>
+        <div class="info-box-content">
+          <span class="info-box-text">Perempuan</span>
+          <span class="info-box-number" ng-repeat="x in dashboard.perempuan">{{x.value}}</span>
+          <div class="progress">
+            <div class="progress-bar" style="width: {{jumlahJenisKelamin('Perempuan') / totalJenisKelamin() * 100}}%"></div>
+          </div>
+          <span class="progress-description">
+            {{jumlahJenisKelamin('Perempuan') / totalJenisKelamin() * 100 | number}}% Dari {{totalJenisKelamin()}} Responden
+          </span>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-8">
+
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title"> <span class="fa fa-cubes"></span> Profesi Responden</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            <ul class="nav nav-tabs pull-right">
+              <li class="active"><a data-target="#profesi_batang" class="btn btn-box-tool" data-toggle="tab">Batang</a></li>
+              <li><a data-target="#profesi_pie" data-toggle="tab" class="btn btn-box-tool">Pie</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="box-body tab-content no-padding">
+
+          <div ng-if = "dashboard.profesi == ''" class="alert alert-info text-center">BELUM ADA DATA</div>
+
+          <div class="chart tab-pane active" id="profesi_batang" style="position: relative; height: 300px;"
+            ng-if = "dashboard.profesi != ''"
+            bar-chart
+            bar-data='dashboard.profesi'
+            bar-x='label'
+            bar-y='["value"]'
+            bar-labels='["Jumlah"]'
+            bar-colors='["rgb(21, 187, 37)"]'>
+          </div>
+
+          <div class="chart tab-pane" id="profesi_pie" style="position: relative; height: 300px;"
+            ng-if = "dashboard.profesi != ''"
+            donut-chart
+            donut-data='dashboard.profesi'
+            donut-label-color='"#000000"'
+            donut-background-color='"#ffffff"'
+            donut-formatter='myFormatter'>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-12">
+
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title"> <span class="fa fa-cubes"></span> Profesi Responden Lainnya</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            <ul class="nav nav-tabs pull-right">
+              <li class="active"><a data-target="#profesi_lain_batang" class="btn btn-box-tool" data-toggle="tab">Batang</a></li>
+              <li><a data-target="#profesi_lain_pie" data-toggle="tab" class="btn btn-box-tool">Pie</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="box-body tab-content no-padding">
+
+          <div ng-if = "dashboard.profesi_lain == ''" class="alert alert-info text-center">BELUM ADA DATA</div>
+
+          <div class="chart tab-pane active" id="profesi_lain_batang" style="position: relative; height: 300px;"
+            ng-if = "dashboard.profesi_lain != ''"
+            bar-chart
+            bar-data='dashboard.profesi_lain'
+            bar-x='label'
+            bar-y='["value"]'
+            bar-labels='["Jumlah"]'
+            bar-colors='["rgb(207, 48, 48)"]'>
+          </div>
+
+          <div class="chart tab-pane" id="profesi_lain_pie" style="position: relative; height: 300px;"
+            ng-if = "dashboard.profesi_lain != ''"
+            donut-chart
+            donut-data='dashboard.profesi_lain'
+            donut-label-color='"#000000"'
+            donut-background-color='"#ffffff"'
+            donut-formatter='myFormatter'>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title"><span class="fa fa-adjust"></span> Usia Responden</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            <ul class="nav nav-tabs pull-right">
+              <li class="active"><a data-target="#usia_batang" class="btn btn-box-tool" data-toggle="tab">Batang</a></li>
+              <li><a data-target="#usia_pie" data-toggle="tab" class="btn btn-box-tool">Pie</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="box-body tab-content no-padding">
+
+          <div ng-if = "dashboard.usia == ''" class="alert alert-info text-center">BELUM ADA DATA</div>
+
+          <div class="chart tab-pane active" id="usia_batang" style="position: relative; height: 300px;"
+            ng-if = "dashboard.usia != ''"
+            bar-chart
+            bar-data='dashboard.usia'
+            bar-x='label'
+            bar-y='["value"]'
+            bar-labels='["Jumlah"]'
+            bar-colors='["#31C0BE"]'>
+          </div>
+
+          <div class="chart tab-pane" id="usia_pie" style="position: relative; height: 300px;"
+            ng-if = "dashboard.usia != ''"
+            donut-chart
+            donut-data='dashboard.usia'
+            donut-label-color='"#000000"'
+            donut-background-color='"#ffffff"'
+            donut-colors='["#31C0BE","#c7254e","#98a0d3"]'
+            donut-formatter='myFormatter'>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-6">
+
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title"> <span class="fa fa-cubes"></span> Pendidikan Responden</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            <ul class="nav nav-tabs pull-right">
+              <li class="active"><a data-target="#pendidikan_batang" class="btn btn-box-tool" data-toggle="tab">Batang</a></li>
+              <li><a data-target="#pendidikan_pie" data-toggle="tab" class="btn btn-box-tool">Pie</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="box-body tab-content no-padding">
+
+          <div ng-if = "dashboard.pendidikan == ''" class="alert alert-info text-center">BELUM ADA DATA</div>
+
+          <div class="chart tab-pane active" id="pendidikan_batang" style="position: relative; height: 300px;"
+            ng-if = "dashboard.pendidikan != ''"
+            bar-chart
+            bar-data='dashboard.pendidikan'
+            bar-x='label'
+            bar-y='["value"]'
+            bar-labels='["Jumlah"]'
+            bar-colors='["rgb(21, 187, 37)"]'>
+          </div>
+
+          <div class="chart tab-pane" id="pendidikan_pie" style="position: relative; height: 300px;"
+            ng-if = "dashboard.pendidikan != ''"
+            donut-chart
+            donut-data='dashboard.pendidikan'
+            donut-label-color='"#000000"'
+            donut-background-color='"#ffffff"'
+            donut-formatter='myFormatter'>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<!-- /.content -->

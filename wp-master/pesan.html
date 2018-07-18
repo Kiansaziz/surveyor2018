@@ -1,0 +1,161 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Pesan
+    <small>Data Transaksi Perpesanan Aplikasi</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Pesan</li>
+  </ol>
+</section>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+
+
+      <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-target="#khusus" data-toggle="tab"><span class="fa fa-envelope-o"></span> PESAN KHUSUS</a></li>
+          <li><a data-target="#broadcast" data-toggle="tab"><span class="fa fa-bullhorn"></span> PESAN BROADCAST</a></li>
+          <li><a data-target="#addkhusus" data-toggle="tab"><span class="fa fa-plus-circle"></span> BUAT PESAN KHUSUS</a></li>
+          <li><a data-target="#addbroadcast" data-toggle="tab"><span class="fa fa-plus-circle"></span> BUAT PESAN BROADCAST</a></li>
+        </ul>
+        <div class="tab-content">
+
+          <div class="active tab-pane" id="khusus">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <a href="" ng-click="searchToggle()"><i class="fa fa-search-plus"></i> Cari</a>
+                <thead>
+                  <tr>
+                    <th width="3%">No <br><input type="text" class="form-control input-sm" placeholder="..." readOnly ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('pengirim')">Pengirim</a>  <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="search.pengirim" ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('penerima')">Penerima</a>  <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="search.penerima" ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('date_entry')">Tanggal</a> <br><input type="text" class="form-control input-sm date-picker" placeholder="..." ng-model="search.date_entry" ng-show="mySearchFiled"></th>
+                    <th width="50%"><a ng-click="order('isi')">Isi Pesan</a>      <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="search.isi" ng-show="mySearchFiled"></th>
+                    <th width="80px"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr dir-paginate="khusus in filteredKhusus = (pesan.khususs | filter:search | filter:search_index) | orderBy:'-date_entry' | orderBy:predicate:reverse  | itemsPerPage:itemsize" pagination-id="ksusus">
+                    <td>{{ $index + 1}}</td>
+                    <td>{{khusus.pengirim}}</td>
+                    <td>{{khusus.penerima}}</td>
+                    <td>{{khusus.date_entry | dateToISO | date:"dd/MMM/yyyy HH:mm"}}</td>
+                    <td>{{khusus.isi}}</td>
+                    <td>
+                      <a title="Hapus Data" ng-click="deletePesan(khusus, 'khususs', 'tbl_pesan_khusus')" class="pull-right danger"><span class="fa fa-trash-o"></span></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row">
+              <div class="col-sm-2">
+                <small>Total :</small> {{filteredKhusus.length}}
+              </div>
+              <div class="form-group" ng-show="filteredKhusus.length > 10">
+                <small for="inputName" class="col-sm-2 col-sm-offset-6">Jumlah /Page :</small>
+                <div class="col-sm-2">
+                  <select class="form-control input-sm" name="" ng-model="itemsize" ng-init="itemsize = '10'">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+                <div class="col-sm-12">
+                  <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="ksusus"></dir-pagination-controls>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="broadcast">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <a href="" ng-click="searchToggle()"><i class="fa fa-search-plus"></i> Cari</a>
+                <thead>
+                  <tr>
+                    <th width="3%">No <br><input type="text" class="form-control input-sm" placeholder="..." readOnly ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('pengirim')">Pengirim</a>  <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="searchBroadcast.pengirim" ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('penerima')">Penerima</a>  <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="searchBroadcast.penerima.nama" ng-show="mySearchFiled"></th>
+                    <th><a ng-click="order('mulai')">Waktu</a> <br><input type="text" class="form-control input-sm date-picker" placeholder="..." ng-model="searchBroadcast.date_entry" ng-show="mySearchFiled"></th>
+                    <th width="55%"><a ng-click="order('isi')">Isi Pesan</a>      <br><input type="text" class="form-control input-sm" placeholder="..." ng-model="searchBroadcast.isi" ng-show="mySearchFiled"></th>
+                    <th width="80px"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr dir-paginate="broadcast in filteredBroadcast = (pesan.broadcasts | filter:searchBroadcast | filter:search_index) | orderBy:predicate:reverse  | itemsPerPage:itemsize" pagination-id="broadcast">
+                    <td>{{ $index + 1}}</td>
+                    <td>{{broadcast.pengirim}}</td>
+                    <td>
+                      <span ng-repeat="penerima in broadcast.penerima">{{penerima.nama_level}}, </span>
+                    </td>
+                    <td>{{broadcast.mulai | dateToISO | date:"dd"}} - {{broadcast.selesai | dateToISO | date:"dd MMM"}}</td>
+                    <td>{{broadcast.isi}}</td>
+                    <td>
+                      <a title="Hapus Data" ng-click="deletePesan(broadcast, 'broadcasts', 'tbl_pesan_broadcast')" class="pull-right danger"><span class="fa fa-trash-o"></span></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row">
+              <div class="col-sm-2">
+                <small>Total :</small> {{filteredBroadcast.length}}
+              </div>
+              <div class="form-group" ng-show="filteredBroadcast.length > 10">
+                <small for="inputName" class="col-sm-2 col-sm-offset-6">Jumlah /Page :</small>
+                <div class="col-sm-2">
+                  <select class="form-control input-sm" name="" ng-model="itemsize" ng-init="itemsize = '10'">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+                <div class="col-sm-12">
+                  <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" pagination-id="broadcast"></dir-pagination-controls>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="addkhusus">
+            <div ng-include src="'pesan-khusus-add.html'"></div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="addbroadcast">
+            <div ng-include src="'pesan-broadcast-add.html'"></div>
+          </div>
+          <!-- /.tab-pane -->
+
+        </div>
+        <!-- /.tab-content -->
+      </div>
+      <!-- /.nav-tabs-custom -->
+
+
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+</section>
+<!-- /.content -->
+
+
+<script type="text/javascript">
+$('.date-picker').datepicker({
+  autoclose: true,
+  todayHighlight: true,
+  format:'yyyy-mm-dd'
+})
+</script>

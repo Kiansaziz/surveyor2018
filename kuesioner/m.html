@@ -1,0 +1,630 @@
+<section class="content-header text-center">
+  <h1>
+    M. EDUKASI PROGRAM ANTI PENCUCIAN DAN PENCEGAHAN PENDANAAN TERORISME KEPADA MASYARAKAT
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Group M</li>
+  </ol>
+</section>
+
+<div ng-if="kuesioner.alert.m">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Sudah Ada Data Kuesioner Untuk Nomor Kuesioner {{kuesioner.nomor_kuesioner}}, Silakan Update Jawaban Pada Form Berikut.</div>
+</div>
+
+<div ng-if="kuesioner.level == '8' && !kuesioner.alert.c">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/c">Form C</a>.</div>
+</div>
+<div ng-if="kuesioner.level == '8' && !kuesioner.alert.e">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/e">Form E</a>.</div>
+</div>
+<div ng-if="kuesioner.level == '8' && !kuesioner.alert.f">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/f">Form F</a>.</div>
+</div>
+<div ng-if="kuesioner.level == '8' && !kuesioner.alert.h">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/h">Form H</a>.</div>
+</div>
+<div ng-if="kuesioner.level == '8' && !kuesioner.alert.i">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/i">Form I</a>.</div>
+</div>
+<div ng-if="kuesioner.level == '8' && !kuesioner.alert.j">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/j">Form J</a>.</div>
+</div>
+<div ng-if="kuesioner.level == '8' && !kuesioner.alert.k">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/k">Form K</a>.</div>
+</div>
+<div ng-if="kuesioner.level == '8' && !kuesioner.alert.l">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/l">Form L</a>.</div>
+</div>
+
+
+<!-- Main content -->
+<section class="content" ng-if="kuesioner.alert.c && kuesioner.alert.e && kuesioner.alert.f && kuesioner.alert.h && kuesioner.alert.i && kuesioner.alert.j && kuesioner.alert.k && kuesioner.alert.l">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+
+        <span class="label label-info pull-right">{{kuesioner.aksi.m}}</span>
+
+        <div class="box-body">
+          <form name="form" ng-submit="submit(kuesioner.m, kuesioner.tbl_m, kuesioner.aksi.m, 'm')">
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"><label>1301.</label></div>
+              <div class="col-md-11 col-soal">
+                <label> Selama 12 bulan terakhir, Apakah Saudara/i pernah mendengar/menyaksikan/mengikuti Program Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme sebagai berikut: <b class="text-danger">*</b> </label> <br><br>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  a. Sosialisasi Pemerintah dan Instansi Terkait (seperti: Bank Indonesia, Otoritas Jasa Keuangan, Kementerian Keuangan, PPATK)
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301a" required ng-model="kuesioner.m.p1301a" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301a" required ng-model="kuesioner.m.p1301a" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  b. Sosialisasi Pemerintah tentang Program Deradikalisasi
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301b" required ng-model="kuesioner.m.p1301b" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301b" required ng-model="kuesioner.m.p1301b" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  c. Sosialisasi oleh Lembaga Keuangan
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301c" required ng-model="kuesioner.m.p1301c" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301c" required ng-model="kuesioner.m.p1301c" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  d. Edukasi oleh Lembaga Pendidikan terkait Ketentuan Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme kepada Masyarakat
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301d" required ng-model="kuesioner.m.p1301d" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301d" required ng-model="kuesioner.m.p1301d" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  e. Sosialisasi oleh Organisasi Kemasyarakatan
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301e" required ng-model="kuesioner.m.p1301e" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301e" required ng-model="kuesioner.m.p1301e" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  f. Layanan Pengaduan Masyarakat atas indikasi Pencucian Uang dan Pendanaan Terorisme
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301f" required ng-model="kuesioner.m.p1301f" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301f" required ng-model="kuesioner.m.p1301f" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  g. Informasi Layanan Masyarakat tentang Indikasi Pencucian Uang dan Pendanaan Terorisme
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301g" required ng-model="kuesioner.m.p1301g" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301g" required ng-model="kuesioner.m.p1301g" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  h. Berita Penanganan Kasus-Kasus Pencucian Uang di Indonesia
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301h" required ng-model="kuesioner.m.p1301h" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301h" required ng-model="kuesioner.m.p1301h" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  i. Berita Penanganan Kasus-Kasus Pendanaan Terorisme di Indonesia
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301i" required ng-model="kuesioner.m.p1301i" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1301i" required ng-model="kuesioner.m.p1301i" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"><label>1302.</label></div>
+              <div class="col-md-11 col-soal">
+                <label>Terkait dengan jawaban atas pertanyaan 1301, sumber informasi manakah yang menurut Saudara/i paling TEPAT/EFEKTIF (mudah diterima) dalam menyosialisasikan Program Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme kepada Masyarakat : (<i>Pilih 1 jawaban</i>) <b class="text-danger">*</b> </label>
+                <br>
+                <div class="table-responsive">
+                  <table class="table">
+                    <tr>
+                      <td width="50%">
+                        <div class="radio">
+                          <label><input type="radio" name="p1302" required ng-model="kuesioner.m.p1302" value="Langsung oleh Pemerintah/Instasi Terkait">Langsung oleh Pemerintah/Instasi Terkait </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p1302" required ng-model="kuesioner.m.p1302" value="Lembaga Pendidikan">Lembaga Pendidikan</label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p1302" required ng-model="kuesioner.m.p1302" value="Publikasi Pemerintah/Instansi Terkait melalui website">Publikasi Pemerintah/Instansi Terkait melalui website</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p1302" required ng-model="kuesioner.m.p1302" value="Organisasi Masyarakat">Organisasi Masyarakat </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p1302" required ng-model="kuesioner.m.p1302" value="Lembaga Keuangan">Lembaga Keuangan </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p1302" required ng-model="kuesioner.m.p1302" value="Berita/informasi melalui media massa"> Berita/informasi melalui media massa </label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"><label>1303.</label></div>
+              <div class="col-md-11 col-soal"><label> Jika salah satu jawaban 1301(a) - (i) "Pernah", selama 12 bulan terakhir, seberapa sering Saudara/i mendapatkan pengetahuan tentang Program Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme melalui beberapa media berikut : <b class="text-danger">*</b> </label> <br><br></div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  a. Televisi
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1303a" ng-required ng-disabled="kuesioner.m.p1301a == 'Tidak Pernah' && kuesioner.m.p1301b == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301d == 'Tidak Pernah' && kuesioner.m.p1301e == 'Tidak Pernah' && kuesioner.m.p1301f == 'Tidak Pernah' && kuesioner.m.p1301g == 'Tidak Pernah' && kuesioner.m.p1301h == 'Tidak Pernah' && kuesioner.m.p1301i == 'Tidak Pernah'  " ng-model="kuesioner.m.p1303a" value="Jarang">Jarang</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1303a" required ng-disabled="kuesioner.m.p1301a == 'Tidak Pernah' && kuesioner.m.p1301b == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301d == 'Tidak Pernah' && kuesioner.m.p1301e == 'Tidak Pernah' && kuesioner.m.p1301f == 'Tidak Pernah' && kuesioner.m.p1301g == 'Tidak Pernah' && kuesioner.m.p1301h == 'Tidak Pernah' && kuesioner.m.p1301i == 'Tidak Pernah'  " ng-model="kuesioner.m.p1303a" ng-model="kuesioner.m.p1303a" value="Sering (>1kali/bulan)"> Sering (>1kali/bulan)</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  b. Radio
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1303b" required  ng-disabled="kuesioner.m.p1301a == 'Tidak Pernah' && kuesioner.m.p1301b == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301d == 'Tidak Pernah' && kuesioner.m.p1301e == 'Tidak Pernah' && kuesioner.m.p1301f == 'Tidak Pernah' && kuesioner.m.p1301g == 'Tidak Pernah' && kuesioner.m.p1301h == 'Tidak Pernah' && kuesioner.m.p1301i == 'Tidak Pernah'  "  ng-model="kuesioner.m.p1303b" value="Jarang">Jarang</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1303b" required ng-disabled="kuesioner.m.p1301a == 'Tidak Pernah' && kuesioner.m.p1301b == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301d == 'Tidak Pernah' && kuesioner.m.p1301e == 'Tidak Pernah' && kuesioner.m.p1301f == 'Tidak Pernah' && kuesioner.m.p1301g == 'Tidak Pernah' && kuesioner.m.p1301h == 'Tidak Pernah' && kuesioner.m.p1301i == 'Tidak Pernah'  "  ng-model="kuesioner.m.p1303b" value="Sering (>1kali/bulan)"> Sering (>1kali/bulan)</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  c. Koran/Majalah
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1303c" required ng-disabled="kuesioner.m.p1301a == 'Tidak Pernah' && kuesioner.m.p1301b == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301d == 'Tidak Pernah' && kuesioner.m.p1301e == 'Tidak Pernah' && kuesioner.m.p1301f == 'Tidak Pernah' && kuesioner.m.p1301g == 'Tidak Pernah' && kuesioner.m.p1301h == 'Tidak Pernah' && kuesioner.m.p1301i == 'Tidak Pernah'  "  ng-model="kuesioner.m.p1303c" value="Jarang">Jarang</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1303c" required ng-disabled="kuesioner.m.p1301a == 'Tidak Pernah' && kuesioner.m.p1301b == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301d == 'Tidak Pernah' && kuesioner.m.p1301e == 'Tidak Pernah' && kuesioner.m.p1301f == 'Tidak Pernah' && kuesioner.m.p1301g == 'Tidak Pernah' && kuesioner.m.p1301h == 'Tidak Pernah' && kuesioner.m.p1301i == 'Tidak Pernah'  "  ng-model="kuesioner.m.p1303c" value="Sering (>1kali/bulan)"> Sering (>1kali/bulan)</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  d. Internet/Media Sosial (WhatsApp, Line, Instagram, Twitter, dll)
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1303d" required ng-disabled="kuesioner.m.p1301a == 'Tidak Pernah' && kuesioner.m.p1301b == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301d == 'Tidak Pernah' && kuesioner.m.p1301e == 'Tidak Pernah' && kuesioner.m.p1301f == 'Tidak Pernah' && kuesioner.m.p1301g == 'Tidak Pernah' && kuesioner.m.p1301h == 'Tidak Pernah' && kuesioner.m.p1301i == 'Tidak Pernah'  "  ng-model="kuesioner.m.p1303d" value="Jarang">Jarang</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1303d" required ng-disabled="kuesioner.m.p1301a == 'Tidak Pernah' && kuesioner.m.p1301b == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301d == 'Tidak Pernah' && kuesioner.m.p1301e == 'Tidak Pernah' && kuesioner.m.p1301f == 'Tidak Pernah' && kuesioner.m.p1301g == 'Tidak Pernah' && kuesioner.m.p1301h == 'Tidak Pernah' && kuesioner.m.p1301i == 'Tidak Pernah'  "  ng-model="kuesioner.m.p1303d" value="Sering (>1kali/bulan)"> Sering (>1kali/bulan)</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  e. Alat Peraga (pameran, spanduk, pamflet, brosur, stiker, dsb)
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1303e" required ng-disabled="kuesioner.m.p1301a == 'Tidak Pernah' && kuesioner.m.p1301b == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301d == 'Tidak Pernah' && kuesioner.m.p1301e == 'Tidak Pernah' && kuesioner.m.p1301f == 'Tidak Pernah' && kuesioner.m.p1301g == 'Tidak Pernah' && kuesioner.m.p1301h == 'Tidak Pernah' && kuesioner.m.p1301i == 'Tidak Pernah'  "  ng-model="kuesioner.m.p1303e" value="Jarang">Jarang</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1303e" required ng-disabled="kuesioner.m.p1301a == 'Tidak Pernah' && kuesioner.m.p1301b == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301d == 'Tidak Pernah' && kuesioner.m.p1301e == 'Tidak Pernah' && kuesioner.m.p1301f == 'Tidak Pernah' && kuesioner.m.p1301g == 'Tidak Pernah' && kuesioner.m.p1301h == 'Tidak Pernah' && kuesioner.m.p1301i == 'Tidak Pernah'  "  ng-model="kuesioner.m.p1303e" value="Sering (>1kali/bulan)"> Sering (>1kali/bulan)</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  f. Penyampaian secara langsung (pidato, khutbah, nasehat, dsb)
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1303f" required ng-disabled="kuesioner.m.p1301a == 'Tidak Pernah' && kuesioner.m.p1301b == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301d == 'Tidak Pernah' && kuesioner.m.p1301e == 'Tidak Pernah' && kuesioner.m.p1301f == 'Tidak Pernah' && kuesioner.m.p1301g == 'Tidak Pernah' && kuesioner.m.p1301h == 'Tidak Pernah' && kuesioner.m.p1301i == 'Tidak Pernah'  "  ng-model="kuesioner.m.p1303f" value="Jarang">Jarang</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1303f" required ng-disabled="kuesioner.m.p1301a == 'Tidak Pernah' && kuesioner.m.p1301b == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301d == 'Tidak Pernah' && kuesioner.m.p1301e == 'Tidak Pernah' && kuesioner.m.p1301f == 'Tidak Pernah' && kuesioner.m.p1301g == 'Tidak Pernah' && kuesioner.m.p1301h == 'Tidak Pernah' && kuesioner.m.p1301i == 'Tidak Pernah'  "  ng-model="kuesioner.m.p1303f" value="Sering (>1kali/bulan)"> Sering (>1kali/bulan)</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  g. Penyampaian secara tidak langsung melalui kesenian dan sebagainya
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1303g" required ng-disabled="kuesioner.m.p1301a == 'Tidak Pernah' && kuesioner.m.p1301b == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301d == 'Tidak Pernah' && kuesioner.m.p1301e == 'Tidak Pernah' && kuesioner.m.p1301f == 'Tidak Pernah' && kuesioner.m.p1301g == 'Tidak Pernah' && kuesioner.m.p1301h == 'Tidak Pernah' && kuesioner.m.p1301i == 'Tidak Pernah'  "  ng-model="kuesioner.m.p1303g" value="Jarang">Jarang</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1303g" required ng-disabled="kuesioner.m.p1301a == 'Tidak Pernah' && kuesioner.m.p1301b == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301d == 'Tidak Pernah' && kuesioner.m.p1301e == 'Tidak Pernah' && kuesioner.m.p1301f == 'Tidak Pernah' && kuesioner.m.p1301g == 'Tidak Pernah' && kuesioner.m.p1301h == 'Tidak Pernah' && kuesioner.m.p1301i == 'Tidak Pernah'  "  ng-model="kuesioner.m.p1303g" value="Sering (>1kali/bulan)"> Sering (>1kali/bulan)</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-7">
+                  h. Kurikulum pendidikan formal
+                </div>
+                <div class="col-md-5">
+                  <table class="table table-bordered" style="margin:0px;">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1303h" required ng-disabled="kuesioner.m.p1301a == 'Tidak Pernah' && kuesioner.m.p1301b == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301d == 'Tidak Pernah' && kuesioner.m.p1301e == 'Tidak Pernah' && kuesioner.m.p1301f == 'Tidak Pernah' && kuesioner.m.p1301g == 'Tidak Pernah' && kuesioner.m.p1301h == 'Tidak Pernah' && kuesioner.m.p1301i == 'Tidak Pernah'  "  ng-model="kuesioner.m.p1303h" value="Jarang">Jarang</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" class="" name="p1303h" required ng-disabled="kuesioner.m.p1301a == 'Tidak Pernah' && kuesioner.m.p1301b == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301c == 'Tidak Pernah' && kuesioner.m.p1301d == 'Tidak Pernah' && kuesioner.m.p1301e == 'Tidak Pernah' && kuesioner.m.p1301f == 'Tidak Pernah' && kuesioner.m.p1301g == 'Tidak Pernah' && kuesioner.m.p1301h == 'Tidak Pernah' && kuesioner.m.p1301i == 'Tidak Pernah'  "  ng-model="kuesioner.m.p1303h" value="Sering (>1kali/bulan)"> Sering (>1kali/bulan)</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"><label>1304.</label></div>
+              <div class="col-md-11 col-soal">
+                <label>Terkait dengan jawaban atas pertanyaan 1303, media apakah yang menurut Saudara/i paling TEPAT/EFEKTIF (mudah diterima) oleh masyarakat untuk memperoleh informasi tentang Program Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme: (<i>Pilih 1 Jawaban</i>) <b class="text-danger">*</b> </label>
+                <div class="table-responsive">
+                  <table class="table">
+                    <tr>
+                      <td width="50%">
+                        <div class="radio">
+                          <label><input type="radio" name="p1304" required  ng-model="kuesioner.m.p1304" value="Televisi"> Televisi </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p1304" required ng-model="kuesioner.m.p1304" value="Alat Peraga (pameran, spanduk, pamflet, brosur, stiker, dsb)"> Alat Peraga</label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p1304" required ng-model="kuesioner.m.p1304" value="Radio"> Radio</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p1304" required ng-model="kuesioner.m.p1304" value="Penyampaian secara langsung (pidato, khutbah, nasehat, dsb)"> Penyampaian secara langsung </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p1304" required ng-model="kuesioner.m.p1304" value="Koran/Majalah"> Koran/Majalah </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p1304" required ng-model="kuesioner.m.p1304" value="Penyampaian secara tidak langsung melalui kesenian, dsb"> Penyampaian secara tidak langsung melalui kesenian, dsb </label>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p1304" required ng-model="kuesioner.m.p1304" value="Internet/Media Sosial"> Internet/Media Sosial </label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p1304" required ng-model="kuesioner.m.p1304" value="Kurikulum pendidikan formal"> Kurikulum pendidikan formal </label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group" ng-if="kuesioner.bagian == 'Data Entry'">
+              <div class="col-md-12">
+                <div class="alert alert-info"><span class="fa fa-warning"></span> Jika Anda Sudah Menyimpan Data Form Ini, Anda Sudah Tidak Bisa Melakukan Log-in Selanjutnya.</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-danger">Submit</button>
+                <img ng-show="loadForm" src="../assets/images/line-load.gif" alt="">
+              </div>
+            </div>
+
+          </form>
+        </div><!-- box-body -->
+      </div><!-- /.nav-tabs-custom -->
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</section>
+<!-- /.content -->

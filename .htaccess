@@ -1,0 +1,15 @@
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.survei-index-tppu-pt18.com/$1 [R,L]
+
+# directory browsing
+Options All -Indexes
+
+
+ErrorDocument 400 /ErrorPages/HTTP400.html
+ErrorDocument 401 /ErrorPages/HTTP401.html
+ErrorDocument 403 /ErrorPages/HTTP403.html
+ErrorDocument 404 /ErrorPages/HTTP404.html
+ErrorDocument 500 /ErrorPages/HTTP500.html
+ErrorDocument 501 /ErrorPages/HTTP501.html
+ErrorDocument 502 /ErrorPages/HTTP502.html
+ErrorDocument 503 /ErrorPages/HTTP503.html

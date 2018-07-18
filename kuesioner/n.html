@@ -1,0 +1,139 @@
+<section class="content-header text-center">
+  <h1>
+     N. MASUKAN RESPONDEN TERHADAP UPAYA PENCEGAHAN DAN PEMBERANTASAN TINDAK PIDANA
+  </h1>
+  <h1>PENCUCIAN UANG DAN PENDANAAN TERORISME</h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Group N</li>
+  </ol>
+</section>
+
+<div ng-if="kuesioner.level == '7' && !kuesioner.alert.ab">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/b">Form A&B</a>.</div>
+</div>
+<div ng-if="kuesioner.level == '7' && !kuesioner.alert.c">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/c">Form C</a>.</div>
+</div>
+<div ng-if="kuesioner.level == '7' && !kuesioner.alert.e">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/e">Form E</a>.</div>
+</div>
+<div ng-if="kuesioner.level == '7' && !kuesioner.alert.f">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/f">Form F</a>.</div>
+</div>
+<div ng-if="kuesioner.level == '7' && !kuesioner.alert.h">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/h">Form H</a>.</div>
+</div>
+<div ng-if="kuesioner.level == '7' && !kuesioner.alert.i">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/i">Form I</a>.</div>
+</div>
+<div ng-if="kuesioner.level == '7' && !kuesioner.alert.j">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/j">Form J</a>.</div>
+</div>
+<div ng-if="kuesioner.level == '7' && !kuesioner.alert.k">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/k">Form K</a>.</div>
+</div>
+<div ng-if="kuesioner.level == '7' && !kuesioner.alert.l">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/l">Form L</a>.</div>
+</div>
+<div ng-if="kuesioner.level == '7' && !kuesioner.alert.m">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Mohon isi dulu <a href="#/m">Form M</a>.</div>
+</div>
+
+
+
+<!-- Main content -->
+<section class="content" ng-if="kuesioner.alert.ab && kuesioner.alert.c && kuesioner.alert.e && kuesioner.alert.f && kuesioner.alert.h && kuesioner.alert.i && kuesioner.alert.j && kuesioner.alert.k && kuesioner.alert.l && kuesioner.alert.m">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+
+        <span class="label label-info pull-right">{{kuesioner.aksi.n}}</span>
+
+        <div class="box-body">
+          <form name="form" ng-submit="submit(kuesioner.n, kuesioner.tbl_n, kuesioner.aksi.n, 'n')">
+
+            <div class="col-md-12">
+
+              <div class="form-group">
+                <label> TERKAIT PENCEGAHAN: <b class="text-danger">*</b></label>
+                <textarea name="pencegahan" class="form-control" rows="5" ng-model="kuesioner.n.pencegahan" required></textarea>
+                <span ng-show="form.pencegahan.$invalid && !form.pencegahan.$pristine"><i class="text-danger">Harus Di Isi</i></span>
+              </div>
+
+              <div class="form-group">
+                <label> TERKAIT PEMBERANTASAN: <b class="text-danger">*</b></label>
+                <textarea name="pemberantasan" class="form-control" rows="5" ng-model="kuesioner.n.pemberantasan" required></textarea>
+                <span ng-show="form.pemberantasan.$invalid && !form.pemberantasan.$pristine"><i class="text-danger">Harus Di Isi</i></span>
+              </div>
+
+            </div>
+
+            <hr>
+             <div class="form-group">
+              <div class="col-md-12 text-center">
+                <button type="button" data-toggle="collapse" data-target="#penjelasan" class="btn btn-sm btn-default pull-right"><span class="fa fa-question"></span></button>
+                <div id="penjelasan" class="collapse">
+                  Mohon periksa kembali jawaban Responden <br> Terima kasih atas partisipan dan kerja sama Bapak/Ibu dalam upaya mendukung penilaian persepsi publik tentang Program Anti Pencucian Uang dan Pencegahan Pendanaan Terorisme di Indonesia
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label> Tanggal Wawancara <b class="text-danger">*</b></label>
+                <div class='input-group'>
+                  <input type="text" name="tgl_wawancara" class="form-control" ng-model="kuesioner.n.tgl_wawancara" placeholder="yyyy-mm-dd" required data-date-picker>
+                  <span class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </span>
+                  <span ng-show="form.tgl_wawancara.$invalid && !form.tgl_wawancara.$pristine"><i class="text-danger">Harus Di Isi</i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Waktu <b class="text-danger">*</b></label>
+                <div class="input-group">
+                  <input type="text" name="mulai" class="form-control time-picker" ng-model="kuesioner.n.mulai" required data-time-picker placeholder="Jam Mulai / Format : HH:mm">
+                    <span class="input-group-addon"> <i class="fa fa-exchange"></i> </span>
+                  <input type="text" name="selesai" class="form-control time-picker" ng-model="kuesioner.n.selesai" required data-time-picker placeholder="Jam Selesai / Format : HH:mm">
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group" ng-if="kuesioner.bagian == 'Enumerator'">
+              <div class="col-md-12">
+                <div class="alert alert-danger"><span class="fa fa-warning"></span> Jika Anda Sudah Submit Data, Anda Sudah Tidak Bisa Menggunakan Token Ini.</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-danger">Submit</button>
+                <img ng-show="loadForm" src="../assets/images/line-load.gif" alt="">
+              </div>
+            </div>
+
+          </form>
+        </div><!-- box-body -->
+        <div class="box-footer">
+          FORM GROUP N
+        </div><!-- box-footer -->
+      </div><!-- /.nav-tabs-custom -->
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</section>
+<!-- /.content -->

@@ -1,0 +1,360 @@
+<style media="screen">
+  @media screen and (min-width: 1200px) {
+    .letter {
+      text-align: justify;
+      text-justify: inter-word;
+      line-height: 1.8;
+      padding-top : 30px;
+      padding-left : 150px;
+      padding-right : 150px;
+    }
+  }
+  @media print {
+    .letter {
+      line-height: 0.8;
+      font-size: 10pt;
+    }
+  }
+</style>
+<div class="content-print">
+
+<section class="content-header text-center">
+  <h1>
+    &nbsp;
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Data Berita Acara</li>
+  </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+        <div class="box-body">
+
+          <div class="text-center">
+            <h3>
+              BERITA ACARA <br>
+              <small>Nomor : BA-……../PIK-VIII/PRO-PPATK/2017</small>
+            </h3>
+          </div>
+
+          <div class="letter">
+            <div class="row">
+              <div class="col-md-12">
+
+                <p style="text-indent: 100px;">
+                  Pada Hari ini {{profile.ba.hari}} Tanggal {{profile.ba.tanggal}} Bulan {{profile.ba.bulan}} Tahun 2017,
+                  telah selesai dilaksanakan kegiatan Survei/Wawancara Persepsi Publik Indonesia terhadap Tindak Pidana Pencucian Uang (TPPU) dan
+                  Tindak Pidana Pendanaan Teroris (TPPT) kepada responden yang bertempat/wilayah sebagai berikut:
+                </p>
+                <b>A. Nama Wilayah</b>
+                <table class="table">
+                  <tr>
+                    <td width="30%">Desa/Kelurahan</td>
+                    <td>: {{profile.kelurahan}}</td>
+                  </tr>
+                  <tr>
+                    <td>Kecamatan</td>
+                    <td>: {{profile.kecamatan}}</td>
+                  </tr>
+                  <tr>
+                    <td>Kabupaten/Kota</td>
+                    <td>: {{profile.kabupaten}}</td>
+                  </tr>
+                  <tr>
+                    <td>Provinsi</td>
+                    <td>: {{profile.provinsi}}</td>
+                  </tr>
+                </table>
+
+                <b>B. Identitas Desa</b>
+                <table class="table">
+                  <tr>
+                    <td width="30%">Nama Kepala Desa/Lurah </td>
+                    <td>: {{profile.ba.kades}}</td>
+                  </tr>
+                  <tr>
+                    <td>NIK / NIP</td>
+                    <td>: {{profile.ba.nip}}</td>
+                  </tr>
+                  <tr>
+                    <td>Jumlah Penduduk</td>
+                    <td>: {{profile.ba.jumlah_penduduk}} Orang; Laki-laki {{profile.ba.laki_laki}} Orang; Perempuan {{profile.ba.perempuan}} Orang</td>
+                  </tr>
+                  <tr>
+                    <td>Jumlah Rumahtangga (KK)</td>
+                    <td>: {{profile.ba.jumlah_kk}}</td>
+                  </tr>
+                </table>
+
+                <b>C. Data Responden</b>
+                <table class="table table-bordered">
+                  <thead>
+                    <th width="3px">No</th>
+                    <th>Nama</th>
+                    <th>Alamat</th>
+                    <th>No Telp</th>
+                    <th>Profesi</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td> {{profile.ba.nama_1}}</td>
+                      <td> {{getAlamat(profile, '01')}}</td>
+                      <td> {{profile.ba.telp_1}}</td>
+                      <td> {{getProfesi(profile, '01')}}</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td> {{profile.ba.nama_2}}</td>
+                      <td> {{getAlamat(profile, '02')}}</td>
+                      <td> {{profile.ba.telp_2}}</td>
+                      <td> {{getProfesi(profile, '02')}}</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td> {{profile.ba.nama_3}}</td>
+                      <td> {{getAlamat(profile, '03')}}</td>
+                      <td> {{profile.ba.telp_3}}</td>
+                      <td> {{getProfesi(profile, '03')}}</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td> {{profile.ba.nama_4}}</td>
+                      <td> {{getAlamat(profile, '04')}}</td>
+                      <td> {{profile.ba.telp_4}}</td>
+                      <td> {{getProfesi(profile, '04')}}</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td> {{profile.ba.nama_5}}</td>
+                      <td> {{getAlamat(profile, '05')}}</td>
+                      <td> {{profile.ba.telp_5}}</td>
+                      <td> {{getProfesi(profile, '05')}}</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td> {{profile.ba.nama_6}}</td>
+                      <td> {{getAlamat(profile, '06')}}</td>
+                      <td> {{profile.ba.telp_6}}</td>
+                      <td> {{getProfesi(profile, '06')}}</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td> {{profile.ba.nama_7}}</td>
+                      <td> {{getAlamat(profile, '07')}}</td>
+                      <td> {{profile.ba.telp_7}}</td>
+                      <td> {{getProfesi(profile, '07')}}</td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td> {{profile.ba.nama_8}}</td>
+                      <td> {{getAlamat(profile, '08')}}</td>
+                      <td> {{profile.ba.telp_8}}</td>
+                      <td> {{getProfesi(profile, '08')}}</td>
+                    </tr>
+                    <tr>
+                      <td>9</td>
+                      <td> {{profile.ba.nama_9}}</td>
+                      <td> {{getAlamat(profile, '09')}}</td>
+                      <td> {{profile.ba.telp_9}}</td>
+                      <td> {{getProfesi(profile, '09')}}</td>
+                    </tr>
+                    <tr>
+                      <td>10</td>
+                      <td> {{profile.ba.nama_10}}</td>
+                      <td> {{getAlamat(profile, '10')}}</td>
+                      <td> {{profile.ba.telp_10}}</td>
+                      <td> {{getProfesi(profile, '10')}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <b>D. Kuesioner Intermediate Course</b>
+                <table class="table table-bordered">
+                  <tr>
+                    <th>No</th>
+                    <th>Pertanyaan</th>
+                    <th><img ng-src="../assets/images/1-10-efektif.png" alt="" class="img-responsive" /></th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                       Seberapa efektifkah kebijakan, koordinasi, dan kerjasama pemerintah dinilai mampu mengatasi resiko dan pencucian uang dan pendaanaan terorisme di wilayah setempat?
+                    </td>
+                    <td class="text-center">{{profile.ba.d1}}</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>
+                     Seberapa efektifkah penerapan prinsip mengenal pengguna jasa oleh sektor-sektor berikut di wilayah Saudara/i, sehingga terjadi indikasi kejahatan dan dana untuk mendukung terorisme dapat dideteksi : 
+                    </td>
+                    <td class="text-center"></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                      a. Bank
+                    </td>
+                    <td class="text-center">{{profile.ba.d2a}}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                      b.	Industri Keuangan Bukan Bank
+                    </td>
+                    <td class="text-center">{{profile.ba.d2b}}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                      c. Penyedia Barang dan Jasa (Perusahaan/Properti, Perusahaan Kendaraan Bermotor, Pedagang Permata dan Perhiasan/Logam Mulia, Pedagang Barang Seni dan Antik)
+                    </td>
+                    <td class="text-center">{{profile.ba.d2c}}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                      d. Jasa Profesi (Advokat, Notaris/PPAT, Akuntan, Perencana Keuangan)
+                    </td>
+                    <td class="text-center">{{profile.ba.d2d}}</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>
+                      Seberapa efektifkah pengawasan pembawaan uang lintas batas dari/ke luar negeri di wilayah provinsi setempat?
+                    </td>
+                    <td class="text-center">{{profile.ba.d3}}</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>
+                     Seberapa efektifkah pengawasan Pemerintah untuk memproteksi organisasi masyarakat setempat dari risiko pendanaan terorisme dan pergerakan radikal?
+                    </td>
+                    <td class="text-center">{{profile.ba.d4}}</td>
+                  </tr>
+                   <tr>
+                    <td>5</td>
+                    <td>
+                      Jika di wilayah Saudara/i dilakukan Pemilu/Pemilukada tahun 2018, seberapa efektifkah peran pemerintah dalam mengawasi politik uang dan pelanggaran dana kampanye ?
+                    </td>
+                    <td class="text-center">{{profile.ba.d5}}</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>
+                     Seberapa efektifkah penegakan hukum yang telah dilakukan mampu berkontribusi terhadap pemberantasan TPPU dan TPPT, jika ditinjau dari aspek-aspek berikut:
+                    </td>
+                    <td class="text-center"></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                      a.  Banyaknya jumlah kasus TPPU yang terungkap
+                    </td>
+                    <td class="text-center">{{profile.ba.d6a}}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                       b. Beratnya hukuman yang dijatuhkan terhadap pelaku TPPU
+                    </td>
+                    <td class="text-center">{{profile.ba.d6b}}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                      c.  Besarnya aset yang mampu dirampas atas hasil TPPU
+                    </td>
+                    <td class="text-center">{{profile.ba.d6c}}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                      d.  Banyaknya jumlah kasus TPPT yang terungkap
+                    </td>
+                    <td class="text-center">{{profile.ba.d6d}}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                     e. Banyaknya hukuaman yang dijatuhkan terhadap pelaku TPPT
+                    </td>
+                    <td class="text-center">{{profile.ba.d6e}}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                     f.  Besarnya aset yang mampu dirampas atas hasil TPPT
+                    </td>
+                    <td class="text-center">{{profile.ba.d6f}}</td>
+                  </tr>
+                </table>
+
+                <p>Demikian Berita Acara ini dibuat dengan sebenar-benarnya dan ditandatangani oleh pihak-pihak terkait.</p>
+                <span class="pull-right">{{profile.ba.hari}}, {{profile.ba.tanggal}} {{profile.ba.bulan}} 2017</span>
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                <table class="table table-bordered">
+                  <tr class="text-center">
+                    <td colspan="2"><b>Enumerator</b></td>
+                  </tr>
+                  <tr class="text-center">
+                    <td width="50%">Nama</td>
+                    <td>Tanda Tangan</td>
+                  </tr>
+                  <tr>
+                    <td><br><br><br></td>
+                    <td></td>
+                  </tr>
+                  <tr class="text-left">
+                    <td colspan="2">
+                      Jabatan :
+                      <br>
+                      No. Tlp :
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-xs-6">
+                <table class="table table-bordered">
+                  <tr class="text-center">
+                    <td colspan="2"><b>Pejabat Yang Berwenang </b></td>
+                  </tr>
+                  <tr class="text-center">
+                    <td width="50%">Nama</td>
+                    <td>Tanda Tangan</td>
+                  </tr>
+                  <tr>
+                    <td><br><br><br></td>
+                    <td></td>
+                  </tr>
+                  <tr class="text-left">
+                    <td colspan="2">
+                      Jabatan :
+                      <br>
+                      No. Tlp :
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+        </div><!-- box-body -->
+      </div><!-- /.nav-tabs-custom -->
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</section>
+
+</div>
+<!-- /.content -->

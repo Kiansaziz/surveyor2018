@@ -1,0 +1,164 @@
+<!-- Content Header (Page header) -->
+<section class="content-header" ng-init="checkPoint = 'p201'">
+  <h1>
+    GRUP B
+    <small>Info Grafis Kuesioner Grup B</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Grup Pertanyaan</li>
+    <li class="active">B</li>
+  </ol>
+</section>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div ng-include src="'chart/filter.html'"></div>
+
+      <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+          <li class="active"><a ng-click="getData('tbl_jwb_gb_ab', 'p201', filter, 'column', post201)" data-target="#201" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 201</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_ab', 'p202', filter, 'column', post202)" data-target="#202" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 202</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_ab', 'p203', filter, 'column', post203)" data-target="#203" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 203</a></li>
+        </ul>
+        <div class="tab-content">
+
+          <div class="active tab-pane" id="201">
+            <div class="row" ng-if="p201.chart && p201.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p201.chart && p201.chart.series[0].data != ''">
+              <div class="col-md-12">
+                <hc-chart options="p201.chart">Chart 201</hc-chart>
+              </div>
+              <div class="col-md-12">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Jawaban</th>
+                      <th>Jumlah</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="x in p201.chart.series[0].data | orderBy :'-y'">
+                      <td>{{$index + 1}}</td>
+                      <td>{{x.name}}</td>
+                      <td><b>{{x.y}}</b> Reponden</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="202">
+            <div class="row" ng-if="p202.a.chart && p202.a.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p202.a.chart && p202.a.chart.series[0].data != ''">
+              <div class="col-md-6">
+                <hc-chart options="p202.a.chart">Chart 202</hc-chart>
+              </div>
+              <div class="col-md-6">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Jawaban</th>
+                      <th>Jumlah</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="x in p202.a.chart.series[0].data | orderBy :'-y'">
+                      <td>{{$index + 1}}</td>
+                      <td>{{x.name}}</td>
+                      <td>{{x.y}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="row" ng-if="p202.b.chart && p202.b.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p202.b.chart && p202.b.chart.series[0].data != ''">
+              <div class="col-md-12">
+                <hc-chart options="p202.b.chart">Chart 202 B</hc-chart>
+              </div>
+              <div class="col-md-6">
+                <hc-chart options="p202.b.satu.chart">Chart 202 B 1</hc-chart>
+              </div>
+              <div class="col-md-6">
+                <hc-chart options="p202.b.dua.chart">Chart 202 B 2</hc-chart>
+              </div>
+              <div class="col-md-6">
+                <hc-chart options="p202.b.tiga.chart">Chart 202 B 3</hc-chart>
+              </div>
+              <div class="col-md-6">
+                <hc-chart options="p202.b.empat.chart">Chart 202 B 4</hc-chart>
+              </div>
+              <div class="col-md-6">
+                <hc-chart options="p202.b.lima.chart">Chart 202 B 5</hc-chart>
+              </div>
+              <div class="col-md-6">
+                <hc-chart options="p202.b.enam.chart">Chart 202 B 6</hc-chart>
+              </div>
+              <div class="col-md-6">
+                <hc-chart options="p202.b.tujuh.chart">Chart 202 B 7</hc-chart>
+              </div>
+              <div class="col-md-6">
+                <hc-chart options="p202.b.delapan.chart">Chart 202 B 8</hc-chart>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="203">
+            <div class="row" ng-if="p203.a.chart && p203.a.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p203.a.chart && p203.a.chart.series[0].data != ''">
+              <div class="col-md-12">
+                <hc-chart options="p203.a.chart">Chart 203 A</hc-chart>
+              </div>
+            </div>
+
+            <div class="row" ng-if="p203.b.chart && p203.b.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p203.b.chart && p203.b.chart.series[0].data != ''">
+              <div class="col-md-12">
+                <hc-chart options="p203.b.chart">Chart 203 B</hc-chart>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+        </div>
+        <!-- /.tab-content -->
+      </div>
+      <!-- /.nav-tabs-custom -->
+
+
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+</section>
+<!-- /.content -->

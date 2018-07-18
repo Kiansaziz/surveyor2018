@@ -1,0 +1,277 @@
+<section class="content-header text-center">
+  <h1>
+    H. PENGALAMAN RESPONDEN TERKAIT PENCEGAHAN PENDANAAN TERORISME
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Group H</li>
+  </ol>
+</section>
+
+<div ng-if="kuesioner.alert.h">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Sudah Ada Data Kuesioner Untuk Nomor Kuesioner {{kuesioner.nomor_kuesioner}}, Silakan Update Jawaban Pada Form Berikut.</div>
+</div>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+
+        <span class="label label-info pull-right">{{kuesioner.aksi.h}}</span>
+
+        <div class="box-body">
+          <form name="form" ng-submit="submit(kuesioner.h, kuesioner.tbl_h, kuesioner.aksi.h, 'h')">
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"><label>801.</label></div>
+              <div class="col-md-11 col-soal"><label> Selama 12 bulan terakhir, apakah saudara/i pernah mendengar/menyaksikan/mengetahui seseorang di lingkungan sekitar tempat tinggal melakukan kegiatan-kegiatan sebagai berikut: <b class="text-danger">*</b> </label> <br><br></div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  a. Memberikan sumbangan dana tanpa kejelasan peruntukannya
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p801a" class="" required ng-model="kuesioner.h.p801a" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p801a" class="" required ng-model="kuesioner.h.p801a" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  b. Membantu pendanaan dalam pembelian bahan-bahan kimia berbahaya terkait terorisme.
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p801b" class="" required ng-model="kuesioner.h.p801b" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p801b" class="" required ng-model="kuesioner.h.p801b" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  c. Membantu Ormas untuk mengumpulkan dana bagi kegiatan yang tidak berhubungan dengan fungsi Ormas tersebut
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p801c" class="" required ng-model="kuesioner.h.p801c" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p801c" class="" required ng-model="kuesioner.h.p801c" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  d. Membantu pendistribusian buku, artikel, tulisan atau ajakan yang cenderung anarkis/radikal.
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p801d" class="" required ng-model="kuesioner.h.p801d" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p801d" class="" required ng-model="kuesioner.h.p801d" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"><label>802.</label></div>
+              <div class="col-md-11 col-soal"><label> Jika Saudara/i pernah mengetahui seseorang melakukan salah satu perbuatan di atas, tindakan apa yang telah Saudara/i lakukan? <b class="text-danger">*</b> </label> <br><br></div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  a. Melaporkan kepada PPATK melalui Pengaduan Masyarakat
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p802a" class="" ng-disabled="kuesioner.h.p801a == 'Tidak Pernah' && kuesioner.h.p801b == 'Tidak Pernah' && kuesioner.h.p801c == 'Tidak Pernah' && kuesioner.h.p801d == 'Tidak Pernah'" ng-required="kuesioner.h.p801a != 'Pernah' || kuesioner.h.p801b != 'Pernah' || kuesioner.h.p801c != 'Pernah' || kuesioner.h.p801d != 'Pernah' || kuesioner.h.p801a == 'Pernah' &&  kuesioner.h.p801b == 'Pernah' &&  kuesioner.h.p801c == 'Pernah' &&  kuesioner.h.p801d == 'Pernah'  " ng-model="kuesioner.h.p802a" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p802a" class="" ng-disabled="kuesioner.h.p801a == 'Tidak Pernah' && kuesioner.h.p801b == 'Tidak Pernah' && kuesioner.h.p801c == 'Tidak Pernah' && kuesioner.h.p801d == 'Tidak Pernah'" ng-required="kuesioner.h.p801a != 'Pernah' || kuesioner.h.p801b != 'Pernah' || kuesioner.h.p801c != 'Pernah' || kuesioner.h.p801d != 'Pernah' || kuesioner.h.p801a == 'Pernah' &&  kuesioner.h.p801b == 'Pernah' &&  kuesioner.h.p801c == 'Pernah' &&  kuesioner.h.p801d == 'Pernah'" ng-model="kuesioner.h.p802a" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  b. Melaporkan kepada Penegak Hukum (Polisi)
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p802b" class="" ng-disabled="kuesioner.h.p801a == 'Tidak Pernah' && kuesioner.h.p801b == 'Tidak Pernah' && kuesioner.h.p801c == 'Tidak Pernah' && kuesioner.h.p801d == 'Tidak Pernah'" ng-required="kuesioner.h.p801a != 'Pernah' || kuesioner.h.p801b != 'Pernah' || kuesioner.h.p801c != 'Pernah' || kuesioner.h.p801d != 'Pernah' || kuesioner.h.p801a == 'Pernah' &&  kuesioner.h.p801b == 'Pernah' &&  kuesioner.h.p801c == 'Pernah' &&  kuesioner.h.p801d == 'Pernah'" ng-model="kuesioner.h.p802b" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p802b" class="" ng-disabled="kuesioner.h.p801a == 'Tidak Pernah' && kuesioner.h.p801b == 'Tidak Pernah' && kuesioner.h.p801c == 'Tidak Pernah' && kuesioner.h.p801d == 'Tidak Pernah'" ng-required="kuesioner.h.p801a != 'Pernah' || kuesioner.h.p801b != 'Pernah' || kuesioner.h.p801c != 'Pernah' || kuesioner.h.p801d != 'Pernah' || kuesioner.h.p801a == 'Pernah' &&  kuesioner.h.p801b == 'Pernah' &&  kuesioner.h.p801c == 'Pernah' &&  kuesioner.h.p801d == 'Pernah'" ng-model="kuesioner.h.p802b" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  c. Melaporkan kepada Pengurus Lingkungan (RT/RW dan Kepala Desa/Dusun)
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p802c" class="" ng-disabled="kuesioner.h.p801a == 'Tidak Pernah' && kuesioner.h.p801b == 'Tidak Pernah' && kuesioner.h.p801c == 'Tidak Pernah' && kuesioner.h.p801d == 'Tidak Pernah'" ng-required="kuesioner.h.p801a != 'Pernah' || kuesioner.h.p801b != 'Pernah' || kuesioner.h.p801c != 'Pernah' || kuesioner.h.p801d != 'Pernah' || kuesioner.h.p801a == 'Pernah' &&  kuesioner.h.p801b == 'Pernah' &&  kuesioner.h.p801c == 'Pernah' &&  kuesioner.h.p801d == 'Pernah'" ng-model="kuesioner.h.p802c" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p802c" class="" ng-disabled="kuesioner.h.p801a == 'Tidak Pernah' && kuesioner.h.p801b == 'Tidak Pernah' && kuesioner.h.p801c == 'Tidak Pernah' && kuesioner.h.p801d == 'Tidak Pernah'" ng-required="kuesioner.h.p801a != 'Pernah' || kuesioner.h.p801b != 'Pernah' || kuesioner.h.p801c != 'Pernah' || kuesioner.h.p801d != 'Pernah' || kuesioner.h.p801a == 'Pernah' &&  kuesioner.h.p801b == 'Pernah' &&  kuesioner.h.p801c == 'Pernah' &&  kuesioner.h.p801d == 'Pernah'" ng-model="kuesioner.h.p802c" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  d. Menasehati dan menegur orang tersebut
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p802d" class="" ng-disabled="kuesioner.h.p801a == 'Tidak Pernah' && kuesioner.h.p801b == 'Tidak Pernah' && kuesioner.h.p801c == 'Tidak Pernah' && kuesioner.h.p801d == 'Tidak Pernah'" ng-required="kuesioner.h.p801a != 'Pernah' || kuesioner.h.p801b != 'Pernah' || kuesioner.h.p801c != 'Pernah' || kuesioner.h.p801d != 'Pernah' || kuesioner.h.p801a == 'Pernah' &&  kuesioner.h.p801b == 'Pernah' &&  kuesioner.h.p801c == 'Pernah' &&  kuesioner.h.p801d == 'Pernah'" ng-model="kuesioner.h.p802d" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p802d" class="" ng-disabled="kuesioner.h.p801a == 'Tidak Pernah' && kuesioner.h.p801b == 'Tidak Pernah' && kuesioner.h.p801c == 'Tidak Pernah' && kuesioner.h.p801d == 'Tidak Pernah'" ng-required="kuesioner.h.p801a != 'Pernah' || kuesioner.h.p801b != 'Pernah' || kuesioner.h.p801c != 'Pernah' || kuesioner.h.p801d != 'Pernah' || kuesioner.h.p801a == 'Pernah' &&  kuesioner.h.p801b == 'Pernah' &&  kuesioner.h.p801c == 'Pernah' &&  kuesioner.h.p801d == 'Pernah'" ng-model="kuesioner.h.p802d" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  e. Membiarkan saja
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p802e" class="" ng-disabled="kuesioner.h.p801a == 'Tidak Pernah' && kuesioner.h.p801b == 'Tidak Pernah' && kuesioner.h.p801c == 'Tidak Pernah' && kuesioner.h.p801d == 'Tidak Pernah'" ng-required="kuesioner.h.p801a != 'Pernah' || kuesioner.h.p801b != 'Pernah' || kuesioner.h.p801c != 'Pernah' || kuesioner.h.p801d != 'Pernah' || kuesioner.h.p801a == 'Pernah' &&  kuesioner.h.p801b == 'Pernah' &&  kuesioner.h.p801c == 'Pernah' &&  kuesioner.h.p801d == 'Pernah'" ng-model="kuesioner.h.p802e" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p802e" class="" ng-disabled="kuesioner.h.p801a == 'Tidak Pernah' && kuesioner.h.p801b == 'Tidak Pernah' && kuesioner.h.p801c == 'Tidak Pernah' && kuesioner.h.p801d == 'Tidak Pernah'" ng-required="kuesioner.h.p801a != 'Pernah' || kuesioner.h.p801b != 'Pernah' || kuesioner.h.p801c != 'Pernah' || kuesioner.h.p801d != 'Pernah' || kuesioner.h.p801a == 'Pernah' &&  kuesioner.h.p801b == 'Pernah' &&  kuesioner.h.p801c == 'Pernah' &&  kuesioner.h.p801d == 'Pernah'" ng-model="kuesioner.h.p802e" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-6">
+                  f. Lainnya
+                </div>
+                <div class="col-md-6">
+                  <input type="text" name="p802ef" class="form-control" placeholder="sebutkan" ng-disabled="kuesioner.h.p801a == 'Tidak Pernah' && kuesioner.h.p801b == 'Tidak Pernah' && kuesioner.h.p801c == 'Tidak Pernah' && kuesioner.h.p801d == 'Tidak Pernah'" ng-model="kuesioner.h.p802f">
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+              <div class="col-sm-12 col-md-12">
+                <br><br>
+                <button type="button" data-toggle="collapse" data-target="#ketentuan" class="btn btn-sm btn-default pull-right"><span class="fa fa-question"></span></button>
+                <div id="ketentuan" class="collapse">
+                Petugas diminta menjelaskan tentang tatacara pengaduan masyarakat terhadap indikasi pencucian uang.
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-danger">Submit</button>
+                <img ng-show="loadForm" src="../assets/images/line-load.gif" alt="">
+              </div>
+            </div>
+
+          </form>
+        </div><!-- box-body -->
+        <div class="box-footer">
+          FORM GROUP H
+        </div><!-- box-footer -->
+      </div><!-- /.nav-tabs-custom -->
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</section>
+<!-- /.content -->

@@ -1,0 +1,1656 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    GRUP I
+    <small>Info Grafis Kuesioner Grup I</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Grup Pertanyaan</li>
+    <li class="active">I</li>
+  </ol>
+</section>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div ng-include src="'chart/filter.html'"></div>
+
+      <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+          <li class="active"><a ng-click="getData('tbl_jwb_gb_i', 'p901', filter, 'bar', post901)" data-target="#901" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 901</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p902', filter, 'bar', post902)" data-target="#902" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 902</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p903', filter, 'bar', post903)" data-target="#903" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 903</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p904', filter, 'bar', post904)" data-target="#904" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 904</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p905', filter, 'bar', post905)" data-target="#905" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 905</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p906', filter, 'bar', post906)" data-target="#906" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 906</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p907', filter, 'bar', post907)" data-target="#907" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 907</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p908', filter, 'bar', post908)" data-target="#908" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 908</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p909', filter, 'bar', post909)" data-target="#909" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 909</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p910', filter, 'bar', post910)" data-target="#910" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 910</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p911', filter, 'bar', post911)" data-target="#911" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 911</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p912', filter, 'bar', post912)" data-target="#912" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 912</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p913', filter, 'bar', post913)" data-target="#913" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 913</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p914', filter, 'bar', post914)" data-target="#914" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 914</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p915', filter, 'bar', post915)" data-target="#915" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 915</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p916', filter, 'bar', post916)" data-target="#916" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 916</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p917', filter, 'bar', post917)" data-target="#917" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 917</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p918', filter, 'bar', post918)" data-target="#918" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 918</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p919', filter, 'bar', post919)" data-target="#919" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 919</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p920', filter, 'bar', post920)" data-target="#920" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 920</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p921', filter, 'bar', post921)" data-target="#921" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 921</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_i', 'p922', filter, 'bar', post922)" data-target="#922" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 922</a></li>
+        </ul>
+        <div class="tab-content">
+
+          <div class="active tab-pane" id="901">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PENCEGAHAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p901.a.chart && p901.a.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p901.a.chart && p901.a.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p901.a.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p901.a.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p901.b.chart && p901.b.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p901.b.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p901.b.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="902">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PENCEGAHAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p902.a.chart && p902.a.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p902.a.chart && p902.a.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p902.a.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p902.a.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p902.b.chart && p902.b.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p902.b.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p902.b.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="903">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PENCEGAHAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p903.a.chart && p903.a.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p903.a.chart && p903.a.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p903.a.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p903.a.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p903.b.chart && p903.b.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p903.b.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p903.b.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="904">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PENCEGAHAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p904.a.chart && p904.a.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p904.a.chart && p904.a.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p904.a.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p904.a.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p904.b.chart && p904.b.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p904.b.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p904.b.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="905">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PENCEGAHAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p905.a.chart && p905.a.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p905.a.chart && p905.a.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p905.a.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p905.a.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p905.b.chart && p905.b.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p905.b.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p905.b.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="906">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PENCEGAHAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p906.a.chart && p906.a.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p906.a.chart && p906.a.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p906.a.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p906.a.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p906.b.chart && p906.b.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p906.b.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p906.b.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="907">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PENCEGAHAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p907.a.chart && p907.a.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p907.a.chart && p907.a.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p907.a.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p907.a.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p907.b.chart && p907.b.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p907.b.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p907.b.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="908">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PENCEGAHAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p908.a.chart && p908.a.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p908.a.chart && p908.a.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p908.a.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p908.a.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p908.b.chart && p908.b.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p908.b.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p908.b.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="909">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PENCEGAHAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p909.a.chart && p909.a.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p909.a.chart && p909.a.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p909.a.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p909.a.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p909.b.chart && p909.b.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p909.b.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p909.b.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PEMBERANTASAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p909.c.chart && p909.c.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p909.c.chart && p909.c.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p909.c.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p909.c.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p909.d.chart && p909.d.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p909.d.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p909.d.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="910">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PENCEGAHAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p910.a.chart && p910.a.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p910.a.chart && p910.a.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p910.a.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p910.a.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p910.b.chart && p910.b.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p910.b.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p910.b.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PEMBERANTASAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p910.c.chart && p910.c.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p910.c.chart && p910.c.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p910.c.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p910.c.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p910.d.chart && p910.d.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p910.d.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p910.d.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="911">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PENCEGAHAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p911.a.chart && p911.a.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p911.a.chart && p911.a.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p911.a.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p911.a.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p911.b.chart && p911.b.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p911.b.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p911.b.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PEMBERANTASAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p911.c.chart && p911.c.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p911.c.chart && p911.c.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p911.c.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p911.c.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p911.d.chart && p911.d.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p911.d.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p911.d.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="912">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PENCEGAHAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p912.a.chart && p912.a.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p912.a.chart && p912.a.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p912.a.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p912.a.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p912.b.chart && p912.b.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p912.b.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p912.b.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PEMBERANTASAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p912.c.chart && p912.c.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p912.c.chart && p912.c.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p912.c.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p912.c.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p912.d.chart && p912.d.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p912.d.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p912.d.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="913">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PEMBERANTASAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p913.c.chart && p913.c.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p913.c.chart && p913.c.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p913.c.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p913.c.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p913.d.chart && p913.d.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p913.d.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p913.d.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="914">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PEMBERANTASAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p914.c.chart && p914.c.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p914.c.chart && p914.c.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p914.c.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p914.c.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p914.d.chart && p914.d.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p914.d.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p914.d.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="915">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PEMBERANTASAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p915.c.chart && p915.c.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p915.c.chart && p915.c.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p915.c.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p915.c.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p915.d.chart && p915.d.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p915.d.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p915.d.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="916">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PEMBERANTASAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p916.c.chart && p916.c.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p916.c.chart && p916.c.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p916.c.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p916.c.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p916.d.chart && p916.d.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p916.d.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p916.d.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="917">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PEMBERANTASAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p917.c.chart && p917.c.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p917.c.chart && p917.c.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p917.c.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p917.c.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p917.d.chart && p917.d.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p917.d.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p917.d.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="918">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PEMBERANTASAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p918.c.chart && p918.c.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p918.c.chart && p918.c.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p918.c.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p918.c.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p918.d.chart && p918.d.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p918.d.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p918.d.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="919">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PEMBERANTASAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p919.c.chart && p919.c.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p919.c.chart && p919.c.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p919.c.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p919.c.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p919.d.chart && p919.d.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p919.d.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p919.d.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="920">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PEMBERANTASAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p920.c.chart && p920.c.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p920.c.chart && p920.c.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p920.c.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p920.c.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p920.d.chart && p920.d.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p920.d.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p920.d.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="921">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PEMBERANTASAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p921.c.chart && p921.c.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p921.c.chart && p921.c.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p921.c.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p921.c.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p921.d.chart && p921.d.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p921.d.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p921.d.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="922">
+            <div class="box box-danger">
+              <div class="box-header with-border">
+                <h3 class="text-center">PEMBERANTASAN</h3>
+                <h3 class="box-title ">PEMAHAMAN</h3>
+                <div class="row" ng-if="p922.c.chart && p922.c.chart.series[0].data == ''">
+                  <div class="col-md-12">
+                    <div class="alert alert-danger">TIDAK ADA DATA</div>
+                  </div>
+                </div>
+                <div class="row" ng-if="p922.c.chart && p922.c.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p922.c.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p922.c.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <h3 class="box-title">KEEFEKTIFAN</h3>
+                <div class="row" ng-if="p922.d.chart && p922.d.chart.series[0].data != ''">
+                  <div class="col-md-7">
+                    <hc-chart options="p922.d.chart">Chart Jenis Kelamin</hc-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th width="2%">No</th>
+                          <th width="20%">Jawaban</th>
+                          <th>Jumlah</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="x in p922.d.chart.series[0].data | orderBy :'-y'">
+                          <td>{{$index + 1}}</td>
+                          <td>{{x.name}}</td>
+                          <td><b>{{x.y}}</b> Responden</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+        </div>
+        <!-- /.tab-content -->
+      </div>
+      <!-- /.nav-tabs-custom -->
+
+
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+</section>
+<!-- /.content -->

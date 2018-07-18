@@ -1,0 +1,223 @@
+<!-- Main Header -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+       <div class="box box-primary">
+          <div class="box-body">
+            <form name="form" >
+
+              <div class="form-group">
+                <div class="col-md-1 col-nomor">1201.</div>
+                <div class="col-md-11 col-soal">
+                  <div class="col-md-8 ">
+                  Apakah Saudara/i setuju jika Pihak tertentu dari Indonesia memberikan bantuan pendanaan pengembangan senjata pemusnah massal di dalam/luar negeri : <b class="text-danger">*</b>
+                  </div>
+                  <div class="col-md-2">
+                      <div class="radio">
+                        <label><input type="radio" name="p1201" ng-model="kuesioner.final.l.p1201" value="Ya">Ya</label>
+                      </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="radio">
+                      <label><input type="radio" name="p1201" ng-model="kuesioner.final.l.p1201" value="Tidak">Tidak</label>
+                    </div>
+                </div>
+                <div class="col-md-12" ng-if="pertanyaan(kuesioner.beda, 'p1201')">
+        				  <table class="table table-bordered">
+        				    <tr class="bg-info">
+        				      <td width="10%">1201</td>
+        				      <td>
+        				        <div class="col-md-6">
+        				          <div class="radio">
+        				            <label><input type="radio" name="p1201" value="{{kuesioner.enum.l.p1201}}" ng-model="kuesioner.final.l.p1201"><span class="badge bg-blue">{{kuesioner.enum.l.p1201}}</span></label>
+        				          </div>
+        				          <div class="radio">
+        				            <label><input type="radio" name="p1201" value="{{kuesioner.data.l.p1201}}" ng-model="kuesioner.final.l.p1201"><span class="badge bg-red">{{kuesioner.data.l.p1201}}</span></label>
+        				          </div>
+        				        </div>
+        				      </td>
+        				      <td>
+        				        <div class="input-group">
+        				          <div class="input-group-btn">
+        				            <button type="button" class="btn btn-primary" ng-click="ubahJawaban('l', kuesioner.final.l.nomor_kuesioner, 'p1201', kuesioner.final.l.p1201, kuesioner.beda)"><span class="fa fa-check"></span></button>
+        				          </div>
+        				        </div>
+        				      </td>
+        				    </tr>
+        				  </table>
+        				</div>
+              </div>
+
+               <div class="form-group">
+                <div class="col-md-1 col-nomor">1202.</div>
+                <div class="col-md-11 col-soal">
+                  <div class="col-md-8 ">
+                    a. Apakah Saudara/i pernah mendengar ada Pihak tertentu di wilayah Saudara/i yang turut mendanai program pengembangan senjata pemusnah massal :
+                  <b class="text-danger">*</b>
+                  </div>
+                  <div class="col-md-2">
+                      <div class="radio">
+                        <label><input type="radio" name="p1202a" ng-model="kuesioner.final.l.p1202a" value="Ya">Ya</label>
+                      </div>
+                  </div>
+                  <div class="col-md-2">
+                      <div class="radio">
+                        <label><input type="radio" name="p1202a" ng-model="kuesioner.final.l.p1202a" value="Tidak">Tidak</label>
+                      </div>
+                  </div>
+                  <div class="col-md-12" ng-if="pertanyaan(kuesioner.beda, 'p1202a')">
+        					  <table class="table table-bordered">
+        					    <tr class="bg-info">
+        					      <td width="10%">1202a</td>
+        					      <td>
+        					        <div class="col-md-6">
+        					          <div class="radio">
+        					            <label><input type="radio" name="p1202a" value="{{kuesioner.enum.l.p1202a}}" ng-model="kuesioner.final.l.p1202a"><span class="badge bg-blue">{{kuesioner.enum.l.p1202a}}</span></label>
+        					          </div>
+        					          <div class="radio">
+        					            <label><input type="radio" name="p1202a" value="{{kuesioner.data.l.p1202a}}" ng-model="kuesioner.final.l.p1202a"><span class="badge bg-red">{{kuesioner.data.l.p1202a}}</span></label>
+        					          </div>
+        					        </div>
+        					      </td>
+        					      <td>
+        					        <div class="input-group">
+        					          <div class="input-group-btn">
+        					            <button type="button" class="btn btn-primary" ng-click="ubahJawaban('l', kuesioner.final.l.nomor_kuesioner, 'p1202a', kuesioner.final.l.p1202a, kuesioner.beda)"><span class="fa fa-check"></span></button>
+        					          </div>
+        					        </div>
+        					      </td>
+        					    </tr>
+        					  </table>
+        					</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-md-1 col-nomor"></div>
+                <div class="col-md-11 col-soal">
+                  <div class="col-md-8">
+                    b. Jika "Ya", jelaskan bentuk pendanaan yang dimaksud ?
+                  </div>
+                  <div class="col-md-12">
+                    <div class="radio">
+                      <textarea type="text" name="p1202b" ng-model="kuesioner.final.l.p1202b" ng-required="kuesioner.final.l.p1202a == 'Ya'" ng-disabled="kuesioner.final.l.p1202a == 'Tidak'" class="form-control" placeholder="Jelaskan..."></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12" ng-if="pertanyaan(kuesioner.beda, 'p1202b')">
+                  <div class="table table-responsive">
+        				  <table class="table table-bordered">
+        				    <tr class="bg-info">
+        				      <td width="10%">1202b</td>
+        				      <td>
+        				        <div class="col-md-6">
+        				          <div class="radio">
+        				            <label><input type="radio" name="p1202b" value="{{kuesioner.enum.l.p1202b}}" ng-model="kuesioner.final.l.p1202b"><span class="badge bg-blue">{{kuesioner.enum.l.p1202b}}</span></label>
+        				          </div>
+        				          <div class="radio">
+        				            <label><input type="radio" name="p1202b" value="{{kuesioner.data.l.p1202b}}" ng-model="kuesioner.final.l.p1202b"><span class="badge bg-red">{{kuesioner.data.l.p1202b}}</span></label>
+        				          </div>
+        				        </div>
+        				      </td>
+        				      <td>
+        				        <div class="input-group">
+        				          <div class="input-group-btn">
+        				            <button type="button" class="btn btn-primary" ng-click="ubahJawaban('l', kuesioner.final.l.nomor_kuesioner, 'p1202b', kuesioner.final.l.p1202b, kuesioner.beda)"><span class="fa fa-check"></span></button>
+        				          </div>
+        				        </div>
+        				      </td>
+        				    </tr>
+        				  </table>
+                  </div>
+        				</div>
+              </div>
+
+
+              <div class="form-group">
+                <div class="col-md-1 col-nomor">1203.</div>
+                <div class="col-md-11 col-soal">
+                  <div class="col-md-5">
+                    <p> Seberapa besar pemahaman Saudara/i bahwa pemerintah berperan untuk menanggulangi ancaman pengembangan/pendanaan senjata pemusnah massal di indonesia :<b class="text-danger">*</b> </p>
+                    <b>(Tulis jawaban antara 1-10)</b>
+                  </div>
+                  <div class="col-md-3">
+                    <img ng-src="../assets/images/PAHAM.png" alt="" class="img-responsive" />
+                  </div>
+                  <div class="col-md-4">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203"  ng-model="kuesioner.final.l.p1203" value="1">1</label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" ng-model="kuesioner.final.l.p1203" value="6">6</label>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" ng-model="kuesioner.final.l.p1203" value="2">2</label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" ng-model="kuesioner.final.l.p1203" value="7">7</label>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" ng-model="kuesioner.final.l.p1203" value="3">3</label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" ng-model="kuesioner.final.l.p1203" value="8">8</label>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" ng-model="kuesioner.final.l.p1203" value="4">4</label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" ng-model="kuesioner.final.l.p1203" value="9">9</label>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" ng-model="kuesioner.final.l.p1203" value="5">5</label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" ng-model="kuesioner.final.l.p1203" value="10">10</label>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="col-md-12" ng-if="pertanyaan(kuesioner.beda, 'p1203')">
+        					  <table class="table table-bordered">
+        					    <tr class="bg-info">
+        					      <td width="10%">1203</td>
+        					      <td>
+        					        <div class="col-md-6">
+        					          <div class="radio">
+        					            <label><input type="radio" name="p1203" value="{{kuesioner.enum.l.p1203}}" ng-model="kuesioner.final.l.p1203"><span class="badge bg-blue">{{kuesioner.enum.l.p1203}}</span></label>
+        					          </div>
+        					          <div class="radio">
+        					            <label><input type="radio" name="p1203" value="{{kuesioner.data.l.p1203}}" ng-model="kuesioner.final.l.p1203"><span class="badge bg-red">{{kuesioner.data.l.p1203}}</span></label>
+        					          </div>
+        					        </div>
+        					      </td>
+        					      <td>
+        					        <div class="input-group">
+        					          <div class="input-group-btn">
+        					            <button type="button" class="btn btn-primary" ng-click="ubahJawaban('l', kuesioner.final.l.nomor_kuesioner, 'p1203', kuesioner.final.l.p1203, kuesioner.beda)"><span class="fa fa-check"></span></button>
+        					          </div>
+        					        </div>
+        					      </td>
+        					    </tr>
+        					  </table>
+        					</div>
+                </div>
+              </div>
+
+            </form>
+          </div><!-- box-body -->
+        </div><!-- /.nav-tabs-custom -->
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </section>

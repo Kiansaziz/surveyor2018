@@ -1,0 +1,190 @@
+<!-- Content Header (Page header) -->
+<section class="content-header text-center">
+  <h1>
+    FORM OBSERVASI SUPERVISOR
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Form Observasi</li>
+  </ol>
+</section>
+
+<div ng-if="profile.alert.observasi">
+  <br>
+  <div class="alert alert-info"><span class="fa fa-warning"></span> PERHATIAN !! Sudah Ada Data Observasi Untuk Kelurahan {{profile.kelurahan}}, Silakan Update Pada Form Berikut.</div>
+</div>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+
+        <span class="label label-info pull-right">{{profile.aksi.observasi}}</span>
+
+        <div class="box-body">
+          <form name="form" ng-submit="submit(profile.observasi, 'tbl_user_kelurahan_observasi', profile.aksi.observasi, 'observasi')">
+
+            <div class="row">
+              <div class="col-md-12">
+
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th width="1px">No</th>
+                      <th width="49px">ITEM SUPERVISI</th>
+                      <th width="5px">YA</th>
+                      <th width="5px">TIDAK</th>
+                      <th width="40px">KETERANGAN</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Enumerator menggunakan perlengkapan kerja (ID Card, Papan Jalan, ATK) dan berpakaian rapi.</td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p1a" class="" required ng-model="profile.observasi.p1a" value="Ya">Ya</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p1a" class="" required ng-model="profile.observasi.p1a" value="Tidak">Tidak</label>
+                        </div>
+                      </td>
+                      <td>
+                        <textarea name="p1b" class="form-control" rows="5" ng-model="profile.observasi.p1b" required></textarea>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>2</td>
+                      <td>Enumerator melakukan wawancara terhadap Responden sesuai dengan lokasi yang telah ditentukan.</td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p2a" class="" required ng-model="profile.observasi.p2a" value="Ya">Ya</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p2a" class="" required ng-model="profile.observasi.p2a" value="Tidak">Tidak</label>
+                        </div>
+                      </td>
+                      <td>
+                        <textarea name="p2b" class="form-control" rows="5" ng-model="profile.observasi.p2b" required></textarea>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>3</td>
+                      <td>Enumerator melakukan wawancara  sesuai dengan <i>profile</i> yang telah ditentukan.</td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p3a" class="" required ng-model="profile.observasi.p3a" value="Ya">Ya</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p3a" class="" required ng-model="profile.observasi.p3a" value="Tidak">Tidak</label>
+                        </div>
+                      </td>
+                      <td>
+                        <textarea name="p3b" class="form-control" rows="5" ng-model="profile.observasi.p3b" required></textarea>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>4</td>
+                      <td>Enumerator melakukan wawancara dengan baik.</td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p4a" class="" required ng-model="profile.observasi.p4a" value="Ya">Ya</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p4a" class="" required ng-model="profile.observasi.p4a" value="Tidak">Tidak</label>
+                        </div>
+                      </td>
+                      <td>
+                        <textarea name="p4b" class="form-control" rows="5" ng-model="profile.observasi.p4b" required></textarea>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>5</td>
+                      <td>Enumerator memberikan souvenir terhadap Responden yang telah diwawancarai.</td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p5a" class="" required ng-model="profile.observasi.p5a" value="Ya">Ya</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p5a" class="" required ng-model="profile.observasi.p5a" value="Tidak">Tidak</label>
+                        </div>
+                      </td>
+                      <td>
+                        <textarea name="p5b" class="form-control" rows="5" ng-model="profile.observasi.p5b" required></textarea>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>6</td>
+                      <td>Enumerator melakukan dokumentasi foto dengan Responden.</td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p6a" class="" required ng-model="profile.observasi.p6a" value="Ya">Ya</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p6a" class="" required ng-model="profile.observasi.p6a" value="Tidak">Tidak</label>
+                        </div>
+                      </td>
+                      <td>
+                        <textarea name="p6b" class="form-control" rows="5" ng-model="profile.observasi.p6b" required></textarea>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>7</td>
+                      <td>Enumerator melakukan wawancara setiap harinya tidak melebihi batas yang telah ditentukan (4 Responden/hari).</td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p7a" class="" required ng-model="profile.observasi.p7a" value="Ya">Ya</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p7a" class="" required ng-model="profile.observasi.p7a" value="Tidak">Tidak</label>
+                        </div>
+                      </td>
+                      <td>
+                        <textarea name="p7b" class="form-control" rows="5" ng-model="profile.observasi.p7b" required></textarea>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                    <img ng-show="loadForm" src="../assets/images/line-load.gif" alt="">
+                </div>
+              </div>
+            </div>
+
+
+          </form>
+        </div><!-- box-body -->
+        <div class="box-footer">
+          FORM OBSERVASI SUPERVISOR
+        </div><!-- box-footer -->
+      </div><!-- /.nav-tabs-custom -->
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</section>
+<!-- /.content -->

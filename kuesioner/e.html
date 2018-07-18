@@ -1,0 +1,415 @@
+<!-- Content Header (Page header) -->
+<section class="content-header text-center">
+  <h1>
+    E. PENGALAMAN RESPONDEN TERKAIT ANTI PENCUCIAN UANG
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Group E</li>
+  </ol>
+</section>
+
+<div ng-if="kuesioner.alert.e">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Sudah Ada Data Kuesioner Untuk Nomor Kuesioner {{kuesioner.nomor_kuesioner}}, Silakan Update Jawaban Pada Form Berikut.</div>
+</div>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+
+        <span class="label label-info pull-right">{{kuesioner.aksi.e}}</span>
+
+        <div class="box-body">
+          <form name="form" ng-submit="submit(kuesioner.e, kuesioner.tbl_e, kuesioner.aksi.e, 'e')">
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"><label>501</label></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  <label> a.	Selama 12 bulan terakhir, apakah Saudara/I pernah bertransaksi di Lembaga Keuangan (Bank dan Bukan Bank)? <b class="text-danger">*</b> </label> <br>(Jika "Tidak" Pertanyaannya B tidak diisi)
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p501a" class="" required ng-model="kuesioner.e.p501a" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p501a" class="" required ng-model="kuesioner.e.p501a" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <label><br><br> b. Jika jawaban pertanyaan 501.a adalah “Ya”, pada setiap transaksi di Lembaga Keuangan tersebut, apakah Saudara/i  pernah melakukan hal-hal sebagai berikut : <b class="text-danger">*</b> </label>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+              <div class="col-md-11 col-md-offset-1">
+                <div class="col-md-8">
+                  <br>
+                  1)	Menyampaikan informasi terkait profil terbaru meliputi: pekerjaan, sumber penghasilan utama, tujuan penempatan dana, dll
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p501b1" class="" ng-required="kuesioner.e.p501a == 'Ya'" ng-disabled="kuesioner.e.p501a == 'Tidak'" ng-model="kuesioner.e.p501b1" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p501b1" class="" ng-required="kuesioner.e.p501a == 'Ya'" ng-disabled="kuesioner.e.p501a == 'Tidak'" ng-model="kuesioner.e.p501b1" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-11 col-md-offset-1">
+                <div class="col-md-8">
+                  <br>
+                  2) Memberikan identitas asli yang masih berlaku
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p501b2" class="" ng-required="kuesioner.e.p501a == 'Ya'" ng-disabled="kuesioner.e.p501a == 'Tidak'" ng-model="kuesioner.e.p501b2" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p501b2" class="" ng-required="kuesioner.e.p501a == 'Ya'" ng-disabled="kuesioner.e.p501a == 'Tidak'" ng-model="kuesioner.e.p501b2" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-11 col-md-offset-1">
+                <div class="col-md-8">
+                  <br>
+                  3) Menyampaikan informasi sumber dana dan tujuan transaksi secara akurat kepada Petugas
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p501b3" class="" ng-required="kuesioner.e.p501a == 'Ya'" ng-disabled="kuesioner.e.p501a == 'Tidak'" ng-model="kuesioner.e.p501b3" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p501b3" class="" ng-required="kuesioner.e.p501a == 'Ya'" ng-disabled="kuesioner.e.p501a == 'Tidak'" ng-model="kuesioner.e.p501b3" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-11 col-md-offset-1">
+                <div class="col-md-8">
+                  <br>
+                  4) Menyampaikan informasi secara benar tentang pemilik dana yang sebenarnya
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p501b4" class="" ng-required="kuesioner.e.p501a == 'Ya'" ng-disabled="kuesioner.e.p501a == 'Tidak'" ng-model="kuesioner.e.p501b4" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p501b4" class="" ng-required="kuesioner.e.p501a == 'Ya'" ng-disabled="kuesioner.e.p501a == 'Tidak'" ng-model="kuesioner.e.p501b4" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-11 col-md-offset-1">
+                <div class="col-md-8">
+                  <br>
+                  5) Membantu menyimpan dana orang lain pada rekening Saudara/i
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p501b5" class="" ng-required="kuesioner.e.p501a == 'Ya'" ng-disabled="kuesioner.e.p501a == 'Tidak'" ng-model="kuesioner.e.p501b5" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p501b5" class="" ng-required="kuesioner.e.p501a == 'Ya'" ng-disabled="kuesioner.e.p501a == 'Tidak'" ng-model="kuesioner.e.p501b5" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-11 col-md-offset-1">
+                <div class="col-md-8">
+                  <br>
+                  6) Membeli harta (seperti rumah, kendaraan, tanah, perhiasan) yang tidak diketahui kejelasan status kepemilikannya
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p501b6" class="" ng-required="kuesioner.e.p501a == 'Ya'" ng-disabled="kuesioner.e.p501a == 'Tidak'" ng-model="kuesioner.e.p501b6" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p501b6" class="" ng-required="kuesioner.e.p501a == 'Ya'" ng-disabled="kuesioner.e.p501a == 'Tidak'" ng-model="kuesioner.e.p501b6" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-11 col-md-offset-1">
+                <div class="col-md-8">
+                  <br>
+                  7) Melakukan transaksi tunai sebesar Rp 500 Juta atau lebih
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p501b7" class="" ng-required="kuesioner.e.p501a == 'Ya'" ng-disabled="kuesioner.e.p501a == 'Tidak'" ng-model="kuesioner.e.p501b7" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p501b7" class="" ng-required="kuesioner.e.p501a == 'Ya'" ng-disabled="kuesioner.e.p501a == 'Tidak'" ng-model="kuesioner.e.p501b7" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-11 col-md-offset-1">
+                <div class="col-md-8">
+                  <br>
+                  8) Menerima dana yang tidak diketahui asal-usulnya.
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p501b8" class="" ng-required="kuesioner.e.p501a == 'Ya'" ng-disabled="kuesioner.e.p501a == 'Tidak'" ng-model="kuesioner.e.p501b8" value="Pernah">Pernah</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p501b8" class="" ng-required="kuesioner.e.p501a == 'Ya'" ng-disabled="kuesioner.e.p501a == 'Tidak'" ng-model="kuesioner.e.p501b8" value="Tidak Pernah">Tidak Pernah</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"><label>502</label></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  <label> a. Selama 12 bulan terakhir, apakah Saudara/i pernah mencurigai, mengetahui, atau menyaksikan adanya indikasi/kejadian Pencucian Uang di lingkungan tempat tinggal Saudara/i? <b class="text-danger">*</b> </label> <br>(Jika "Tidak" Pertanyaannya B tidak diisi)
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p502a" class="" required ng-model="kuesioner.e.p502a" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p502a" class="" required ng-model="kuesioner.e.p502a" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <label><br><br> b. Jika jawaban pertanyaan 502.a adalah “Ya”, tindakan apa yang telah Saudara/i lakukan terkait kejadian Pencucian Uang tersebut? <b class="text-danger">*</b> </label>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+              <div class="col-md-11 col-md-offset-1">
+                <div class="col-md-8">
+                  <br>
+                  1)	Melaporkan kepada PPATK melalui Pengaduan Masyarakat
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p502b1" class="" ng-required="kuesioner.e.p502a == 'Ya'" ng-disabled="kuesioner.e.p502a == 'Tidak'" ng-model="kuesioner.e.p502b1" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p502b1" class="" ng-required="kuesioner.e.p502a == 'Ya'" ng-disabled="kuesioner.e.p502a == 'Tidak'" ng-model="kuesioner.e.p502b1" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-11 col-md-offset-1">
+                <div class="col-md-8">
+                  <br>
+                  2)	Melaporkan kepada Penegak Hukum (Polisi, Jaksa, KPK, BNN).
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p502b2" class="" ng-required="kuesioner.e.p502a == 'Ya'" ng-disabled="kuesioner.e.p502a == 'Tidak'" ng-model="kuesioner.e.p502b2" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p502b2" class="" ng-required="kuesioner.e.p502a == 'Ya'" ng-disabled="kuesioner.e.p502a == 'Tidak'" ng-model="kuesioner.e.p502b2" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-11 col-md-offset-1">
+                <div class="col-md-8">
+                  <br>
+                  3) Melaporkan kepada Pengurus Lingkungan
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p502b3" class="" ng-required="kuesioner.e.p502a == 'Ya'" ng-disabled="kuesioner.e.p502a == 'Tidak'" ng-model="kuesioner.e.p502b3" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p502b3" class="" ng-required="kuesioner.e.p502a == 'Ya'" ng-disabled="kuesioner.e.p502a == 'Tidak'" ng-model="kuesioner.e.p502b3" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-11 col-md-offset-1">
+                <div class="col-md-8">
+                  <br>
+                  4) Menasehati dan menegur orang tersebut
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p502b4" class="" ng-required="kuesioner.e.p502a == 'Ya'" ng-disabled="kuesioner.e.p502a == 'Tidak'" ng-model="kuesioner.e.p502b4" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p502b4" class="" ng-required="kuesioner.e.p502a == 'Ya'" ng-disabled="kuesioner.e.p502a == 'Tidak'" ng-model="kuesioner.e.p502b4" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-11 col-md-offset-1">
+                <div class="col-md-8">
+                  <br>
+                  5) Membiarkan saja
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p502b5" class="" ng-required="kuesioner.e.p502a == 'Ya'" ng-disabled="kuesioner.e.p502a == 'Tidak'" ng-model="kuesioner.e.p502b5" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p502b5" class="" ng-required="kuesioner.e.p502a == 'Ya'" ng-disabled="kuesioner.e.p502a == 'Tidak'" ng-model="kuesioner.e.p502b5" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-11 col-md-offset-1">
+                <div class="col-md-8">
+                  <br>
+                  6) Lainnya
+                </div>
+                <div class="col-md-4">
+                  <input type="text" name="p502b6" class="form-control" ng-model="kuesioner.e.p502b6" placeholder="Sebutkan" ng-disabled="kuesioner.e.p502a == 'Tidak'">
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+              <div class="col-md-12 text-center">
+                <button type="button" data-toggle="collapse" data-target="#penjelasan" class="btn btn-sm btn-default pull-right"><span class="fa fa-question"></span></button>
+                <div id="penjelasan" class="collapse">
+                  Petugas diminta menjelaskan tentang tatacara pengaduan masyarakat terhadap indikasi Pencucian Uang.
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-danger">Submit</button>
+                <img ng-show="loadForm" src="../assets/images/line-load.gif" alt="">
+              </div>
+            </div>
+
+          </form>
+        </div><!-- box-body -->
+        <div class="box-footer">
+          FORM GROUP E
+        </div><!-- box-footer -->
+      </div><!-- /.nav-tabs-custom -->
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</section>
+<!-- /.content -->

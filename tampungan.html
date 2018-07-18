@@ -1,0 +1,66 @@
+<<<<<<< HEAD
+<div class="col-md-12" ng-if="pertanyaan(kuesioner.beda, 'p603c')">
+=======
+<<<<<<< HEAD
+<div class="col-md-12" ng-if="pertanyaan(kuesioner.beda, 'p9226')">
+  <table class="table table-bordered">
+    <tr class="bg-info">
+      <td width="10%">9226</td>
+      <td>
+        <div class="col-md-6">
+          <div class="radio">
+            <label><input type="radio" name="p9226" value="{{kuesioner.enum.i.p9226}}" ng-model="kuesioner.final.i.p9226"><span class="badge bg-blue">{{kuesioner.enum.i.p9226}}</span></label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="p9226" value="{{kuesioner.data.i.p9226}}" ng-model="kuesioner.final.i.p9226"><span class="badge bg-red">{{kuesioner.data.i.p9226}}</span></label>
+=======
+<div class="col-md-12" ng-if="pertanyaan(kuesioner.beda, 'p502b6')">
+>>>>>>> f19491df0a8be4cb43e07cee35f8d2262fa30ea1
+  <table class="table table-bordered">
+    <tr class="bg-info">
+      <td width="10%">603c</td>
+      <td>
+        <div class="col-md-6">
+          <div class="radio">
+            <label><input type="radio" name="p603c" value="{{kuesioner.enum.f.p603c}}" ng-model="kuesioner.final.f.p603c"><span class="badge bg-blue">{{kuesioner.enum.f.p603c}}</span></label>
+          </div>
+          <div class="radio">
+<<<<<<< HEAD
+            <label><input type="radio" name="p603c" value="{{kuesioner.data.f.p603c}}" ng-model="kuesioner.final.f.p603c"><span class="badge bg-red">{{kuesioner.data.f.p603c}}</span></label>
+=======
+            <label><input type="radio" name="p502b6" value="{{kuesioner.data.f,p502b6}}" ng-model="kuesioner.final.f,p502b6"><span class="badge bg-red">{{kuesioner.data.f,p502b6}}</span></label>
+>>>>>>> 0e10a3c4b4632f155a1f01a81cc9b40528c5d8d1
+>>>>>>> f19491df0a8be4cb43e07cee35f8d2262fa30ea1
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="input-group">
+          <div class="input-group-btn">
+<<<<<<< HEAD
+            <button type="button" class="btn btn-primary" ng-click="ubahJawaban('f', kuesioner.final.f.nomor_kuesioner, 'p603c', kuesioner.final.f.p603c, kuesioner.beda)"><span class="fa fa-check"></span></button>
+=======
+<<<<<<< HEAD
+            <button type="button" class="btn btn-primary" ng-click="ubahJawaban('i', kuesioner.final.i.nomor_kuesioner, 'p9226', kuesioner.final.i.p9226, kuesioner.beda)"><span class="fa fa-check"></span></button>
+=======
+            <button type="button" class="btn btn-primary" ng-click="ubahJawaban('f', kuesioner.final.f.nomor_kuesioner, 'p502b6', kuesioner.final.f,p502b6, kuesioner.beda)"><span class="fa fa-check"></span></button>
+>>>>>>> 0e10a3c4b4632f155a1f01a81cc9b40528c5d8d1
+>>>>>>> f19491df0a8be4cb43e07cee35f8d2262fa30ea1
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+$cek_enum_c = $conn->query("SELECT nomor_kuesioner, p303a, p303c FROM tbl_jwb_en_c WHERE nomor_kuesioner = '$nomor_kuesioner'");
+$row_enum_c = $cek_enum_c->fetch_assoc();
+if ($row_enum_c['p303a'] == 'Ya' && $jawaban->p303a == 'Tidak') {
+  $query   .= "INSERT INTO tbl_jwb_beda (id,nomor_kuesioner,grup,pertanyaan) VALUES('','111006100102','d','p401'),('','111006100102','d','p402'),('','111006100102','d','p403a1'),('','111006100102','d','p403a2'),('','111006100102','d','p403a3'),('','111006100102','d','p403b'),('','111006100102','d','p403c'),('','111006100102','d','p403d'),('','111006100102','d','p403e'),('','111006100102','d','p403f'),('','111006100102','d','p403g'),('','111006100102','d','p403h'),('','111006100102','d','p403i'),('','111006100102','d','p403j'),('','111006100102','d','p403k'),('','111006100102','d','p403l'),('','111006100102','d','p403m'),('','111006100102','d','p404a'),('','111006100102','d','p404b'),('','111006100102','d','p404c'),('','111006100102','d','p404d'),('','111006100102','d','p404e'),('','111006100102','d','p405a'),('','111006100102','d','p405b'),('','111006100102','d','p405c'),('','111006100102','d','p405d'),('','111006100102','d','p405e'),('','111006100102','d','p405f'),('','111006100102','d','p405g'),('','111006100102','d','p405h'),('','111006100102','d','p405i'),('','111006100102','d','p405j'),('','111006100102','d','p405k'),('','111006100102','d','p405l'),('','111006100102','d','p405m'),('','111006100102','d','p405n'),('','111006100102','d','p405o'),('','111006100102','d','p405p'),('','111006100102','d','p405q'),('','111006100102','d','p405r'),('','111006100102','d','p405s'),('','111006100102','d','p405t'),('','111006100102','d','p405u'),('','111006100102','d','p405v'),('','111006100102','d','p405w'),('','111006100102','d','p405x'),('','111006100102','d','p405y'),('','111006100102','d','p406a'),('','111006100102','d','p406b'),('','111006100102','d','p406c'),('','111006100102','d','p406d'),('','111006100102','d','p406e'),('','111006100102','d','p406f'),('','111006100102','d','p406g'),('','111006100102','d','p406h'),('','111006100102','d','p406i'),('','111006100102','d','p406j'),('','111006100102','d','p406k'),('','111006100102','d','p406l'),('','111006100102','d','p406m'); ";
+}
+$cek_enum_f = $conn->query("SELECT nomor_kuesioner, p603a, p603c FROM tbl_jwb_en_f WHERE nomor_kuesioner = '$nomor_kuesioner'");
+$row_enum_f = $cek_enum_f->fetch_assoc();
+if ($row_enum_f['p603a'] =='Tidak' && $row_enum_f['p603c'] =='Tidak') {
+  $query   .= "INSERT INTO tbl_jwb_beda (id,nomor_kuesioner,grup,pertanyaan) VALUES('','111006100102','g','p701'),('','111006100102','g','p702'),('','111006100102','g','p703a1'),('','111006100102','g','p703a2'),('','111006100102','g','p703a3'),('','111006100102','g','p703c'),('','111006100102','g','p703b'),('','111006100102','g','p703d'),('','111006100102','g','p703e'),('','111006100102','g','p703f'),('','111006100102','g','p703g'),('','111006100102','g','p703h'),('','111006100102','g','p703i'),('','111006100102','g','p703j'),('','111006100102','g','p703k'),('','111006100102','g','p703l'),('','111006100102','g','p703m'),('','111006100102','g','p704a'),('','111006100102','g','p704b'),('','111006100102','g','p704c'),('','111006100102','g','p704d'),('','111006100102','g','p705a'),('','111006100102','g','p705b'),('','111006100102','g','p705c'),('','111006100102','g','p705d'),('','111006100102','g','p705e'),('','111006100102','g','p706a'),('','111006100102','g','p706b'),('','111006100102','g','p706c'),('','111006100102','g','p706d'),('','111006100102','g','p706e'),('','111006100102','g','p706f'),('','111006100102','g','p706g'),('','111006100102','g','p706h'),('','111006100102','g','p706i'); ";
+}

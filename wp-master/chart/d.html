@@ -1,0 +1,203 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    GRUP D
+    <small>Info Grafis Kuesioner Grup D</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Grup Pertanyaan</li>
+    <li class="active">D</li>
+  </ol>
+</section>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div ng-include src="'chart/filter.html'"></div>
+
+      <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+          <li class="active"><a ng-click="getData('tbl_jwb_gb_d', 'p401', filter, 'column', post401)" data-target="#401" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 401</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_d', 'p402', filter, 'column', post402)" data-target="#402" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 402</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_d', 'p403', filter, 'column', post403)" data-target="#403" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 403</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_d', 'p404', filter, 'column', post404)" data-target="#404" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 404</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_d', 'p405', filter, 'column', post405)" data-target="#405" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 405</a></li>
+          <li><a ng-click="getData('tbl_jwb_gb_d', 'p406', filter, 'column', post406)" data-target="#406" data-toggle="tab"><span class="fa fa-bar-chart-o"></span> 406</a></li>
+        </ul>
+        <div class="tab-content">
+
+          <div class="active tab-pane" id="401">
+            <div class="row" ng-if="p401.chart && p401.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p401.chart && p401.chart.series[0].data != ''">
+              <div class="col-md-7">
+                <hc-chart options="p401.chart">Chart Jenis Kelamin</hc-chart>
+              </div>
+              <div class="col-md-5">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th width="2%">No</th>
+                      <th width="20%">Jawaban</th>
+                      <th>Jumlah</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="x in p401.chart.series[0].data | orderBy :'-y'">
+                      <td>{{$index + 1}}</td>
+                      <td>{{x.name}}</td>
+                      <td><b>{{x.y}}</b> Responden</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="402">
+            <div class="row" ng-if="p402.chart && p402.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p402.chart && p402.chart.series[0].data != ''">
+              <div class="col-md-7">
+                <hc-chart options="p402.chart">Chart Jenis Kelamin</hc-chart>
+              </div>
+              <div class="col-md-5">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th width="2%">No</th>
+                      <th width="20%">Jawaban</th>
+                      <th>Jumlah</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="x in p402.chart.series[0].data | orderBy :'-y'">
+                      <td>{{$index + 1}}</td>
+                      <td>{{x.name}}</td>
+                      <td><b>{{x.y}}</b> Responden</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="403">
+            <div class="row" ng-if="p403.chart && p403.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p403.chart && p403.chart.series[0].data != ''">
+              <div class="col-md-12">
+                <hc-chart options="p403.chart"></hc-chart>
+              </div>
+              <!-- Tidak ada tabel -->
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="404">
+            <div class="row" ng-if="p404.chart && p404.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p404.chart && p404.chart.series[0].data != ''">
+              <div class="col-md-12">
+                <hc-chart options="p404.chart">Chart 404</hc-chart>
+              </div>
+              <div class="col-md-12">
+                <h4 class="text-center">JAWABAN 404 E</h4>
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Nomor Kuesioner</th>
+                      <th>Jawaban</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr dir-paginate="x in filteredSemua = (p404.filtered | filter:emptyOrNull) | orderBy:'-p404e' | orderBy:predicate:reverse  | itemsPerPage:itemsize">
+                      <td width="2%">{{$index + 1}}</td>
+                      <td width="30%">{{x.nomor_kuesioner}}</td>
+                      <td>{{x.p404e}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="col-sm-2">
+                  <small>Total :</small> {{filteredSemua.length}}
+                </div>
+                <div class="form-group" ng-show="filteredSemua.length > 10">
+                  <small for="inputName" class="col-sm-2 col-sm-offset-6">Jumlah /Page :</small>
+                  <div class="col-sm-2">
+                    <select class="form-control input-sm" name="" ng-model="itemsize" ng-init="itemsize = '10'">
+                      <option value="10">10</option>
+                      <option value="25">25</option>
+                      <option value="50">50</option>
+                      <option value="100">100</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-12">
+                    <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="405">
+            <div class="row" ng-if="p405.chart && p405.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p405.chart && p405.chart.series[0].data != ''">
+              <div class="col-md-12">
+                <hc-chart options="p405.chart"></hc-chart>
+              </div>
+              <!-- Tidak ada tabel -->
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+          <div class="tab-pane" id="406">
+            <div class="row" ng-if="p406.chart && p406.chart.series[0].data == ''">
+              <div class="col-md-12">
+                <div class="alert alert-danger">TIDAK ADA DATA</div>
+              </div>
+            </div>
+            <div class="row" ng-if="p406.chart && p406.chart.series[0].data != ''">
+              <div class="col-md-12">
+                <hc-chart options="p406.chart"></hc-chart>
+              </div>
+              <!-- Tidak ada tabel -->
+            </div>
+          </div>
+          <!-- /.tab-pane -->
+
+        </div>
+        <!-- /.tab-content -->
+      </div>
+      <!-- /.nav-tabs-custom -->
+
+
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+</section>
+<!-- /.content -->

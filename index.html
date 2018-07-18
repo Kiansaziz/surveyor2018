@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="begin">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Survey 2018 | Log in</title>
+  <link rel="shortcut icon" href="assets/images/logo.png">
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="assets/LTE/css/AdminLTE.min.css">
+  <!-- Alert Toaster -->
+  <link rel="stylesheet" href="assets/plugins/toaster/toaster.css" />
+  <link rel="stylesheet" href="assets/plugins/pace/pace.css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="hold-transition login-page" ng-controller="loginController">
+
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 text-center">
+
+      <div class="center">
+        <img src="assets/images/logo.png" class="img-responsive" alt="Indonesia" width="20%" style="margin:0 auto">
+      </div>
+      <h3 class="">Survei Persepsi Publik <b>APUPPT</b> 2018</h3>
+
+    </div>
+  </div>
+
+<div class="login-box" style="margin-top:10px;">
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+
+    <noscript>
+      <style type="text/css">
+          .main-sidebar {display:none;}
+      </style>
+      <div class="alert alert-danger">
+        Untuk Menggunakan Aplikasi ini, Diperlukan mengaktikan Javascript pada browser Anda. <br>
+        Klik <a href="http://www.enable-javascript.com/" target="_blank">Disini</a> Untuk Melihat Cara Mengaktikan Javascript
+      </div>
+    </noscript>
+
+    <p class="login-box-msg">Masuk Dengan Data Yang Sudah Terdaftar</p>
+    <form name="formLogin" ng-submit="loginSubmit(login)">
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="Username" required autoFocus ng-model="login.username">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="Password" required ng-model="login.password">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="submit" class="btn btn-primary btn-block btn-flat" ng-disabled="formLogin.$invalid">Sign In</button>
+          <img ng-show="loadLineLog" src="assets/images/line-load.gif" width="100%" alt="">
+        </div>
+      </div>
+    </form>
+
+  </div>
+  <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery 2.2.3 -->
+<script src="assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- progres Halaman -->
+<script src="assets/plugins/pace/pace.js"></script>
+<!-- Angular -->
+<script src="assets/angular/angular.min.js"></script>
+<script src="assets/plugins/toaster/toaster.js"></script>
+<script src="app/begin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,698 @@
+<section class="content-header text-center">
+  <h1>
+    F. KARAKTERISTIK PERBUATAN PENDANAAN TERORISME
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Group F</li>
+  </ol>
+</section>
+
+<div ng-if="kuesioner.alert.f">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span> PERHATIAN !! Sudah Ada Data Kuesioner Untuk Nomor Kuesioner {{kuesioner.nomor_kuesioner}}, Silakan Update Jawaban Pada Form Berikut.</div>
+</div>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+
+        <span class="label label-info pull-right">{{kuesioner.aksi.f}}</span>
+
+        <div class="box-body">
+          <form name="form" ng-submit="submit(kuesioner.f, kuesioner.tbl_f, kuesioner.aksi.f, 'f')">
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"><label>601.</label></div>
+              <div class="col-md-11 col-soal">
+                <label>Jika seseorang diketahui atau diduga membantu pendanaan terorisme baik berupa uang atau fasilitas, seberapa yakin Saudara/i bahwa seseorang tersebut akan melakukan kegiatan-kegiatan berikut ini: <b class="text-danger">*</b> </label> <br>
+                (tulis jawaban antara 1-10)
+                <div class="col-md-4 col-md-offset-8">
+                  <img ng-src="../assets/images/1-10-yakin.png" alt="" class="img-responsive" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  a. Memberikan pendanaan secara langsung kepada pelaku teror
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601a" class="" required ng-model="kuesioner.f.p601a" value="1">1</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601a" class="" required ng-model="kuesioner.f.p601a" value="6">6</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601a" class="" required ng-model="kuesioner.f.p601a" value="2">2</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601a" class="" required ng-model="kuesioner.f.p601a" value="7">7</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601a" class="" required ng-model="kuesioner.f.p601a" value="3">3</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601a" class="" required ng-model="kuesioner.f.p601a" value="8">8</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601a" class="" required ng-model="kuesioner.f.p601a" value="4">4</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601a" class="" required ng-model="kuesioner.f.p601a" value="9">9</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601a" class="" required ng-model="kuesioner.f.p601a" value="5">5</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601a" class="" required ng-model="kuesioner.f.p601a" value="10">10</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  b. Mentransfer dana tersebut melalui perbankan
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601b" class="" required ng-model="kuesioner.f.p601b" value="1">1</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601b" class="" required ng-model="kuesioner.f.p601b" value="6">6</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601b" class="" required ng-model="kuesioner.f.p601b" value="2">2</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601b" class="" required ng-model="kuesioner.f.p601b" value="7">7</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601b" class="" required ng-model="kuesioner.f.p601b" value="3">3</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601b" class="" required ng-model="kuesioner.f.p601b" value="8">8</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601b" class="" required ng-model="kuesioner.f.p601b" value="4">4</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601b" class="" required ng-model="kuesioner.f.p601b" value="9">9</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601b" class="" required ng-model="kuesioner.f.p601b" value="5">5</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601b" class="" required ng-model="kuesioner.f.p601b" value="10">10</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  c. Memberikan logam mulia (emas, perak dll) kepada pelaku teror
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601c" class="" required ng-model="kuesioner.f.p601c" value="1">1</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601c" class="" required ng-model="kuesioner.f.p601c" value="6">6</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601c" class="" required ng-model="kuesioner.f.p601c" value="2">2</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601c" class="" required ng-model="kuesioner.f.p601c" value="7">7</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601c" class="" required ng-model="kuesioner.f.p601c" value="3">3</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601c" class="" required ng-model="kuesioner.f.p601c" value="8">8</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601c" class="" required ng-model="kuesioner.f.p601c" value="4">4</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601c" class="" required ng-model="kuesioner.f.p601c" value="9">9</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601c" class="" required ng-model="kuesioner.f.p601c" value="5">5</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601c" class="" required ng-model="kuesioner.f.p601c" value="10">10</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  d. Memberikan fasilitas (kendaraan, rumah, dsb.) kepada pelaku teror
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601d" class="" required ng-model="kuesioner.f.p601d" value="1">1</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601d" class="" required ng-model="kuesioner.f.p601d" value="6">6</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601d" class="" required ng-model="kuesioner.f.p601d" value="2">2</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601d" class="" required ng-model="kuesioner.f.p601d" value="7">7</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601d" class="" required ng-model="kuesioner.f.p601d" value="3">3</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601d" class="" required ng-model="kuesioner.f.p601d" value="8">8</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601d" class="" required ng-model="kuesioner.f.p601d" value="4">4</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601d" class="" required ng-model="kuesioner.f.p601d" value="9">9</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601d" class="" required ng-model="kuesioner.f.p601d" value="5">5</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601d" class="" required ng-model="kuesioner.f.p601d" value="10">10</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  e. Memberikan bantuan melalui pembukaan usaha bagi kelompok pelaku terror
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601e" class="" required ng-model="kuesioner.f.p601e" value="1">1</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601e" class="" required ng-model="kuesioner.f.p601e" value="6">6</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601e" class="" required ng-model="kuesioner.f.p601e" value="2">2</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601e" class="" required ng-model="kuesioner.f.p601e" value="7">7</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601e" class="" required ng-model="kuesioner.f.p601e" value="3">3</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601e" class="" required ng-model="kuesioner.f.p601e" value="8">8</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601e" class="" required ng-model="kuesioner.f.p601e" value="4">4</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601e" class="" required ng-model="kuesioner.f.p601e" value="9">9</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601e" class="" required ng-model="kuesioner.f.p601e" value="5">5</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601e" class="" required ng-model="kuesioner.f.p601e" value="10">10</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  f. Memberikan pendanaan secara tidak langsung melalui Organisasi Kemasyarakatan
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601f" class="" required ng-model="kuesioner.f.p601f" value="1">1</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601f" class="" required ng-model="kuesioner.f.p601f" value="6">6</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601f" class="" required ng-model="kuesioner.f.p601f" value="2">2</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601f" class="" required ng-model="kuesioner.f.p601f" value="7">7</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601f" class="" required ng-model="kuesioner.f.p601f" value="3">3</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601f" class="" required ng-model="kuesioner.f.p601f" value="8">8</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601f" class="" required ng-model="kuesioner.f.p601f" value="4">4</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601f" class="" required ng-model="kuesioner.f.p601f" value="9">9</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601f" class="" required ng-model="kuesioner.f.p601f" value="5">5</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601f" class="" required ng-model="kuesioner.f.p601f" value="10">10</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  g. Memberikan pendanaan melalui sistem keuangan virtual kepada pelaku teror
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601g" class="" required ng-model="kuesioner.f.p601g" value="1">1</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601g" class="" required ng-model="kuesioner.f.p601g" value="6">6</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601g" class="" required ng-model="kuesioner.f.p601g" value="2">2</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601g" class="" required ng-model="kuesioner.f.p601g" value="7">7</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601g" class="" required ng-model="kuesioner.f.p601g" value="3">3</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601g" class="" required ng-model="kuesioner.f.p601g" value="8">8</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601g" class="" required ng-model="kuesioner.f.p601g" value="4">4</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601g" class="" required ng-model="kuesioner.f.p601g" value="9">9</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601g" class="" required ng-model="kuesioner.f.p601g" value="5">5</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601g" class="" required ng-model="kuesioner.f.p601g" value="10">10</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  h. Memberikan pendanaan melalui penyelenggara transfer dana ilegal
+                </div>
+                <div class="col-md-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601h" class="" required ng-model="kuesioner.f.p601h" value="1">1</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601h" class="" required ng-model="kuesioner.f.p601h" value="6">6</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601h" class="" required ng-model="kuesioner.f.p601h" value="2">2</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601h" class="" required ng-model="kuesioner.f.p601h" value="7">7</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601h" class="" required ng-model="kuesioner.f.p601h" value="3">3</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601h" class="" required ng-model="kuesioner.f.p601h" value="8">8</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601h" class="" required ng-model="kuesioner.f.p601h" value="4">4</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601h" class="" required ng-model="kuesioner.f.p601h" value="9">9</label>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="radio">
+                          <label><input type="radio" name="p601h" class="" required ng-model="kuesioner.f.p601h" value="5">5</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p601h" class="" required ng-model="kuesioner.f.p601h" value="10">10</label>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"><label>602.</label></div>
+              <div class="col-md-11 col-soal"><label> Menurut saudara/i, apakah pendanaan tersebut diperuntukan bagi kegiatan berikut ini: <b class="text-danger">*</b> </label> <br><br></div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  a. Aksi terorisme di dalam negeri
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p602a" class="" required ng-model="kuesioner.f.p602a" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p602a" class="" required ng-model="kuesioner.f.p602a" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  b. Aksi terorisme di luar negeri
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p602b" class="" required ng-model="kuesioner.f.p602b" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p602b" class="" required ng-model="kuesioner.f.p602b" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  c. Pengembangan jaringan terorisme (rekrutmen) di dalam negeri
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p602c" class="" required ng-model="kuesioner.f.p602c" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p602c" class="" required ng-model="kuesioner.f.p602c" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  d. Pengembangan jaringan terorisme (rekrutmen) di luar negeri
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p602d" class="" required ng-model="kuesioner.f.p602d" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p602d" class="" required ng-model="kuesioner.f.p602d" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+              <div class="col-md-12 text-center">
+                <button type="button" data-toggle="collapse" data-target="#penjelasan" class="btn btn-sm btn-default pull-right"><span class="fa fa-question"></span></button>
+                <div id="penjelasan" class="collapse">
+                  Petugas wajib menjelaskan bahwa: <br><b>Pendanaan Terorisme</b> adalah <b>segala perbuatan dalam rangka menyediakan, mengumpulkan, memberikan, atau meminjamkan dana, baik langsung maupun tidak langsung, dengan maksud untuk digunakan dan/atau yang diketahui akan digunakan untuk melakukan kegiatan terorisme, organisasi teroris, atau teroris.</b>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"><label>603.</label></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-8">
+                  <label>a. Apakah Saudara/i setuju apabila seseorang yang melakukan kegiatan-kegiatan tersebut dikenai Pidana Pendanaan Terorisme? <b class="text-danger">*</b> </label>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p603a" class="" required ng-disabled="kuesioner.alert.f" ng-model="kuesioner.f.p603a" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p603a" class="" required ng-disabled="kuesioner.alert.f" ng-model="kuesioner.f.p603a" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal">
+                <div class="col-md-12">
+                  <label>b. Jika "Tidak Setuju", apa alasan Saudara/i? <b class="text-danger">*</b> </label>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <div class="col-md-7 col-md-offset-1">
+                1) Kegiatan tersebut bukan termasuk Pendanaan Terorisme
+              </div>
+              <div class="col-md-2">
+                <div class="radio">
+                  <label><input type="radio" name="p603b1" class="" ng-model="kuesioner.f.p603b1" value="Ya" ng-required="kuesioner.f.p603a == 'Tidak'" ng-disabled="kuesioner.f.p603a == 'Ya' || kuesioner.alert.f">Ya</label>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="radio">
+                  <label><input type="radio" name="p603b1" class="" ng-model="kuesioner.f.p603b1" value="Tidak" ng-required="kuesioner.f.p603a == 'Tidak'" ng-disabled="kuesioner.f.p603a == 'Ya' || kuesioner.alert.f">Tidak</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-7 col-md-offset-1">
+                2) Kegiatan tersebut hal yang biasa dan tidak melanggar hukum
+              </div>
+              <div class="col-md-2">
+                <div class="radio">
+                  <label><input type="radio" name="p603b2" class="" ng-model="kuesioner.f.p603b2" value="Ya" ng-required="kuesioner.f.p603a == 'Tidak'" ng-disabled="kuesioner.f.p603a == 'Ya' || kuesioner.alert.f">Ya</label>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="radio">
+                  <label><input type="radio" name="p603b2" class="" ng-model="kuesioner.f.p603b2" value="Tidak" ng-required="kuesioner.f.p603a == 'Tidak'" ng-disabled="kuesioner.f.p603a == 'Ya' || kuesioner.alert.f">Tidak</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-7 col-md-offset-1">
+                3) Lainnya
+              </div>
+              <div class="col-md-4">
+                <input type="text" name="p603b3" class="form-control" ng-model="kuesioner.f.p603b3" placeholder="Sebutkan......." ng-disabled="kuesioner.f.p603a == 'Ya' || kuesioner.alert.f">
+                <span ng-show="form.p603b3.$invalid && !form.p603b3.$pristine"><i class="text-danger">Harus Diisi</i></span>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+              <div class="col-md-12 text-center">
+                <br>
+                <button type="button" data-toggle="collapse" data-target="#ketentuan" class="btn btn-sm btn-default pull-right"><span class="fa fa-question"></span></button>
+                <div id="ketentuan" class="collapse">
+                  Jika jawaban responden pada 603.a ’Tidak’, Petugas wajib menjelaskan ketentuan perundang-undangan yang mengatur tentang pemidanaan Pendanaan Terorisme.
+                  Setelah itu Petugas menanyakan kembali apakah responden setuju dengan pemidanaan Pendanaan Terorisme tersebut.
+                  Jika ‘Ya’, wawancara dilanjutkan kembali ke Blok G, Jika ‘Tidak’, wawancara dilanjutkan ke Blok H.
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group" ng-if="kuesioner.f.p603a == 'Tidak'">
+              <div class="col-md-1 col-nomor"></div>
+              <div class="col-md-11 col-soal bg-blue">
+                <div class="col-md-8">
+                  c.	Bagi yang menjawab "TIdak Setuju" pada 603.a apakah Responden merubah jawaban setelah menerima edukasi? <br>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p603c" class="" ng-disabled="kuesioner.alert.f" ng-required="kuesioner.f.p603a == 'Tidak'" ng-model="kuesioner.f.p603c" value="Ya">Ya</label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label><input type="radio" name="p603c" class="" ng-disabled="kuesioner.alert.f" ng-required="kuesioner.f.p603a == 'Tidak'" ng-model="kuesioner.f.p603c" value="Tidak">Tidak</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <br>
+                <button type="submit" class="btn btn-danger">Submit</button>
+                <img ng-show="loadForm" src="../assets/images/line-load.gif" alt="">
+              </div>
+            </div>
+
+          </form>
+        </div><!-- box-body -->
+        <div class="box-footer">
+          FORM GROUP F
+        </div><!-- box-footer -->
+      </div><!-- /.nav-tabs-custom -->
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</section>
+<!-- /.content -->

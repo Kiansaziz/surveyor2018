@@ -1,0 +1,211 @@
+<style media="screen">
+  @media screen and (min-width: 1200px) {
+    .letter {
+      text-align: justify;
+      text-justify: inter-word;
+      line-height: 1.8;
+      padding-top : 30px;
+      padding-left : 150px;
+      padding-right : 150px;
+    }
+  }
+  @media print {
+    .letter {
+      line-height: 0.8;
+      font-size: 10pt;
+    }
+  }
+</style>
+<div class="content-print">
+
+<section class="content-header text-center">
+  <h1>
+    &nbsp;
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Data Observasi</li>
+  </ol>
+</section>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="box box-primary">
+        <div class="box-body">
+
+          <div class="row letter">
+
+            <div class="col-xs-6">
+              <h3 class="box">FORM OBSERVASI SUPERVISOR</h3>
+            </div>
+
+            <div class="col-xs-6">
+              <div class="pull-right" style="text-align: right; line-height: 1.2;">
+                <img ng-src="../assets/images/logo-ptsi.png" alt="" width="80px" /> <br>
+                <small>
+                  PT. SURVEYOR INDONESIA <br>
+                  Graha Surveyor Indonesia <br>
+                  Jl. Jenderal Gatot Subroto Kav. 56 <br>
+                  Jakarta – 12950 <br>
+                  Telepon: (021) 5269459 ext. (229 dan 350) <br>
+                </small>
+              </div>
+            </div>
+
+            <div class="col-xs-6">
+              <table class="table table-bordered">
+                <tr>
+                  <td>Desa/Kelurahan</td>
+                  <td>: {{profile.kelurahan}}</td>
+                </tr>
+                <tr>
+                  <td>Kecamatan</td>
+                  <td>: {{profile.kecamatan}}</td>
+                </tr>
+                <tr>
+                  <td>Kabupaten/Kota</td>
+                  <td>: {{profile.kabupaten}}</td>
+                </tr>
+                <tr>
+                  <td>Provinsi</td>
+                  <td>: {{profile.provinsi}}</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="col-xs-12">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th width="1px">No</th>
+                    <th width="49px">ITEM SUPERVISI</th>
+                    <th width="5px">YA</th>
+                    <th width="5px">TIDAK</th>
+                    <th width="40px">KETERANGAN</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Enumerator menggunakan perlengkapan kerja (ID Card, Papan Jalan, ATK) dan berpakaian rapi.</td>
+                    <td>
+                      <span ng-if="profile.observasi.p1a == 'Ya'" class="fa fa-check"></span>
+                    </td>
+                    <td>
+                      <span ng-if="profile.observasi.p1a == 'Tidak'" class="fa fa-check"></span>
+                    </td>
+                    <td>
+                      {{profile.observasi.p1b}}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>2</td>
+                    <td>Enumerator melakukan wawancara terhadap Responden sesuai dengan lokasi yang telah ditentukan.</td>
+                    <td>
+                      <span ng-if="profile.observasi.p2a == 'Ya'" class="fa fa-check"></span>
+                    </td>
+                    <td>
+                      <span ng-if="profile.observasi.p2a == 'Tidak'" class="fa fa-check"></span>
+                    </td>
+                    <td>
+                      {{profile.observasi.p2b}}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>3</td>
+                    <td>Enumerator melakukan wawancara  sesuai dengan <i>profile</i> yang telah ditentukan.</td>
+                    <td>
+                      <span ng-if="profile.observasi.p3a == 'Ya'" class="fa fa-check"></span>
+                    </td>
+                    <td>
+                      <span ng-if="profile.observasi.p3a == 'Tidak'" class="fa fa-check"></span>
+                    </td>
+                    <td>
+                      {{profile.observasi.p3b}}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>4</td>
+                    <td>Enumerator melakukan wawancara dengan baik.</td>
+                    <td>
+                      <span ng-if="profile.observasi.p4a == 'Ya'" class="fa fa-check"></span>
+                    </td>
+                    <td>
+                      <span ng-if="profile.observasi.p4a == 'Tidak'" class="fa fa-check"></span>
+                    </td>
+                    <td>
+                      {{profile.observasi.p4b}}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>5</td>
+                    <td>Enumerator memberikan souvenir terhadap Responden yang telah diwawancarai.</td>
+                    <td>
+                      <span ng-if="profile.observasi.p5a == 'Ya'" class="fa fa-check"></span>
+                    </td>
+                    <td>
+                      <span ng-if="profile.observasi.p5a == 'Tidak'" class="fa fa-check"></span>
+                    </td>
+                    <td>
+                      {{profile.observasi.p5b}}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>6</td>
+                    <td>Enumerator melakukan dokumentasi foto dengan Responden.</td>
+                    <td>
+                      <span ng-if="profile.observasi.p6a == 'Ya'" class="fa fa-check"></span>
+                    </td>
+                    <td>
+                      <span ng-if="profile.observasi.p6a == 'Tidak'" class="fa fa-check"></span>
+                    </td>
+                    <td>
+                      {{profile.observasi.p6b}}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>7</td>
+                    <td>Enumerator melakukan wawancara setiap harinya tidak melebihi batas yang telah ditentukan (4 Responden/hari).</td>
+                    <td>
+                      <span ng-if="profile.observasi.p7a == 'Ya'" class="fa fa-check"></span>
+                    </td>
+                    <td>
+                      <span ng-if="profile.observasi.p7a == 'Tidak'" class="fa fa-check"></span>
+                    </td>
+                    <td>
+                      {{profile.observasi.p7b}}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="col-xs-4 col-xs-offset-8">
+
+              <span class="pull-right">{{profile.ba.hari}}, {{profile.ba.tanggal}} {{profile.ba.bulan}} 2017</span>
+
+              <div class="col-xs-3 box text-center">
+                Sipervisor
+                <br><br><br><br><br>
+                <span class="text-muted">(...............................................)</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div><!-- box-body -->
+      </div><!-- /.nav-tabs-custom -->
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</section>
+<!-- /.content -->

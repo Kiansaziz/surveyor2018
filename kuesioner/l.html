@@ -1,0 +1,150 @@
+<!-- Content Header (Page Header) -->
+<section class="content-header text-center">
+  <h1>
+    L. PANDANGAN PUBLIK TERHADAP PENDANAAN PROLIFERASI/PENGEMBANGAN SENJATA PEMUSNAH MASSAL
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+    <li class="active">Group L</li>
+  </ol>
+</section>
+
+<div ng-if="kuesioner.alert.l">
+  <br>
+  <div class="alert alert-danger"><span class="fa fa-warning"></span>PERHATIAN !! Sudah Ada Data Kuesioner Untuk Nomor Kuesioner  {{kuesioner.nomor_kuesioner}}, Silahkan Update Pada Form Berikut.</div>
+</div>
+
+<!-- Main Header -->
+
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+       <div class="box box-primary">
+          <span class="label label-info pull-right">{{kuesioner.aksi.l}}</span>
+          <div class="box-body">
+            <form name="form" ng-submit="submit(kuesioner.l,  kuesioner.tbl_l, kuesioner.aksi.l , 'l')">
+
+              <div class="form-group">
+                <div class="col-md-1 col-nomor">1201.</div>
+                <div class="col-md-11 col-soal">
+                  <div class="col-md-8 ">
+                  Apakah Saudara/i setuju jika Pihak tertentu dari Indonesia memberikan bantuan pendanaan pengembangan senjata pemusnah massal di dalam/luar negeri : <b class="text-danger">*</b>
+                  </div>
+                  <div class="col-md-2">
+                      <div class="radio">
+                        <label><input type="radio" name="p1201" required ng-model="kuesioner.l.p1201" value="Ya">Ya</label>
+                      </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="radio">
+                      <label><input type="radio" name="p1201" required ng-model="kuesioner.l.p1201" value="Tidak">Tidak</label>
+                    </div>
+                </div>
+              </div>
+
+               <div class="form-group">
+                <div class="col-md-1 col-nomor">1202.</div>
+                <div class="col-md-11 col-soal">
+                  <div class="col-md-8 ">
+                    a. Apakah Saudara/i pernah mendengar ada Pihak tertentu di wilayah Saudara/i yang turut mendanai program pengembangan senjata pemusnah massal :
+                  <b class="text-danger">*</b>
+                  </div>
+                  <div class="col-md-2">
+                      <div class="radio">
+                        <label><input type="radio" name="p1202a" required ng-model="kuesioner.l.p1202a" value="Ya">Ya</label>
+                      </div>
+                  </div>
+                  <div class="col-md-2">
+                      <div class="radio">
+                        <label><input type="radio" name="p1202a" required ng-model="kuesioner.l.p1202a" value="Tidak">Tidak</label>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-md-1 col-nomor"></div>
+                <div class="col-md-11 col-soal">
+                  <div class="col-md-8">
+                    b. Jika "Ya", jelaskan bentuk pendanaan yang dimaksud ?
+                  </div>
+                  <div class="col-md-12">
+                    <div class="radio">
+                      <textarea type="text" name="p1202b" ng-model="kuesioner.l.p1202b" ng-required="kuesioner.l.p1202a == 'Ya'" ng-disabled="kuesioner.l.p1202a == 'Tidak'" class="form-control" placeholder="Jelaskan..."></textarea>
+                    </div>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <div class="col-md-1 col-nomor">1203.</div>
+                <div class="col-md-11 col-soal">
+                  <div class="col-md-5">
+                    <p> Seberapa besar pemahaman Saudara/i bahwa pemerintah berperan untuk menanggulangi ancaman pengembangan/pendanaan senjata pemusnah massal di indonesia :<b class="text-danger">*</b> </p>
+                    <b>(Tulis jawaban antara 1-10)</b>
+                  </div>
+                  <div class="col-md-3">
+                    <img ng-src="../assets/images/PAHAM.png" alt="" class="img-responsive" />
+                  </div>
+                  <div class="col-md-4">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" class=""  required ng-model="kuesioner.l.p1203" value="1">1</label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" class="" required ng-model="kuesioner.l.p1203" value="6">6</label>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" class="" required ng-model="kuesioner.l.p1203" value="2">2</label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" class="" required ng-model="kuesioner.l.p1203" value="7">7</label>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" class="" required ng-model="kuesioner.l.p1203" value="3">3</label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" class="" required ng-model="kuesioner.l.p1203" value="8">8</label>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" class="" required ng-model="kuesioner.l.p1203" value="4">4</label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" class="" required ng-model="kuesioner.l.p1203" value="9">9</label>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" class="" required ng-model="kuesioner.l.p1203" value="5">5</label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="p1203" class="" required ng-model="kuesioner.l.p1203" value="10">10</label>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-danger">Submit</button>
+                  <img ng-show="loadForm" src="../assets/images/line-load.gif" alt="">
+                </div>
+              </div>
+
+            </form>
+          </div><!-- box-body -->
+        </div><!-- /.nav-tabs-custom -->
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </section>
