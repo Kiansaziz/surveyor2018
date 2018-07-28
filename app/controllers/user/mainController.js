@@ -85,7 +85,6 @@
       var BA_C = function(){
         var token =  JSON.parse(localStorage['_token']);
         var onSuccess = function(response){
-          console.log(response);
           if (response.data == "error") {
             toastr.danger('Terjadi Kesalahan');
           } else {
@@ -124,6 +123,50 @@
         }
       }
 
+      var flow = function(){
+        var token =  JSON.parse(localStorage['_token']);
+        var onSuccess = function(response){
+          if (response.data == "error") {
+            toastr.danger('Terjadi Kesalahan');
+          } else {
+            if (response.data != 'null') {
+              $rootScope.profile.flow        = response.data;
+              $rootScope.profile.aksi.flow   = 'update';
+              $rootScope.profile.alert.flow  = true;
+            } else {
+              $rootScope.profile.aksi.flow   = 'update';
+              $rootScope.profile.alert.flow  = true;
+            }
+          }
+        }
+        var onError = function(reason){
+          toastr.error('Terjadi Kesalahan');
+        }
+        $http.post("../api/user/primaryUser.php?type=flow",{"token":token})
+        .then(onSuccess, onError);
+      }
+      flow();
+
+      $scope.changeList = function(param, value){
+        if (value == '1') { var backValue = '0'; } else { var backValue = '1'; }
+        var data = {
+          'kolom'   : param,
+          'value'   : value,
+          'token'   : JSON.parse(localStorage['_token'])
+        }
+        $http.post('../api/user/allProccess.php?type=change', data).success(function(response){
+          if (response.status == 'success') {
+            toastr.success(response.keterangan);
+          } else if (response.status != 'success') {
+            $scope.profile.flow[param] = backValue;
+            toastr.error(response.keterangan);
+          } else {
+            $scope.profile.flow[param] = backValue;
+            toastr.error('Terjadi Kesalahan');
+          }
+        });
+      }
+
 
 
       $scope.submit = function(dataSubmit, tableTujuan, aksi, grup){
@@ -141,7 +184,6 @@
           'token'   : JSON.parse(localStorage['_token'])
         }
         $http.post('../api/user/allProccess.php?type=submit', data).success(function(response){
-          console.log(response);
           if (response.status == 'success') {
             toastr.success(response.keterangan);
             $scope.profile.aksi[grup]   = 'update';

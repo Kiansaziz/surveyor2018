@@ -77,4 +77,46 @@ if($type == 'submit')
   echo $outp;
 }
 
+if($type == 'change')
+{
+  $ket        = '';
+  $post       = json_decode(file_get_contents("php://input"));
+  $kolom      = $conn->real_escape_string(isset($post->kolom) ? $post->kolom : '');
+  $value      = $conn->real_escape_string(isset($post->value) ? $post->value : '');
+  $jwt        = $conn->real_escape_string($post->token);
+  try {
+     $DecodedDataArray = JWT::decode(
+       $jwt,
+       $secretKey,
+       array(ALGORITHM)
+     );
+     $id  = $DecodedDataArray->data->id;
+
+     if ($id == '') {
+       $outp .= '{"status":"error",';
+       $outp .= '"keterangan":"Gagal Proses, Mohon Login Kembali"}';
+       echo $outp;
+       exit();
+     }
+
+      //  QUERY UPDATE
+      $query           = "UPDATE tbl_user_kelurahan_list SET $kolom = $value WHERE `id` = '$id'";
+      $run             = $conn->query($query);
+      if ($run) {
+        $outp .= '{"status":"success",';
+        $outp .= '"hasil":"update",';
+        $outp .= '"keterangan":"Berhasil Mengubah Data"}';
+      } else {
+        $outp .= '{"status":"error",';
+        $outp .= '"hasil":"update",';
+        $outp .= '"keterangan":"Gagal Mengubah Data"}';
+      }
+
+  } catch (Exception $e) {
+    $outp .= '{"status":"error",';
+    $outp .= '"keterangan":"Gagal Proses, Code : 1212"}';
+  }
+  echo $outp;
+}
+
 ?>

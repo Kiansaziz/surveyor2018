@@ -102,4 +102,30 @@ if($type == 'ba_c')
   }
   echo json_encode($outpArr);
 }
+
+
+
+if($type == 'flow')
+{
+  $post   = json_decode(file_get_contents("php://input"));
+  $jwt    = $conn->real_escape_string($post->token);
+  try {
+     $DecodedDataArray = JWT::decode(
+       $jwt,
+       $secretKey,
+       array(ALGORITHM)
+     );
+     $id        = $DecodedDataArray->data->id;
+     $query     = "SELECT * FROM tbl_user_kelurahan_list WHERE id = '$id'";
+     $run       = $conn->query($query);
+     if ($run->num_rows != NULL) {
+        $outp = $run->fetch_object();
+     } else {
+       $outp=null;
+     }
+  } catch (Exception $e) {
+    $outp=null;
+  }
+  echo json_encode($outp);
+}
 ?>

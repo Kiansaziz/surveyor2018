@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'toastr']);
+var app = angular.module('app', ['ngRoute', 'toastr', 'ngMaterial']);
 
     app.config(["$routeProvider",
     function($routeProvider) {
@@ -26,6 +26,11 @@ var app = angular.module('app', ['ngRoute', 'toastr']);
           templateUrl : "observasi-data.html",
           activetab   : 'observasi',
           title       : 'OBSERVASI'
+      })
+      .when("/flow", {
+          templateUrl : "flow.html",
+          activetab   : 'flow',
+          title       : 'FLOW TUGAS'
       })
       .otherwise({
           redirectTo : "/"

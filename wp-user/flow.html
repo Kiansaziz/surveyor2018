@@ -1,0 +1,200 @@
+<!-- Content Header (Page header) -->
+<section class="content-header text-center">
+  <h1>
+    FLOW TUGAS
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li class="active">Flow Tugas</li>
+  </ol>
+</section>
+
+
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+
+
+        <div class="box-body">
+          <form name="form">
+
+            <div class="row">
+              <div class="col-md-12">
+
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th width="1px">No</th>
+                      <th>LIST TAHAPAN</th>
+                      <th>STATUS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Koordinasi Dengan Lurah Atau Kades</td>
+                      <td>
+                        <md-switch ng-model="profile.flow.list1" aria-label="List 1" ng-true-value="'1'" ng-false-value="'0'" ng-change="changeList('list1', profile.flow.list1)">
+                          {{ profile.flow.list1 == '1' ? "Selesai" : "Belum" }}
+                        </md-switch>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>2</td>
+                      <td>Susun Kerangka Calon Sample Calon Responden.</td>
+                      <td>
+                        <md-switch ng-model="profile.flow.list2" aria-label="List 2" ng-true-value="'1'" ng-false-value="'0'" ng-change="changeList('list2', profile.flow.list2)">
+                          {{ profile.flow.list2 == '1' ? "Selesai" : "Belum" }}
+                        </md-switch>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>3</td>
+                      <td>Wawancara Nomor Kuesioner {{profile.id}}01</td>
+                      <td>
+                        <md-switch ng-model="profile.flow.list3" aria-label="List" ng-true-value="'1'" ng-false-value="'0'" ng-change="changeList('list3', profile.flow.list3)">
+                          {{ profile.flow.list3 == '1' ? "Selesai" : "Belum" }}
+                        </md-switch>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>4</td>
+                      <td>Wawancara Nomor Kuesioner {{profile.id}}02</td>
+                      <td>
+                        <md-switch ng-model="profile.flow.list4" aria-label="List" ng-true-value="'1'" ng-false-value="'0'" ng-change="changeList('list4', profile.flow.list4)">
+                          {{ profile.flow.list4 == '1' ? "Selesai" : "Belum" }}
+                        </md-switch>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>5</td>
+                      <td>Wawancara Nomor Kuesioner {{profile.id}}03</td>
+                      <td>
+                        <md-switch ng-model="profile.flow.list5" aria-label="List" ng-true-value="'1'" ng-false-value="'0'" ng-change="changeList('list5', profile.flow.list5)">
+                          {{ profile.flow.list5 == '1' ? "Selesai" : "Belum" }}
+                        </md-switch>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>6</td>
+                      <td>Wawancara Nomor Kuesioner {{profile.id}}04</td>
+                      <td>
+                        <md-switch ng-model="profile.flow.list6" aria-label="List" ng-true-value="'1'" ng-false-value="'0'" ng-change="changeList('list6', profile.flow.list6)">
+                          {{ profile.flow.list6 == '1' ? "Selesai" : "Belum" }}
+                        </md-switch>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>7</td>
+                      <td>Wawancara Nomor Kuesioner {{profile.id}}05</td>
+                      <td>
+                        <md-switch ng-model="profile.flow.list7" aria-label="List" ng-true-value="'1'" ng-false-value="'0'" ng-change="changeList('list7', profile.flow.list7)">
+                          {{ profile.flow.list7 == '1' ? "Selesai" : "Belum" }}
+                        </md-switch>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>8</td>
+                      <td>Wawancara Nomor Kuesioner {{profile.id}}06</td>
+                      <td>
+                        <md-switch ng-model="profile.flow.list8" aria-label="List" ng-true-value="'1'" ng-false-value="'0'" ng-change="changeList('list8', profile.flow.list8)">
+                          {{ profile.flow.list8 == '1' ? "Selesai" : "Belum" }}
+                        </md-switch>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>9</td>
+                      <td>Wawancara Nomor Kuesioner {{profile.id}}07</td>
+                      <td>
+                        <md-switch ng-model="profile.flow.list9" aria-label="List" ng-true-value="'1'" ng-false-value="'0'" ng-change="changeList('list9', profile.flow.list9)">
+                          {{ profile.flow.list9 == '1' ? "Selesai" : "Belum" }}
+                        </md-switch>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>10</td>
+                      <td>Wawancara Nomor Kuesioner {{profile.id}}08</td>
+                      <td>
+                        <md-switch ng-model="profile.flow.list10" aria-label="List" ng-true-value="'1'" ng-false-value="'0'" ng-change="changeList('list10', profile.flow.list10)">
+                          {{ profile.flow.list10 == '1' ? "Selesai" : "Belum" }}
+                        </md-switch>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>11</td>
+                      <td>Wawancara Nomor Kuesioner {{profile.id}}09</td>
+                      <td>
+                        <md-switch ng-model="profile.flow.list11" aria-label="List" ng-true-value="'1'" ng-false-value="'0'" ng-change="changeList('list11', profile.flow.list11)">
+                          {{ profile.flow.list11 == '1' ? "Selesai" : "Belum" }}
+                        </md-switch>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>12</td>
+                      <td>Wawancara Nomor Kuesioner {{profile.id}}10</td>
+                      <td>
+                        <md-switch ng-model="profile.flow.list12" aria-label="List" ng-true-value="'1'" ng-false-value="'0'" ng-change="changeList('list12', profile.flow.list12)">
+                          {{ profile.flow.list12 == '1' ? "Selesai" : "Belum" }}
+                        </md-switch>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>13</td>
+                      <td>Wawancara Kelurahan Berita Acara</td>
+                      <td>
+                        <md-switch ng-model="profile.flow.list13" aria-label="List" ng-true-value="'1'" ng-false-value="'0'" ng-change="changeList('list13', profile.flow.list13)">
+                          {{ profile.flow.list13 == '1' ? "Selesai" : "Belum" }}
+                        </md-switch>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>14</td>
+                      <td>Dokumen Diterima Supervisor</td>
+                      <td>
+                        <md-switch ng-model="profile.flow.list14" aria-label="List" ng-true-value="'1'" ng-false-value="'0'" ng-change="changeList('list14', profile.flow.list14)">
+                          {{ profile.flow.list14 == '1' ? "Selesai" : "Belum" }}
+                        </md-switch>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>15</td>
+                      <td>Selesai QA Kirim Ke Korwil</td>
+                      <td>
+                        <md-switch ng-model="profile.flow.list15" aria-label="List" ng-true-value="'1'" ng-false-value="'0'" ng-change="changeList('list15', profile.flow.list15)">
+                          {{ profile.flow.list15 == '1' ? "Selesai" : "Belum" }}
+                        </md-switch>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+
+
+          </form>
+        </div><!-- box-body -->
+        <div class="box-footer">
+          FORM FLOW TUGAS
+        </div><!-- box-footer -->
+      </div><!-- /.nav-tabs-custom -->
+    </div><!-- /.col -->
+  </div><!-- /.row -->
+</section>
+<!-- /.content -->
