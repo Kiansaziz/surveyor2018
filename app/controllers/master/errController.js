@@ -24,10 +24,10 @@
           ke : ke
         }
         var onSuccess = function(response){
-          if (response.status == 'success') {
-            toastr.success(response.keterangan);
-          } else if (response.status != 'success') {
-            toastr.warning(response.keterangan);
+          if (response.data.status == 'success') {
+            toastr.success(response.data.keterangan);
+          } else if (response.data.status != 'success') {
+            toastr.warning(response.data.keterangan);
           } else {
             toastr.error('Terjadi Kesalahan');
           }

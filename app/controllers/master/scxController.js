@@ -39,7 +39,6 @@
       $scope.scit = function(detail){
         var idx = $scope.scs.indexOf(detail);
         $http.post('../api/master/scx.php?type=scit', detail).success(function(response){
-          console.log(response);
           if (response.status == 'success') {
             toastr.success(response.keterangan);
             $scope.scs.splice(idx,1);
@@ -54,7 +53,6 @@
       $scope.sxit = function(detail){
         var idx = $scope.sxs.indexOf(detail);
         $http.post('../api/master/scx.php?type=sxit', detail).success(function(response){
-          console.log(response);
           if (response.status == 'success') {
             toastr.success(response.keterangan);
             $scope.sxs.splice(idx,1);

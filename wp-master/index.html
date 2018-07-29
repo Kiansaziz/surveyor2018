@@ -152,22 +152,12 @@
             <i ng-class="{'pull-right fa fa-arrow-circle-right': $route.current.activetab == 'chart'}"></i>
           </a>
         </li>
-        <!-- <li class="treeview" ng-class="{'active': $route.current.activetab == 'kuesioner'}">
-          <a>
-            <i class="fa fa-files-o"></i>
-            <span>Kuesioner</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+        <li ng-class="{'active': $route.current.activetab == 'flow'}">
+          <a href="#flow">
+            <i class="fa fa-bar-chart"></i> <span>Flow Tugas</span>
+            <i ng-class="{'pull-right fa fa-arrow-circle-right': $route.current.activetab == 'flow'}"></i>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="#kuesioner/sudah"><i class="fa fa-angle-right"></i> Sudah Input</a></li>
-            <li><a href="#kuesioner/belum"><i class="fa fa-angle-right"></i> Belum Input</a></li>
-            <li><a href="#kuesioner/sama"><i class="fa fa-angle-right"></i> Sama</a></li>
-            <li><a href="#kuesioner/tidak"><i class="fa fa-angle-right"></i> Tidak Sama</a></li>
-            <li><a href="#kuesioner"><i class="fa fa-angle-right"></i> Semua Kuesioner</a></li>
-          </ul>
-        </li> -->
+        </li>
         <li ng-class="{'active': $route.current.activetab == 'kuesioner'}">
           <a href="#kuesioner">
             <i class="fa fa-files-o"></i> <span>Kuesioner</span>
@@ -395,6 +385,7 @@
 <script src="../app/controllers/master/dashboardController.js"></script>
 <script src="../app/controllers/master/infoController.js"></script>
 <script src="../app/controllers/master/chartController.js"></script>
+<script src="../app/controllers/master/flowController.js"></script>
 <script src="../app/controllers/master/userController.js"></script>
 <script src="../app/controllers/master/userDetailController.js"></script>
 <script src="../app/controllers/master/kuesionerController.js"></script>
