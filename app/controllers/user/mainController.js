@@ -21,6 +21,7 @@
             $scope.profile.alert = {};
             BA();
             OBSERVASI();
+            flow();
           }
         }
         var onError = function(reason){
@@ -145,7 +146,6 @@
         $http.post("../api/user/primaryUser.php?type=flow",{"token":token})
         .then(onSuccess, onError);
       }
-      flow();
 
       $scope.changeList = function(param, value){
         if (value == '1') { var backValue = '0'; } else { var backValue = '1'; }
