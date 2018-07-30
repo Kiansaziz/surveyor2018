@@ -1,3 +1,26 @@
-<md-switch ng-model="profile.flow.list15" aria-label="List" ng-true-value="'1'" ng-false-value="'0'" ng-change="changeList('list15', profile.flow.list15)">
-  {{ profile.flow.list15 == '1' ? "Selesai" : "Belum" }}
-</md-switch>
+if($type == 'list15')
+{
+  $post     = json_decode(file_get_contents("php://input"));
+  $id_prov  = isset($post->id_prov) ? $post->id_prov : '';
+  $id_kab   = isset($post->id_kab) ? $post->id_kab : '';
+  $id_kec   = isset($post->id_kec) ? $post->id_kec : '';
+  $cond     = '';
+  if ($id_prov != '') { $cond   .= "AND id_prov = '$id_prov' "; }
+  if ($id_kab != '') { $cond   .= "AND id_kab = '$id_kab' "; }
+  if ($id_kec != '') { $cond   .= "AND id_kec = '$id_kec' "; }
+  $proses = $conn->query("SELECT COUNT(id) as value,
+                                CASE WHEN list15 = '1' THEN 'Selesai' ELSE 'Belum' END AS label
+                                FROM tbl_user_kelurahan_list
+                                WHERE 1
+                                $cond
+                                GROUP BY list15
+                                ");
+  if ($proses->num_rows > 0) {
+    while($rs = $proses->fetch_object()) {
+        $outpArr[] = $rs;
+    }
+  } else {
+    $outpArr[]=null;
+  }
+  echo json_encode($outpArr);
+}

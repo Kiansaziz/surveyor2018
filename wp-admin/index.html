@@ -145,6 +145,12 @@
             <i ng-class="{'pull-right fa fa-arrow-circle-right': $route.current.activetab == 'chart'}"></i>
           </a>
         </li>
+        <li ng-class="{'active': $route.current.activetab == 'flow'}">
+          <a href="#flow">
+            <i class="fa fa-map-pin"></i> <span>Flow Tugas</span>
+            <i ng-class="{'pull-right fa fa-arrow-circle-right': $route.current.activetab == 'flow'}"></i>
+          </a>
+        </li>
         <li ng-class="{'active': $route.current.activetab == 'pesan'}">
           <a href="#pesan">
             <i class="fa fa-envelope-o"></i> <span>Pesan</span>
@@ -338,6 +344,7 @@
 
 <script src="../app/controllers/master/dashboardController.js"></script>
 <script src="../app/controllers/master/chartController.js"></script>
+<script src="../app/controllers/master/flowController.js"></script>
 <script src="../app/controllers/admin/pesanController.js"></script>
 <script src="../app/controllers/master/dokumentasiController.js"></script>
 <script src="../app/controllers/master/chart/groupAController.js"></script>

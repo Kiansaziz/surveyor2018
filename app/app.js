@@ -30,7 +30,6 @@ var app = angular.module('app', ['ngRoute', 'toastr','angularUtils.directives.di
           controller  : "chartController",
           activetab   : 'chart'
       })
-
       .when("/flow", {
           templateUrl : "flow.html",
           controller  : "flowController",

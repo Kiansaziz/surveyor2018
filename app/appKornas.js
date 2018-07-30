@@ -25,6 +25,11 @@ var app = angular.module('app', ['ngRoute', 'toastr','angularUtils.directives.di
           controller  : "chartController",
           activetab   : 'chart'
       })
+      .when("/flow", {
+          templateUrl : "flow.html",
+          controller  : "flowController",
+          activetab   : 'flow'
+      })
       .when("/pesan", {
           templateUrl : "pesan.html",
           controller  : "pesanController",

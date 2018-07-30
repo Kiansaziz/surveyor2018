@@ -2,6 +2,9 @@
 
     app.controller('flowController', function($scope, $http, toastr, filterFilter){
 
+      $scope.filter = {};
+      $scope.filter.token = JSON.parse(localStorage['_token']);
+
       $scope.changeProv = function(filter){
         if (filter.id_prov == '') {
           delete $scope.filter.id_prov;
@@ -40,7 +43,7 @@
         var onError = function(reason){
           toastr.error('Terjadi Kesalahan');
         }
-        $http.post("../api/master/flow.php?type=filterFlow",filter).then(onSuccess, onError);
+        $http.post("../api/korwil/flow.php?type=filterFlow",filter).then(onSuccess, onError);
       }
       $scope.filterFlow($scope.filter);
 
@@ -56,7 +59,7 @@
         var onError = function(reason){
           toastr.error('Terjadi Kesalahan');
         }
-        $http.post("../api/master/flow.php?type=list1", filter).then(onSuccess, onError);
+        $http.post("../api/korwil/flow.php?type=list1", filter).then(onSuccess, onError);
       }
 
       var list2 = function(filter) {
@@ -70,7 +73,7 @@
         var onError = function(reason){
           toastr.error('Terjadi Kesalahan');
         }
-        $http.post("../api/master/flow.php?type=list2", filter).then(onSuccess, onError);
+        $http.post("../api/korwil/flow.php?type=list2", filter).then(onSuccess, onError);
       }
 
       var list13 = function(filter) {
@@ -84,7 +87,7 @@
         var onError = function(reason){
           toastr.error('Terjadi Kesalahan');
         }
-        $http.post("../api/master/flow.php?type=list13", filter).then(onSuccess, onError);
+        $http.post("../api/korwil/flow.php?type=list13", filter).then(onSuccess, onError);
       }
 
       var list14 = function(filter) {
@@ -98,7 +101,7 @@
         var onError = function(reason){
           toastr.error('Terjadi Kesalahan');
         }
-        $http.post("../api/master/flow.php?type=list14", filter).then(onSuccess, onError);
+        $http.post("../api/korwil/flow.php?type=list14", filter).then(onSuccess, onError);
       }
 
       var list15 = function(filter) {
@@ -112,7 +115,7 @@
         var onError = function(reason){
           toastr.error('Terjadi Kesalahan');
         }
-        $http.post("../api/master/flow.php?type=list15", filter).then(onSuccess, onError);
+        $http.post("../api/korwil/flow.php?type=list15", filter).then(onSuccess, onError);
       }
 
 
@@ -129,7 +132,7 @@
         var onError = function(reason){
           toastr.error('Terjadi Kesalahan');
         }
-        $http.post("../api/master/flow.php?type=listRes", filter).then(onSuccess, onError);
+        $http.post("../api/korwil/flow.php?type=listRes", filter).then(onSuccess, onError);
       }
 
       var changeOutput = function(data){

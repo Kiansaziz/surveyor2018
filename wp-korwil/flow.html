@@ -18,13 +18,6 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label>Provinsi</label>
-            <select class="form-control" name="provinsi" ng-model="filter.id_prov" ng-change="changeProv(filter)">
-              <option value="">-Pilih</option>
-              <option ng-repeat="provinsi in main.provinsis | orderBy:'provinsi'" value="{{provinsi.id}}">{{provinsi.provinsi}}</option>
-            </select>
-          </div>
-          <div class="form-group">
             <label>Kabupaten</label>
             <select class="form-control" name="kabupaten" ng-model="filter.id_kab" ng-change="changeKab(filter)">
               <option value="">-Pilih</option>
