@@ -167,7 +167,7 @@
           ]
         }];
         $scope.flow.listRes.series = temp;
-        $scope.flow.listRes.key = ['List 3','List 4','List 5','List 6', 'List 7', 'List 8', 'List 9', 'List 10', 'List 11', 'List 12'];
+        $scope.flow.listRes.key = ['Wawancara 1','Wawancara 2','Wawancara 3','Wawancara 4', 'Wawancara 5', 'Wawancara 6', 'Wawancara 7 ', 'Wawancara 8', 'Wawancara 9', 'Wawancara 10'];
         passingChart($scope.flow.listRes.key, $scope.flow.listRes.series)
       }
 
@@ -175,13 +175,13 @@
         $scope.flow.listRes.chart = {
           chart: {
               type: 'column',
-              width: 1200
+              width: 1070
           },
           title: {
-              text: 'Survey Persepsi Publik'
+              text: 'Wawancara Responden'
           },
           subtitle: {
-              text: 'List Flow Tugas 3 - 12'
+              text: 'Wawancara 1 -10'
           },
           xAxis: {
               categories: ObjectKey,
