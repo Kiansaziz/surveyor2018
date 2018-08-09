@@ -115,7 +115,7 @@
                     <span class="input-group-addon"> <i class="fa fa-exchange"></i> </span>
                   <input type="text" name="selesai" class="form-control time-picker" ng-model="kuesioner.final.n.selesai" required data-time-picker placeholder="Jam Selesai / Format : HH:mm">
                 </div>
-                <div class="col-md-12" ng-if="pertanyaan(kuesioner.beda, 'mulai')">
+                <div class="col-md-6" ng-if="pertanyaan(kuesioner.beda, 'mulai')">
                   <table class="table table-bordered">
                     <tr class="bg-info">
                       <td width="10%">mulai</td>
@@ -139,6 +139,31 @@
                     </tr>
                   </table>
                 </div>
+                <div class="col-md-6" ng-if="pertanyaan(kuesioner.beda, 'selesai')">
+                  <table class="table table-bordered">
+                    <tr class="bg-info">
+                      <td width="10%">selesai</td>
+                      <td>
+                        <div class="col-md-6">
+                          <div class="radio">
+                            <label><input type="radio" name="selesai" value="{{kuesioner.enum.n.selesai}}" ng-model="kuesioner.final.n.selesai"><span class="badge bg-blue">{{kuesioner.enum.n.selesai}}</span></label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="selesai" value="{{kuesioner.data.n.selesai}}" ng-model="kuesioner.final.n.selesai"><span class="badge bg-red">{{kuesioner.data.n.selesai}}</span></label>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="input-group">
+                          <div class="input-group-btn">
+                            <button type="button" class="btn btn-primary" ng-click="ubahJawaban('n', kuesioner.final.n.nomor_kuesioner, 'selesai', kuesioner.final.n.selesai, kuesioner.beda)"><span class="fa fa-check"></span></button>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
 
               </div>
             </div>

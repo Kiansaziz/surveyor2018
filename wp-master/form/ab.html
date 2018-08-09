@@ -504,7 +504,9 @@
                           <label><input type="radio" name="p201" value="Petani/Nelayan, Pengrajin, Buruh Lepas, Pedagang" ng-model="kuesioner.final.ab.p201">Petani/Nelayan, Pengrajin, Buruh Lepas, Pedagang</label>
                         </div>
                         <div class="radio">
-                          <label><input type="radio" name="p201" value="Profesi Lainnya" ng-model="kuesioner.final.ab.p201">Profesi Lainnya (Tidak bekerja/ Sementara tidak bekerja)</label>
+                          <label><input type="radio" name="p201" value="Profesi Lainnya" ng-model="kuesioner.final.ab.p201">Profesi Lainnya (Sebutkan : ....................)</label>
+                        <div class="radio">
+                          <label><input type="radio" name="p201" value="Tidak bekerja/Sementara tidak bekerja" ng-model="kuesioner.final.ab.p201">Tidak bekerja/Sementara tidak bekerja</label>  
                           <input type="text" name="p201x" class="form-control" ng-model="kuesioner.final.ab.p201x" placeholder="Sebutkan">
                           <div class="col-md-12" ng-if="pertanyaan(kuesioner.beda, 'p201x')">
                             <table class="table table-bordered">

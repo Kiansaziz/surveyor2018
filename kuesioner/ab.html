@@ -306,8 +306,11 @@
                           <label><input type="radio" name="p201" required value="Petani/Nelayan, Pengrajin, Buruh Lepas, Pedagang" ng-model="kuesioner.ab.p201" ng-disabled="disabled201('Petani/Nelayan, Pengrajin, Buruh Lepas, Pedagang')">Petani/Nelayan, Pengrajin, Buruh Lepas, Pedagang</label>
                         </div>
                         <div class="radio">
-                          <label><input type="radio" name="p201" required value="Profesi Lainnya" ng-model="kuesioner.ab.p201" ng-disabled="disabled201('Profesi Lainnya')">Profesi Lainnya (Tidak bekerja/ Sementara tidak bekerja)</label>
+                          <label><input type="radio" name="p201" required value="Profesi Lainnya" ng-model="kuesioner.ab.p201" ng-disabled="disabled201('Profesi Lainnya')">Profesi Lainnya (Sebutkan : ....................)</label>
                           <input type="text" name="p201x" class="form-control" ng-model="kuesioner.ab.p201x" placeholder="Sebutkan" ng-if="kuesioner.ab.p201 == 'Profesi Lainnya'" ng-required="kuesioner.ab.p201 == 'Profesi Lainnya'">
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="p201" required value="Tidak bekerja/Sementara tidak bekerja" ng-model="kuesioner.ab.p201" ng-disabled="disabled201('Tidak bekerja/Sementara tidak bekerja')">Tidak bekerja/Sementara tidak bekerja</label>
                         </div>
                       </div>
                     </div>
